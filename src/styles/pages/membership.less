@@ -1,0 +1,688 @@
+@membership-header-height: 180px;
+
+.@{class-prefix}-membership-modal {
+    & .ant-modal-header {
+      display: none;
+    }
+  
+    & .ant-modal-footer {
+      display: none;
+    }
+
+    & .ant-modal-content {
+        border-radius: 10px;
+    }
+
+    & .ant-modal-body{
+        background-color: #f5f5f5;
+        padding: 0px;
+        border-radius: @border-radius-lg;
+        position: relative;
+        overflow: hidden;
+        height: 745px;
+    }
+}
+
+.@{class-prefix}-membership-header {
+    width: 100%;
+    height: @membership-header-height;
+    color: white;
+
+    &-content {
+        position: absolute;
+        top: 36px;
+        left: 0;                
+        z-index: 100;
+        
+        width: 100%;
+        text-align: center;
+        
+        .@{class-prefix}-fullscreen-dialog & {
+            top: 20px;
+        }
+    }
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;    
+        width: 1249px;
+        height: @membership-header-height;
+        border-top-left-radius: @border-radius-lg;
+        border-top-right-radius: @border-radius-lg;
+
+        .@{class-prefix}-fullscreen-dialog & {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;     
+        }
+
+        overflow: hidden;
+        z-index: 1;                     
+    }
+    &-mask {
+        position: absolute;
+        top: 0;
+        left: 0;   
+        width: 100%;
+        height: @membership-header-height;
+
+        border-top-left-radius: @border-radius-lg - 2px;
+        border-top-right-radius: @border-radius-lg - 2px;     
+
+        .@{class-prefix}-fullscreen-dialog & {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;     
+        }
+
+        
+        background-color: #006cff;                
+        opacity: 0.6;
+        z-index: 2;
+    }
+
+    &-title {
+        font-size: 30px;
+        font-weight: 600;       
+        .@{class-prefix}-fullscreen-dialog & {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+    }
+    &-description {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 12px;
+        .@{class-prefix}-fullscreen-dialog & {
+            font-size: 13px;
+        }
+    }
+}
+
+.@{class-prefix}-membership-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+
+    box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.14);            
+    background-color: white;
+    padding: 0 50px;
+    .@{class-prefix}-fullscreen-dialog & {
+        padding: 0px;
+    }
+    .flex-display(flex, row, nowrap);
+    .justify-content(space-between);
+    .align-items(center);
+
+    & &-company-wrapper {       
+        .@{class-prefix}-fullscreen-dialog & { 
+            overflow-x: scroll;
+            padding-top: 12px;
+            & > div {                
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+
+    & &-button-wrapper {       
+        .@{class-prefix}-fullscreen-dialog & { 
+            padding: 20px;
+            .flex(0, 0, 190px);
+            box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.14);            
+        }
+    }
+
+    & .@{class-prefix}-continue-btn {                
+        width: 150px;
+        height: 40px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 0px;
+    }
+
+    & .@{class-prefix}-star-div {
+        .flex-display(flex, row, nowrap);
+        .align-items(center);
+
+        & > i {
+            font-size: 20px;              
+        }
+    }
+}
+
+.@{class-prefix}-membership-content {
+    position: absolute;
+    top: 180px;
+    left: 0px;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 30px 50px 0px;
+}
+
+.@{class-prefix}-membership-content-mobile {
+    padding: 20px 0;
+    min-height: calc(100vh ~ "-" 264px);     // header 184px footer 80px
+    height:  calc(100vh ~ "-" 264px);
+}
+
+.@{class-prefix}-membership-header-exit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    & .@{class-prefix}-membership-modal-close {
+        color: #b9bcc1;
+        padding: 15px;
+        cursor: pointer;
+    }
+}
+
+.@{class-prefix}-button-switch-container {
+    .flex-display(flex, row, nowrap);
+    overflow: hidden;
+
+    & .@{class-prefix}-switch-button {
+        .flex(1, 1, 0);
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.@{class-prefix}-membership-annual-switch {
+    border-radius: 18px;    
+    width: 200px;
+    
+    & .@{class-prefix}-switch-button {
+        height: 36px;
+        font-size: 13px;    
+        font-weight: 500;
+        line-height: 36px;
+
+        background-color: white;
+        color: @text-grey;        
+
+        &.selected {
+            background-color: @green-color;
+            color: white;
+        }
+    }
+}
+
+.@{class-prefix}-purchase-annual-switch {
+    border-radius: 20px;    
+    width: 100%;
+    
+    & .@{class-prefix}-switch-button {
+        height: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 38px;
+
+        background-color: #d7f8de;
+        color: @green-color;
+
+        &.selected {
+            background-color: @green-color;
+            color: white;
+        }
+    }
+}
+
+.@{class-prefix}-membership-discount {
+    width: 100px;
+
+    text-align: center;
+
+    font-family: "MV Boli";
+    font-size: 14px;
+
+    &-wrapper {
+        .flex-display(flex, row, nowrap);
+        width: 200px;
+    }
+}
+
+.@{class-prefix}-membership-table {
+    position: relative;
+    width: 100%;
+        
+    background-color: #f8f8f8;
+
+    & .@{class-prefix}-membership-table-header-row,
+    & .@{class-prefix}-membership-table-row {
+        .flex-display(flex, row, nowrap);
+        .align-items(center);
+
+        & > div {
+            text-align: center;        
+            padding: 0px;
+            height: 100%;
+
+            &:not(:first-child) {
+                .flex(1, 1, 0);
+                border-left: 2px solid #e5e7ed;
+            }
+            &:last-child {
+                border-right: 2px solid #e5e7ed;
+            }
+
+            &:first-of-type {
+                text-align: left;
+                padding: 0 20px;
+                min-width: 275px;
+                width: 275px;
+            }
+        }    
+    }
+
+    & .@{class-prefix}-membership-table-header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    & .@{class-prefix}-membership-table-body {
+        margin-top: 0px;
+        padding-top: 175px;
+        margin-bottom: 80px;
+    }
+
+    & .@{class-prefix}-membership-table-header-row {
+        background-color: white;
+        position: sticky;
+        box-shadow: 0 0 6px #dde0e5;
+    }
+
+    & .@{class-prefix}-membership-table-row {
+        height: 40px;              
+        & > div {
+            font-size: 13px;
+            font-weight: 500;
+            
+            .flex-display(flex, row, nowrap);
+            .align-items(center);
+            
+            &:not(:first-child) {
+                .justify-content(center);
+            }
+        }
+    }    
+
+    & .normal {
+        background-color: white;
+    }
+
+    & .category  {        
+        height: 42px;
+        & > div > span {
+            font-size: 16px !important;
+            color: @header-text-color;
+        }
+    }
+
+    & .main-header-cell {
+        font-size: 26px;
+        font-weight: 600;
+        color: @header-text-color;
+    }
+
+    & .top-select-bar {
+        position: relative;
+        height: 60px;
+        font-size: 18px;        
+        font-weight: 700;
+        line-height: 60px;
+        color: white;        
+
+        & .@{class-prefix}-membership-custom-option-wrapper {
+            position: absolute;
+            left: 20px;
+            top: 19px;
+        }
+    }
+
+    & .price-element {   
+        font-size: 13px;
+        font-weight: 500;
+        padding: 25px 0;
+
+        @media screen and (max-width: @screen-lg-max) {
+            padding: 10px 0;
+        }
+
+        & .price {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        & i {
+            font-size: 18px;
+        }
+    }
+
+    & .@{class-prefix}-membership-poular-wrapper {            
+        position: absolute;
+        right: -26px;
+        top: 13px;
+        transform: rotate(45deg);
+    }
+    & .popular-tag {
+        padding: 0 25px;
+        font-size: 10px;            
+        font-weight: 700;
+        letter-spacing: 0.25px;
+        line-height: 21px;
+        background-color: white;
+    }
+}
+
+.@{class-prefix}-membership-custom-option {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #ffffff;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+
+    cursor: pointer;
+    
+    &-selected {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+}
+
+.@{class-prefix}-membership-item-check {
+    .flex(0, 0);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 auto;
+    & > i {
+        font-size: 10px;
+        line-height: 16px;
+        font-weight: 600;
+        color: white;
+    }
+}
+
+.@{class-prefix}-membership-scroll {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+
+.@{class-prefix}-purchaseplan-modal {
+    &-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: @header-text-color;
+    }
+
+    & .ant-modal-content {
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    & .ant-modal-header {
+        background-color: white;
+        height: 120px;
+        padding-left: 30px;
+        padding-right: 60px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.14);
+    }
+    & .ant-modal-title {
+        height: 100%;
+    }
+
+    & .ant-modal-body{
+        background: transparent;
+        padding: 30px;
+        padding-bottom: 0px;        
+    }
+
+    & .ant-modal-footer {
+        display: none;
+    }
+
+    
+    .ant-divider-horizontal {
+        margin: 16px 0;
+    }
+  
+}
+
+.@{class-prefix}-purchaseplan-custom-option {
+    position: relative;
+    width: 24px;
+    height: 24px;    
+    min-width: 24px;
+    border: 2px solid @text-grey;
+    background-color: transparent;
+    border-radius: 50%;
+
+    cursor: pointer;
+    
+    &-selected {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: @text-grey;
+    }
+
+    &.active {
+        border: 2px solid @primary-color;
+        & .@{class-prefix}-purchaseplan-custom-option-selected {
+            background-color: @primary-color;
+        }
+    }
+}
+
+.@{class-prefix}-purchaseplan-card {
+    height: 30px;
+    background-color: #e6e9ec;
+    border-radius: 4px;
+    margin-left: 8px;
+
+    .@{class-prefix}-fullscreen-dialog & {
+        display: none;
+    }
+}
+
+.@{class-prefix}-purchase-btn-apply {
+    height: 38px;
+}
+
+.@{class-prefix}-purchase-total-value {
+    font-size: 36px;
+    font-weight: 600;
+    color: @header-text-color;
+}
+
+.@{class-prefix}-purchaseplan-content {
+    min-height: 590px;
+    position: relative;
+    
+    .@{class-prefix}-fullscreen-dialog & {
+        min-height: calc( 100vh ~ "-" 104px );    
+    }
+}
+
+.@{class-prefix}-purchaseplan-result-panel {
+    max-width: 710px;
+    width: 100%;
+    min-height: 485px;    
+
+    margin-top: -15px;
+    margin-bottom: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+
+    .@{class-prefix}-fullscreen-dialog & {
+        margin-top: 0px;
+        min-height: calc( 100vh ~ "-" 104px );    
+    }
+}
+
+.@{class-prefix}-purchaseplan-header {
+    height: 60px;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 1px 1px 5px #dce0e9;
+    
+    .@{class-prefix}-fullscreen-dialog & {
+        font-size: 18px;
+        line-height: 60px;
+        font-weight: 600;
+        color: @header-text-color;
+    }
+}
+
+
+.@{class-prefix}-purchaseplan-fullscreen-scroll {
+    height: calc( 100vh ~ "-" @layout-header-height ); 
+    overflow-y: scroll;
+        
+    & .@{class-prefix}-purchaseplan-fullscreen-content {
+        padding: 20px;
+    }
+}
+
+.@{class-prefix}-membership-scroll {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.@{class-prefix}-membership-mobile-container {
+    .flex-display(flex, row, nowrap);    
+    // padding: 0 45px;    
+    padding: 0 53px; // 45 + 8
+}
+
+@membership-card-header: 165px;
+
+.@{class-prefix}-membership-card { 
+    .flex(0, 0);
+    position: relative;
+    width: calc( 100vw ~ "-" 122px );  // margin 16px  left, right = 45px;
+    margin: 0px 8px;
+    background-color: #fcfbfb;   
+    overflow: hidden;
+
+    &-header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: @membership-card-header;
+        text-align: center;
+
+        background-color: white;
+        box-shadow: 0 0 6px #dde0e5;
+
+        & .top-select-bar {
+            position: relative;
+            height: 60px;
+            font-size: 18px;        
+            font-weight: 700;
+            line-height: 60px;
+            color: white;    
+    
+            & .@{class-prefix}-membership-custom-option-wrapper {
+                position: absolute;
+                left: 20px;
+                top: 19px;
+            }
+
+            & .@{class-prefix}-membership-card-left {
+                position: absolute;
+                right: 12px;
+                top: 8px;
+                cursor: pointer;            
+            }
+
+            & .@{class-prefix}-membership-card-right {
+                position: absolute;
+                left: 12px;
+                top: 8px;
+                cursor: pointer;            
+            }
+        }
+
+        & .@{class-prefix}-membership-poular-wrapper {            
+            position: absolute;
+            right: -26px;
+            top: 13px;
+            transform: rotate(45deg);
+        }
+        & .popular-tag {
+            padding: 0 25px;
+            font-size: 10px;            
+            font-weight: 700;
+            letter-spacing: 0.25px;
+            line-height: 21px;
+            background-color: white;
+        }
+
+        & .price-element {   
+            font-size: 13px;
+            font-weight: 500;
+            padding: 20px 0;
+        
+            & .price {
+                font-size: 24px;
+                font-weight: 600;
+            }
+    
+            & i {
+                font-size: 18px;
+            }
+        }
+    }
+    
+    &-body {
+        margin-top: 0px;
+        padding: 185px 0px 20px 0px;
+        text-align: left; 
+
+        &-scroll {
+            height: calc( 100vh ~ "-" 509px );     // header 184 footer 80 padding 40 cardheader 165 cardpadding 40
+            overflow-y: scroll;
+        }
+
+        & .@{class-prefix}-membership-card-item {            
+            .flex-display(flex, row, nowrap);
+            min-height: 40px;        
+            font-size: 13px;
+            font-weight: 500;    
+            padding: 0px 20px;
+
+            & .@{class-prefix}-membership-item-check {
+                margin: 0;
+                margin-right: 8px;    
+                text-align: center;
+            }
+        }
+    }
+}
+
+.@{class-prefix}-membership-company-icon{
+    height: 32px;
+}

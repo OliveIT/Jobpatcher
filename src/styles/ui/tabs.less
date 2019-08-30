@@ -1,0 +1,248 @@
+/*Tabs Styles*/
+.@{class-prefix}-tabs-half {
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  & .ant-tabs-nav {
+    display: block;
+
+    & .ant-tabs-tab {
+      margin: 0;
+      width: 50%;
+      text-align: center;
+    }
+
+    & .ant-tabs-ink-bar {
+      width: 50%;
+    }
+  }
+}
+
+.@{class-prefix}-card-tabs {
+  & .ant-card-head-title {
+    text-transform: capitalize;
+    font-size: @font-size-lg;
+  }
+
+  & .ant-card-extra {
+    position: relative;
+    z-index: 2;
+  }
+
+  & .ant-tabs {
+    margin-top: -40px;
+
+    @media screen and (max-width: @screen-xs-max) {
+      margin-top: 0;
+    }
+  }
+
+  & .ant-tabs-tab {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 15px;
+  }
+
+  & .ant-tabs-tab-active {
+    font-weight: @font-weight-normal;
+  }
+
+  & .ant-tabs-nav-container {
+    font-size: @font-size-lg;
+    text-align: center;
+
+    @media screen and (max-width: @screen-xs-max) {
+      text-align: left;
+    }
+  }
+
+  & .ant-card-body {
+    padding-top: @gx-card-padding-base - 20px;
+  }
+}
+
+.@{class-prefix}-card-tabs-right {
+
+  & .ant-tabs-nav-container {
+    text-align: right;
+
+    @media screen and (max-width: @screen-xs-max) {
+      text-align: left;
+    }
+  }
+}
+
+.@{class-prefix}-tabs-sidebar-sub {
+  box-shadow: 1px 1px 5px #dce0e9;
+  & .ant-tabs-bar {
+    z-index: 9 !important;
+  }
+}
+
+.@{class-prefix}-tabs-sidebar {
+  position: relative;
+
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 5px #dce0e9;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+  }
+
+  & .ant-tabs-tabpane {
+    padding-top: 60px;    
+  }
+
+  & .ant-tabs-nav {
+    display: block;
+
+    & .ant-tabs-tab {
+      margin-right: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
+      height: 60px;
+      color: @text-grey;      
+      text-align: center;
+      line-height: 36px;
+      
+      &.ant-tabs-tab-active {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+
+.@{class-prefix}-tabs-search {
+  
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  & .ant-tabs-bar {
+    padding-left: 20px;
+    background-color: white;
+  }
+
+  & .ant-tabs-nav {
+    display: block;
+
+    & .ant-tabs-tab {
+      margin-right: 20px;
+      padding-left: 0px;
+      padding-right: 0px;
+      height: 40px;
+      color: @text-grey;      
+      text-align: center;
+      font-size: 14px;
+      line-height: 16px;
+      
+      &.ant-tabs-tab-active {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.@{class-prefix}-customer-tab {
+  position: relative;
+
+  &-header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 8;
+
+    box-shadow: 1px 1px 5px #dce0e9;
+    background-color: #ffffff;
+    .flex-display(flex, row, nowrap);
+    .justify-content(space-between);
+    align-items: center;
+    padding: 0px 20px;    
+    height: 60px;
+
+    &.@{class-prefix}-customer-tab-file-header{
+      height: 110px;
+      padding: 0px;
+    }
+  }
+
+  & .@{class-prefix}-customer-top-tab-scroll {
+    overflow-y: scroll;
+    height: 206px !important;
+    padding-top: 60px;
+  }
+    
+  & .@{class-prefix}-customer-activities-tab-scroll {
+    overflow-y: scroll;
+    height: calc(100vh ~"-" 330px) !important;
+    padding-top: 60px;
+    @media screen and (max-width: @screen-sm-max) {
+      height: 240px !important;
+    }
+  }
+    
+  &-content {
+    padding: 20px;
+  } 
+}
+
+.@{class-prefix}-customer-job-panel-tab,
+.@{class-prefix}-job-panel-tab  {
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  & .ant-tabs-bar {
+    background-image: linear-gradient(to right, #1667c5 0%, #023c7d 100%);
+  }
+  & .ant-tabs-nav-wrap {
+    margin-bottom: 1px;
+  }
+
+  & .ant-tabs-nav {
+    display: block;
+
+    & .ant-tabs-tab {
+      margin: 0;
+      padding: 10px 20px;
+      color: #86addb;
+      text-align: center;
+      background-color: transparent;
+      border-right: 1px solid rgba(0,0,0,.1);
+      height: 40px;
+      
+      &.ant-tabs-tab-active,
+      &:hover {      
+        color: #ffffff;
+      }
+
+      &.ant-tabs-tab-active {
+        background-color: #1158a9;
+      } 
+    }    
+      
+    & .ant-tabs-ink-bar {
+      display: none !important;
+    }
+  } 
+  
+  & .ant-tabs-tab-prev-icon i,
+  & .ant-tabs-tab-next-icon i, {
+    color: white !important;
+    font-size: 16px !important;
+  }
+      
+  & .ant-tabs-content {
+    background-color: #fcfbfb;
+    padding: 0 20px;
+  }
+}

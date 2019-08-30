@@ -1,0 +1,47 @@
+@import "variables";
+@import 'mixin';
+@import "colors-class";
+@import "custom-animation";
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px; // hide horizontal scrollbar
+  /* This is more usable for users trying to click it. */
+  // background-color: rgba(100, 100, 100, 0.1);
+  background: transparent !important;
+  -webkit-border-radius: 100px;
+}
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+  background: transparent !important;
+  // background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+  background: @text-grey;
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: @text-grey; /* Some darker color when you click it */
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+  background: @text-grey;
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:horizontal:active {
+  background: @text-grey; /* Some darker color when you click it */
+  -webkit-border-radius: 100px;
+}
+
+.gx-no-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+}

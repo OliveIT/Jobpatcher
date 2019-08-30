@@ -1,0 +1,223 @@
+.gx-employee-work-hours-area {
+    margin-bottom: 15px;
+}
+.gx-employee-work-hours-search {
+    padding: 13px 20px;
+    border-bottom: 1px solid #e5e7ed;
+    max-height: 70px;
+    height: auto;
+}
+
+.gx-employee-work-hours-list-single {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #e5e7ed;
+    padding: 15px 20px;
+    max-height: 70px;
+}
+.gx-employee-work-hours-list-single-content-area {
+
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.gx-search-bar.gx-dispatch-search {
+    background-color: #f5f5f5;
+    width: 216px;
+}
+.gx-employee-work-hours-list-single {position: relative;}
+
+.gx-employee-work-hours-list-single .border-4px {/* Style for "Rounded Re" */
+    width: 4px;
+    height: 30px;
+    background-color: #08bdc5;
+    display: block;
+    border-radius: 13px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.gx-employee-work-hours-list-single:nth-child(2) .border-4px {
+	background-color: #39bf58;
+}
+.gx-employee-work-hours-list-single:nth-child(3) .border-4px {
+	background-color: #f7c43d;
+}
+
+.gx-employee-work-hours-list-single-img {
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.gx-employee-work-hours-list-area {
+	max-width: 256px;
+	    box-shadow: 0px 0px 20px -18px #000;
+	background-color: #ffffff;
+	float: left;
+	width: 100%;
+	height: auto;
+}
+.gx-employee-work-hours-list-single-img img {height: 40px;width: 40px;}
+
+.gx-employee-work-hours-list-single-content h2 {
+    font-size: 13px;
+	color: #132144;
+}
+
+.gx-employee-work-hours-list-single-content p {
+    font-size: 12px;
+    margin-top: 7px;
+	color: #9399a2;
+	font-family: Poppins;
+    margin-bottom: 0;
+}
+.gx-employee-work-hours-list-time-table-area {
+    width: 100%;
+    float: left;
+    height: auto;
+    box-shadow: 0px 0px 5px -4px #000;
+}
+
+.gx-employee-work-hours {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.gx-employee-work-hours-table-area-header {
+    height: 64px;
+}
+
+.gx-employee-work-hours-table-area-header-date {
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    height: 34px;
+}
+
+.gx-employee-work-hours-table-area-header-date p {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    color: #9399a2;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.gx-employee-work-hours-table-area-time {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.gx-employee-work-hours-table-area-time-single {
+    width: 149px;
+    text-align: center;    border-right: 1px solid #e5e7ed;
+}
+
+.gx-employee-work-hours-table-area-time-single p {
+    margin: 0;
+		color: #4c586d;
+		font-family: Poppins;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 29px;
+		text-transform: uppercase;
+}
+
+.gx-employee-work-hours-table-area-body-single-overlay.overlay-time.unavailable-full-hours {
+    background: #eff1f5;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 42%;
+}
+.gx-employee-work-hours-table-area-body-single-item {
+    height: 69px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.gx-employee-work-hours-table-area-body-single {
+    width: 149px;
+    height: 70px;
+    display: flex;
+}
+
+.gx-employee-work-hours-table-area-body-single span {
+    width: calc( 149px / 2 );
+    border-right: 1px solid #eeeeee;
+    height: 70px;
+    display: block;
+    float: left;
+}
+.gx-employee-work-hours-table-area-body-single-item {
+    position: relative;
+}
+
+.gx-employee-work-hours-table-area-body-single-overlay {
+    position: absolute;
+    background: #fcfbfb;
+    width: 297px;
+    border-bottom: 3px solid #39bf58;
+    height: 69px;
+    top: 0px;
+}
+.check-in .gx-employee-work-hours-list-single {
+    padding: 0;
+}
+
+.check-in {
+    width: 74px !important;
+    text-align: center;
+    padding-left: 16px;
+    padding-top: 12px;
+}
+.unavailable-full-hours .gx-employee-work-hours-list-single-content h2 {
+/* Style for "Unavailabl" */color: #9399a2;font-family: Poppins;font-size: 13px;font-weight: 500;}
+
+.unavailable-full-hours .gx-employee-work-hours-list-single-content p {/* Style for "Full day" */
+    color: #9399a2;
+    font-family: Poppins;
+    font-size: 11px;
+    font-weight: 400;
+}
+.gx-employee-work-hours-table-area-body-single-item {
+    position: relative;
+}
+.gx-employee-work-hours-table-area-body-single-overlay.unavailable-full-hours {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.gx-employee-work-hours-list-single-img i {
+    font-size: 30px;
+}
+.gx-employee-work-hours-table-area-body-single-overlay .gx-employee-work-hours-list-single {border: 0;}
+
+.gx-employee-work-hours-table-area-body-single-overlay .gx-employee-work-hours-list-single .gx-employee-work-hours-list-single-content-area {
+    border: 0;
+}
+
+
+
+
+.last-rwo .gx-employee-work-hours-table-area-body-single-overlay.two-hours {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #e5ff7e;
+}
+
+
+.user-one {
+    border-color: #08bdc5;
+}

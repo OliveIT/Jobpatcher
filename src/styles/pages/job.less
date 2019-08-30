@@ -1,0 +1,311 @@
+
+.@{class-prefix}-job-customer-profile-container {
+    .flex-display(flex, row, nowrap);
+    background-color: #fcfbfb;
+
+    @media screen and (max-width: @screen-lg-max) {
+        .flex-display(flex, column, nowrap);
+    }
+
+    & .@{class-prefix}-job-customer-profile-card {
+        box-shadow: 1px 1px 5px #dce0e9;
+        background-color: white;
+    }
+
+    & .@{class-prefix}-job-customer-status {
+        width: 100%;
+        padding: 20px 20px;
+        overflow-x: scroll;
+    }
+}
+
+.@{class-prefix}-job-customer-profile-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    color: @header-text-color;    
+}
+
+.@{class-prefix}-job-customer-profile-card-table {
+    font-size: 12px;
+    line-height: 20px;
+
+    & td {
+        vertical-align: top;        
+    }
+
+    & td:first-child {
+        color: @text-grey;
+        font-weight: 400;
+        padding-right: 20px;
+    }
+
+    & td:last-child {
+        font-weight: 500;
+    }
+}
+
+.@{class-prefix}-job-stat-steps-container {
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.@{class-prefix}-job-stat-steps {
+    .flex-display(flex, row, nowrap);
+    // min-width: 700px;
+  
+    &-icon {
+      .flex-display(flex, row, nowrap);
+      .justify-content(center);
+      .align-items(center);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #a5abb5;
+      color: white;      
+      margin: 0 auto;
+
+      .@{class-prefix}-job-stat-steps-item.check & {
+        background-color: @primary-color;
+      }
+    }
+    
+    &-item-wrapper {
+        .flex(1, 1, 0);
+        text-align: center;
+        position: relative;
+    }
+
+    &-item {
+      font-size: 14px;
+      font-weight: 500;  
+    }
+  
+    &-seperator {
+      position: absolute;
+      left: calc(-50% ~ "+" 2px);
+      top: 17px;      
+      width: calc(100% ~ "-" 36px);
+      height: 2px;        
+      margin: 0 16px;
+      background-color: @text-grey;
+  
+      &.passed {
+        background-color: @primary-color;
+      }
+    }
+}
+
+.@{class-prefix}-job-panel {
+    background-color: #fcfbfb;
+    min-height: calc(100vh ~ "-" 294px );  // 64 + 58 + 152 + 20
+
+    @media screen and (min-width: @screen-xl-min) {        
+        margin-bottom: 0px;        
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+}
+
+.@{class-prefix}-job-panel-table-widget {
+    min-height: 250px;
+    @media screen and (min-width: @screen-xl-min) {    
+        min-height: calc(100vh ~ "-" 394px);    // 64 + 58 + 152 + 20 + 40 + 58
+        margin-bottom: 0px;        
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+}
+
+.@{class-prefix}-job-jobdetail-card {
+
+    & .ant-row {
+       margin: -10px;
+    }
+    & .ant-col {
+       padding: 10px;
+    }
+
+    &-employee-list {
+        height: 95px;
+        overflow-y: scroll;
+    }
+}
+
+.@{class-prefix}-job-jobdetail-card-subcard {
+    & .ant-row {
+        margin: 0px;
+    }
+    & .ant-col {
+        padding: 0px;
+    }
+}
+
+.@{class-prefix}-job-activities-summary-tab-scroll {
+    overflow-y: scroll;
+    padding-top: 60px;
+    height: calc(100vh ~"-" 522px) !important;      //64 + 60 + 60 + 397
+    @media screen and (max-width: @screen-sm-max) {
+      height: 240px !important;
+    }
+}
+
+.@{class-prefix}-job-activities-todos-tab-scroll {
+    overflow-y: scroll;
+    padding-top: 60px;
+    height: calc(100vh ~"-" 461px) !important;      //64 + 60 + 60 + 277 + 60
+    @media screen and (max-width: @screen-sm-max) {
+      height: 240px !important;
+    }
+}
+
+.@{class-prefix}-job-activities-file-tab-scroll {
+    overflow-y: scroll;
+    padding-top: 60px;
+    height: calc(100vh ~"-" 330px) !important;      //64 + 60 + 205 + 60
+    @media screen and (max-width: @screen-sm-max) {
+      height: 240px !important;
+    }
+}
+
+.@{class-prefix}-job-todos-content-scroll {
+    overflow-y: scroll;
+    height: 200px !important;
+    @media screen and (max-width: @screen-sm-max) {
+      height: 240px !important;
+    }
+}
+
+.@{class-prefix}-job-tab-input {
+    outline: none;
+    background-color: #fcfbfb;
+
+    &::placeholder {
+        font-size: 12px;
+    }
+}
+
+.@{class-prefix}-todo-option {
+    .flex-display(flex, row, nowrap);
+
+    margin-bottom: 12px;
+
+    &-check {
+        .flex( 0 );
+
+        .flex-display(flex, row, nowrap);
+        .justify-content(center);
+        .align-items(center);
+
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+
+        & > i {
+            font-size: 16px;
+        }
+
+        border: 2px solid #a5abb5;
+        margin-right: 8px;
+    }
+
+    &-text {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    
+    &.checked {
+        & .@{class-prefix}-todo-option-check {
+            border: 0px solid #a5abb5;
+            background-color: @primary-color;
+            color: white;
+        }
+
+        & .@{class-prefix}-todo-option-text {
+            text-decoration: line-through;
+            color: @text-grey;
+        }
+    }
+}
+
+.@{class-prefix}-job-photo-tab {
+
+    &-scroll {
+        padding-top: 60px;
+        overflow-x: scroll;        
+    }
+    
+    & .@{class-prefix}-customer-tab-content{        
+        .flex-display(flex, row, nowrap);
+    }
+
+    &-item {
+        padding-right: 20px;
+    }
+}
+
+.@{class-prefix}-job-invoice-panel-table {
+    background-color:#fcfbfb;
+    // min-width: 1100px !important;
+
+    & thead {                
+        background-color: white;
+        box-shadow: 0 0 6px #dde0e5 !important;
+
+        & th:not(:last-child) {
+            border-right: 1px solid #e6e7ed;
+        }
+    }
+
+    & td {
+        font-size: 13px;
+        font-weight: 500;
+        color: @header-text-color;      
+        vertical-align: top;  
+        
+        &:not(:last-child) {
+            border-right: 1px solid #e6e7ed;
+        }
+    }
+
+    & th, td {
+        padding: 16px 20px !important;
+
+        &:last-child {
+            padding: 16px 10px !important;
+        }
+    }
+
+    & .@{class-prefix}-job-invoice-panel-table-last-row {        
+        border-bottom: 0px solid #e6e7ed !important;
+        
+        & td {
+            border-right: 0px solid #e6e7ed !important;
+            padding: 16px 5px !important;
+        }
+
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+}
+
+.@{class-prefix}-job-invoice-panel-sub-table {
+    & tr {
+        height: 30px;
+
+        & td:first-child {
+            font-size: 13px;
+            font-weight: 600;
+            width: 100px;
+        }
+
+        & td:last-child {
+            font-size: 14px;
+            font-weight: 600;
+            color: @header-text-color;
+            width: 150px;
+        }
+    }
+}
