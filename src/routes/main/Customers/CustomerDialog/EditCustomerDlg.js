@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button, Checkbox, Avatar, Row, Col, Select } from "antd";
+import {Button, Checkbox, Avatar, Row, Col, Select, Input, Switch, Icon } from "antd";
 
 import {GoogleMap, withGoogleMap} from "react-google-maps";
 
@@ -30,17 +30,23 @@ class EditCustomerDlg extends Component {
     this.state = {
         isCommercial: false,
         isResidential: false,
+        title: "",
         firstname: "",
+        midlename: "",
         lastname: "",
         displayname: "",
         companyname: "",
         email: "",
-        mobilephone: "",
+        mobile: "",
+        fax: "",
         workphone: "",
-        homephone: "",
+        website: "",
+        phone: "",
         address: "",
+        street: "",
         city: "",
         state: "",
+        postalcode: "",
         zip: "",
         notes: [],
         tags: [],
@@ -116,7 +122,7 @@ class EditCustomerDlg extends Component {
   
   render() {    
     const {intl: {formatMessage}} = this.props;
-    const { firstname, lastname, displayname,  companyname, email, mobilephone, workphone, homephone,
+    const { title, firstname, midlename, lastname, displayname,  companyname, email, mobile, workphone, phone, fax, website, street, postalcode,  
                 address, city, state, zip, notes, tags, type } = this.state;
 
     return (
@@ -128,7 +134,351 @@ class EditCustomerDlg extends Component {
                         <i className="material-icons">account_circle</i>
                         <IntlMessages id="customer.customerdlg.content.customerdetails"/>
                     </div>
+
                     <Row>
+                        <Col span={12}>
+                            <Row>
+                                <Col span={4} style={{paddingRight: '0px'}}>
+                                <div className="gx-customized-modal-content-field">
+                                    <div className="gx-customized-modal-content-field-title">
+                                        <IntlMessages id="customer.customerdlg.content.title"/>
+                                    </div>
+                                    <div>
+                                        <Input
+                                            value={title}
+                                            onChange={(event) => { this.setState({title: event.target.value})}}/>
+                                    </div>
+                                </div>
+                                </Col>
+                                <Col span={7} style={{paddingRight: '0px'}}>
+                                <div className="gx-customized-modal-content-field">
+                                    <div className="gx-customized-modal-content-field-title">
+                                        <IntlMessages id="customer.customerdlg.content.firstname"/>
+                                    </div>
+                                    <div>
+                                        <Input 
+                                            value={firstname}
+                                            onChange={(event) => { this.setState({firstname: event.target.value})}}/>
+                                    </div>
+                                </div>
+                                </Col>
+                                <Col span={6} style={{paddingRight: '0px'}}>
+                                <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.midlename"/>
+                                </div>
+                                <div>
+                                    <Input
+                                    value={midlename}
+                                    onChange={(event) => { this.setState({midlename: event.target.value})}} />
+                                </div>
+                            </div>
+                                </Col>
+                                <Col span={7} >
+                                <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.lastname"/>
+                                </div>
+                                <div>
+                                    <Input
+                                    value={lastname}
+                                    onChange={(event) => { this.setState({lastname: event.target.value})}} />
+                                </div>
+                            </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col span={12}>
+                        <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.email"/>
+                                </div>
+                                <div>
+                                    <Input
+                                     
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.emailholder'})} 
+                                            value={email}
+                                            onChange={(event) => { this.setState({email: event.target.value})}} />
+                                </div>
+                            </div>  
+                        </Col>
+                    </Row>
+{/* first row end */}
+                <Row>
+                    <Col span={12}>
+                    <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.companyname"/>
+                                </div>
+                                <div>
+                                    <Input 
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.companynameholder'})} 
+                                            value={companyname}
+                                            onChange={(event) => { this.setState({companyname: event.target.value})}} />
+                                </div>
+                            </div>  
+                        </Col>
+                    
+                    <Col span={12}>
+                        <Row>
+                            <Col span={12} style={{paddingRight: '0px'}}>
+                            <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.phone"/>
+                                </div>
+                                <div>
+                                    <Input 
+                                    value={phone}
+                                    onChange={(event) => { this.setState({phone: event.target.value})}} />
+                                </div>
+                            </div>
+                            </Col>
+
+                            <Col span={12}>
+                            <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.mobile"/>
+                                </div>
+                                <div>
+                                    <Input
+                                            value={mobile}
+                                            onChange={(event) => { this.setState({mobile: event.target.value})}} />
+                                </div>
+                            </div>  
+                            </Col>
+                        </Row>
+                    </Col>
+                        
+                    </Row>
+{/* secound row end */}
+        <Row>
+                    <Col span={12}>
+                    <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.displayname"/>
+                                </div>
+                                <div>
+                                    <Input 
+                                        value={displayname}
+                                        onChange={(event) => { this.setState({displayname: event.target.value})}} />
+                                </div>
+                            </div>
+                        </Col>
+                    
+                    <Col span={12}>
+                        <Row>
+                            <Col span={12} style={{paddingRight: '0px'}}>
+                            <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.fax"/>
+                                </div>
+                                <div>
+                                    <Input 
+                                    value={fax}
+                                    onChange={(event) => { this.setState({fax: event.target.value})}} />
+                                </div>
+                            </div>
+                            </Col>
+
+                            <Col span={12}>
+                            <div className="gx-customized-modal-content-field">
+                                <div className="gx-customized-modal-content-field-title">
+                                    <IntlMessages id="customer.customerdlg.content.website"/>
+                                </div>
+                                <div>
+                                    <Input
+                                            value={website}
+                                            onChange={(event) => { this.setState({website: event.target.value})}} />
+                                </div>
+                            </div>  
+                            </Col>
+                        </Row>
+                    </Col>
+                        
+                    </Row>
+
+{/* third row end */}
+<div style={{
+    position: 'relative',
+    display: 'flex',
+    width: '100%',
+    height: '41px',
+    backgroundColor: '#2B4773',
+    borderTopLeftRadius: '10px',
+    borderTopRightRadius: '10px',
+    marginBottom: '20px'
+}}>
+<div style={{ padding: '10px 10px 10px 10px',
+    color: '#FFFF'}}><IntlMessages id="customer.customerdlg.content.address"/></div>
+<div style={{ padding: '10px 10px 10px 10px',
+    color: '#FFFF'}}><IntlMessages id="customer.customerdlg.content.payment"/></div>
+<div style={{ padding: '10px 10px 10px 10px',
+    color: '#FFFF'}}><IntlMessages id="customer.customerdlg.content.notes"/></div>
+    <div style={{ padding: '10px 10px 10px 10px',
+    color: '#FFFF'}}><IntlMessages id="customer.customerdlg.content.files"/></div>
+    </div>
+
+    <Row>
+        <Col span={12}>
+            <Row>
+                <Col span={12}>
+        <div className="gx-customized-modal-content-title">
+            <i className="material-icons">location_on</i>
+            <IntlMessages id="customer.customerdlg.content.customerlocation"/>
+        </div>
+                </Col>
+                <Col span={12}>
+            <a className="gx-customized-modal-content-title">
+            <IntlMessages id="customer.customerdlg.content.anotheraddress"/>
+        </a>
+                </Col>
+            </Row>
+        <Row><Col span={24}>
+        <div className="gx-customized-modal-content-field">
+                                        
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.street'})}
+                                                    value={street}
+                                                    onChange={(event) => { this.setState({street: event.target.value})}} />
+                                        </div>
+                                    </div>
+            </Col>
+            </Row>
+            <Row>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                   
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.city'})}
+                                                    value={city}
+                                                    onChange={(event) => { this.setState({city: event.target.value})}} />
+                                        </div>
+                                    </div>
+                </Col>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                        <div>
+                                            <Input placeholder={formatMessage({id: "customer.customerdlg.content.state"})}
+                                            value={state}
+                                            onChange={(event) => { this.setState({state: event.target.value})}}
+                                            />
+                                        </div>
+                                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                   
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.postalcode'})}
+                                                    value={postalcode}
+                                                    onChange={(event) => { this.setState({postalcode: event.target.value})}} />
+                                        </div>
+                                    </div>
+                </Col>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                        <div>
+                                            <Select style={{width: '100%'}}
+                                                    placeholder={formatMessage({id: "customer.customerdlg.content.country"})}
+                                                    suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>}>
+                                                { Countries().map ( (country, index) => (
+                                                    <Option key={index} value={index}>
+                                                        {formatMessage({id: country})}
+                                                    </Option>
+                                                ))}
+                                            </Select>
+                                        </div>
+                                    </div>
+                </Col>
+            </Row>
+        
+        </Col>
+        <Col span={12}>
+        <Row>
+                <Col span={12}>
+        <div className="gx-customized-modal-content-title">
+        <Icon type="credit-card" />
+            <IntlMessages id="customer.customerdlg.content.customerlocation"/>
+        </div>
+                </Col>
+                <Col span={12}>
+                <Switch size="small" defaultChecked />
+            <IntlMessages id="customer.customerdlg.content.sameascustomeraddr"/>
+                </Col>
+            </Row>
+            <Row><Col span={24}>
+        <div className="gx-customized-modal-content-field">
+                                        
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.street'})}
+                                                    value={street}
+                                                    onChange={(event) => { this.setState({street: event.target.value})}} />
+                                        </div>
+                                    </div>
+            </Col>
+            </Row>
+            <Row>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                   
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.city'})}
+                                                    value={city}
+                                                    onChange={(event) => { this.setState({city: event.target.value})}} />
+                                        </div>
+                                    </div>
+                </Col>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                        <div>
+                                            <Input placeholder={formatMessage({id: "customer.customerdlg.content.state"})}
+                                            value={state}
+                                            onChange={(event) => { this.setState({state: event.target.value})}}
+                                            />
+                                        </div>
+                                    </div>
+                </Col>
+            </Row>
+            <Row>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                   
+                                        <div>
+                                            <Input
+                                            placeholder={formatMessage({id: 'customer.customerdlg.content.postalcode'})}
+                                                    value={postalcode}
+                                                    onChange={(event) => { this.setState({postalcode: event.target.value})}} />
+                                        </div>
+                                    </div>
+                </Col>
+                <Col span={12}>
+                <div className="gx-customized-modal-content-field">
+                                        <div>
+                                            <Select style={{width: '100%'}}
+                                                    placeholder={formatMessage({id: "customer.customerdlg.content.country"})}
+                                                    suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>}>
+                                                { Countries().map ( (country, index) => (
+                                                    <Option key={index} value={index}>
+                                                        {formatMessage({id: country})}
+                                                    </Option>
+                                                ))}
+                                            </Select>
+                                        </div>
+                                    </div>
+                </Col>
+            </Row>
+
+        </Col>
+    </Row>
+
+                    {/* <Row>
                         <Col lg={8} md={12} sm={24} xs={24}>  
                             <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
@@ -226,7 +576,7 @@ class EditCustomerDlg extends Component {
                                             value={mobilephone}
                                             onChange={(event) => { this.setState({mobilephone: event.target.value})}} />
                                 </div>
-                            </div>   
+                            </div>
                         </Col>
                         <Col lg={8} md={12} sm={24} xs={24}>
                             <div className="gx-customized-modal-content-field">
@@ -242,7 +592,7 @@ class EditCustomerDlg extends Component {
                             </div>   
                         </Col>
                         <Col lg={8} md={12} sm={24} xs={24}>
-                            <div className="gx-customized-modal-content-field">
+                            {/* <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.homephone"/>
                                 </div>
@@ -252,12 +602,12 @@ class EditCustomerDlg extends Component {
                                             value={homephone}
                                             onChange={(event) => { this.setState({homephone: event.target.value})}} />
                                 </div>
-                            </div>   
+                            </div>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </div>
 
-                <div className="gx-customized-modal-content-block">
+                {/* <div className="gx-customized-modal-content-block">
                     <div className="gx-customized-modal-content-title">
                         <i className="material-icons">location_on</i>
                         <IntlMessages id="customer.customerdlg.content.customerlocation"/>
@@ -384,7 +734,7 @@ class EditCustomerDlg extends Component {
                         </Col>
                     </Row>
                 </div>
-            
+             */}
             </div>    
 
             <div className="gx-customized-modal-footer" >
