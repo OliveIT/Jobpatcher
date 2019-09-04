@@ -29,6 +29,10 @@ class TopMenu extends React.Component {
         };
     }
 
+    next() {
+        const current = this.state.current + 1;
+        this.setState({ current });
+    }
     onChange = current => {
         console.log('onChange:', current);
         this.setState({ current });
@@ -39,19 +43,19 @@ class TopMenu extends React.Component {
         return (
             <div>
                 <div className="gx-dispatch-topmenu" style={{display: "flex", alignItems: "center", justifyContent: "space-between", height: 60+"px"}}>
-                    <h5>Steps</h5>
+                    <h3 className="gx-addjob-top-title">Add new job</h3>
                     <div>
                     <Steps current={current} onChange={this.onChange}>
                         {steps.map(item => (
-                        <Step key={item.title} title={item.title} >
-                        
-                        </Step>
+                            <Step key={item.title} title={item.title} />
                         ))}
                     </Steps>
                     </div>
                     <div>
-                        <Button>save</Button>
-                        <Button>next</Button>
+                        <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-save-btn">Save without scheduling</Button>
+                        <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-next-btn" onClick={() => this.next()}>
+                            Next
+                        </Button>
                     </div>
                 </div>
                 <div className="steps-content">{steps[current].content}</div>
