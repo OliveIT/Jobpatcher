@@ -71,9 +71,9 @@ class Step1_2 extends Component {
                                         </div>
                                         <div className="gx-panel-content">
                                             <SimpleMapExampleGoogleMap 
-                                                loadingElement={<div style={{height: `100%`}}/>}
-                                                containerElement={<div style={{height: `190px`}}/>}
-                                                mapElement={<div style={{height: `100%`}}/>}
+                                                loadingElement={<div style={{height: "100%"}}/>}
+                                                containerElement={<div style={{height: "190px"}}/>}
+                                                mapElement={<div style={{height: "100%"}}/>}
                                                 />
                                         </div>
                                         <div className="gx-addjob-customer-widget" style={{padding:10}}>
@@ -111,9 +111,9 @@ class Step1_2 extends Component {
                                         </div>
                                         <div className="gx-panel-content">
                                             <SimpleMapExampleGoogleMap 
-                                                loadingElement={<div style={{height: `100%`}}/>}
-                                                containerElement={<div style={{height: `410px`}}/>}
-                                                mapElement={<div style={{height: `100%`}}/>}
+                                                loadingElement={<div style={{height: "100%"}}/>}
+                                                containerElement={<div style={{height: "410px"}}/>}
+                                                mapElement={<div style={{height: "100%"}}/>}
                                                 />
                                         </div>
                                     </Widget>
