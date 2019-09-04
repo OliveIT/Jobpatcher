@@ -48,8 +48,10 @@ class TopMenu extends React.Component {
                     </Steps>
                     </div>
                     <div>
-                        <Button>save</Button>
-                        <Button>next</Button>
+                        <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-save-btn">Save without scheduling</Button>
+                        <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-next-btn">
+                            Next
+                        </Button>
                     </div>
                 </div>
                 <div className="steps-content">{steps[current].content}</div>
