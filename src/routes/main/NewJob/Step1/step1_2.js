@@ -77,19 +77,19 @@ class Step1_2 extends Component {
                                                 />
                                         </div>
                                         <div class="gx-addjob-customer-widget" style={{padding:10}}>
-                                            <div style={{padding:5, alignItems:"center", display: "flex"}}>
+                                            <div class="gx-addjob-customer-widget-item">
                                                 <span class="gx-addjob-customer-widget-text" style={{fontWeight:700}}>Peter Goldberg</span>
                                                 <i class="material-icons gx-addjob-customer-widget-icon">account_circle</i>
                                             </div>
-                                            <div style={{padding:5, alignItems:"center", display: "flex"}}>
+                                            <div class="gx-addjob-customer-widget-item">
                                                 <span class="gx-addjob-customer-widget-text">701 S Harrison Ave <br/> Kankakee, IL 60901</span>
                                                 <i class="material-icons gx-addjob-customer-widget-icon">room</i>
                                             </div>
-                                            <div style={{padding:5, alignItems:"center", display: "flex"}}>
+                                            <div class="gx-addjob-customer-widget-item">
                                                 <span class="gx-addjob-customer-widget-text">(688)-829-0483</span>
                                                 <i class="material-icons gx-addjob-customer-widget-icon">local_phone</i>
                                             </div>
-                                            <div style={{padding:5, alignItems:"center", display: "flex"}}>
+                                            <div class="gx-addjob-customer-widget-item">
                                                 <span class="gx-addjob-customer-widget-text">perterjackson@website.com</span>
                                                 <i class="material-icons gx-addjob-customer-widget-icon">email</i>
                                             </div>

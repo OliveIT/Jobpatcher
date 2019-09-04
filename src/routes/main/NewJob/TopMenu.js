@@ -43,7 +43,9 @@ class TopMenu extends React.Component {
                     <div>
                     <Steps current={current} onChange={this.onChange}>
                         {steps.map(item => (
-                        <Step key={item.title} title={item.title} />
+                        <Step key={item.title} title={item.title} >
+                        
+                        </Step>
                         ))}
                     </Steps>
                     </div>

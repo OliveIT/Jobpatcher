@@ -1873,6 +1873,15 @@
     color: #2571bf;
     border: #2571bf 3px solid;
   }
+  & .ant-steps-icon {
+    color: #2571bf !important;
+  }
+  & .ant-steps-item-title {
+    color : #b5b5b5 !important;
+  }
+  & .ant-steps-item-title::after {
+    visibility: hidden !important;
+  }
 }
 
 .@{class-prefix}-addjob-search-wrapper {
@@ -1941,6 +1950,11 @@
 }
 
 .@{class-prefix}-addjob-customer-widget {
+  & .@{class-prefix}-addjob-customer-widget-item {
+    padding: 5px;
+    align-items: center;
+    display: flex;
+  }
   & .@{class-prefix}-addjob-customer-widget-text {
     font-size: 14px;
   }
