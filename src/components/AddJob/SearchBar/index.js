@@ -71,7 +71,7 @@ render() {
         <div>
             <div className="gx-addjob-search-wrapper" ref={this._element}>
                 <SearchBox styleName="gx-addjob-searchbar gx-lt-icon-search-bar"
-                        placeholder={formatMessage({id:"topmenu.search.placeholder"})}
+                        placeholder={formatMessage({id:"job.add.search.placeholder"})}
                         onChange={this.updateSearch.bind(this)}
                         value={searchText}
                         focus={true}

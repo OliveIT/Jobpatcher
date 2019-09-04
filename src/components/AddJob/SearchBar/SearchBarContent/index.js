@@ -32,7 +32,7 @@ updateStatWithProps (props) {
     // alert(this.props.searchKey);
     var result = [];
     data.map((customer, index) => {
-        if(customer.name.includes(this.props.searchKey)){
+        if(customer.name.toLowerCase().includes(this.props.searchKey.toLowerCase())){
             result.push(customer);
         }
     })
