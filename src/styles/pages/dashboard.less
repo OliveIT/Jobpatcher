@@ -1863,3 +1863,61 @@
   bottom: 20px;
   left: 20px;
 }
+
+
+
+//================== addjobsearch
+.@{class-prefix}-addjob-search-wrapper {
+  position: relative;
+  border-bottom: 1px solid #e6e7ed;
+  background-color: white; 
+  
+  & .ant-input {
+    padding-right: 60px !important;
+    padding-left: 60px !important;
+    height: 60px;
+    background-color: white !important;
+  }
+
+
+  & .@{class-prefix}-addjob-search-typing-wrapper
+  {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    & > img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  & .@{class-prefix}-search-icon {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+& .@{class-prefix}-addjob-search-container {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  border-top:#4363c6 2px solid;
+  & .@{class-prefix}-addjob-search-result-item {    
+    height: 50px;
+    line-height: 16px;
+    & .@{class-prefix}-addjob-search-result-item-name {  
+      font-size: 16px;
+      color: @text-color; 
+    }
+    & .@{class-prefix}-addjob-search-result-item-address {  
+      font-size: 13px;
+      color: @text-color; 
+      float: right;
+    }
+  }
+}
+
+
+
+//===============================

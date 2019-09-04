@@ -6,6 +6,7 @@ import CustomerProfile from "./Customers/CustomerProfile";
 import Dispatch from "./Dispatch";
 import DispatchSchedule from "./Dispatch/DispatchSchedule";
 import Job from "./Job";
+import NewJob from "./NewJob";
 
 const Main = ({match}) => (
   <Switch>
@@ -14,6 +15,7 @@ const Main = ({match}) => (
     <Route path={`${match.url}/customers`} component={Customers}/>
     <Route path={`${match.url}/dispatch/schedule`} component={DispatchSchedule}/>
     <Route path={`${match.url}/dispatch/job`} component={Job}/>
+    <Route path={`${match.url}/dispatch/newjob`} component={NewJob}/>
     <Route path={`${match.url}/dispatch`} component={Dispatch}/>
   </Switch>
 );

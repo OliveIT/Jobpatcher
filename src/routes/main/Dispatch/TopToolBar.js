@@ -3,6 +3,7 @@ import {Button, Select, Avatar, Tag } from "antd";
 import IntlMessages from "util/IntlMessages";
 import SelectableButtonGroup from "components/Button/SelectableButtonGroup";
 import DateCalendar from "components/Calendar/DateCalendar";
+import {Link} from "react-router-dom";
 
 class TopToolBar extends Component {
 
@@ -56,12 +57,14 @@ class TopToolBar extends Component {
                     </SelectableButtonGroup>
     
                     <span className="gx-d-none gx-d-md-block gx-ml-10">
-                        <Button className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0" type="primary">
-                            <div className="gx-div-align-center">
-                                <i className="material-icons gx-fs-xl gx-mr-2">add</i>
-                                <IntlMessages id="dispatch.dispatch.newjob"/>
-                            </div>
-                        </Button>
+                        <Link to="/main/dispatch/newjob">
+                            <Button className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0" type="primary">
+                                <div className="gx-div-align-center">
+                                    <i className="material-icons gx-fs-xl gx-mr-2">add</i>
+                                    <IntlMessages id="dispatch.dispatch.newjob"/>
+                                </div>
+                            </Button>
+                        </Link>
                     </span>
                 </div>
             </div>
