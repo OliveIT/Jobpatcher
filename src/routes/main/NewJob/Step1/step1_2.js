@@ -122,7 +122,7 @@ class Step1_2 extends Component {
                             </Row>
                         </Col>
 
-                        <Col xxl={8} xl={8} lg={8} md={12} sm={24} xs={24}>
+                        <Col xxl={8} xl={8} lg={8} md={24} sm={24} xs={24}>
                             <Row>
                                 <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}}>
                                     <PrivateNoteWidget style={{padding:0}}/>
@@ -136,7 +136,7 @@ class Step1_2 extends Component {
                             <UploadFileWidget style={{padding:0}}/>
                         </Col> */}
                     </Row>
-                </Col>     
+                </Col>
             </Row>
         </div>
     );
