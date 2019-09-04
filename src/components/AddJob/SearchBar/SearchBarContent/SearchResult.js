@@ -29,7 +29,7 @@ class SearchResult extends Component {
                 }
                 { data.map( (customer, index) => (
                         <div key={index} className="gx-menuitem gx-addjob-search-result-item">
-                            <div className="gx-div-align-center">
+                            <div className="gx-div-align-center" style={{width:"100%"}}>
                                 <Avatar icon="person" />
                                 <div className="gx-addjob-search-result-item-name">
                                     {customer.name}

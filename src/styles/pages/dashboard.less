@@ -1871,7 +1871,8 @@
   position: relative;
   border-bottom: 1px solid #e6e7ed;
   background-color: white; 
-  
+  -webkit-box-shadow: 0 0 12px #e5e5e5;
+  box-shadow: 0 0 12px #e5e5e5;
   & .ant-input {
     padding-right: 60px !important;
     padding-left: 60px !important;
@@ -1902,8 +1903,11 @@
   position: absolute;
   width: 100%;
   z-index: 100;
-  border-top:#4363c6 2px solid;
-  & .@{class-prefix}-addjob-search-result-item {    
+  border-top:#2571bf 2px solid;
+  -webkit-box-shadow: 0 0 12px #e5e5e5;
+  box-shadow: 0 0 12px #e5e5e5;
+  & .@{class-prefix}-addjob-search-result-item {   
+    border-top: #e5e5e5 1px solid; 
     height: 50px;
     line-height: 16px;
     & .@{class-prefix}-addjob-search-result-item-name {  
@@ -1914,6 +1918,16 @@
       font-size: 13px;
       color: @text-color; 
       float: right;
+      margin-left: auto;
+    }
+  }
+  & .@{class-prefix}-addjob-search-result-item:hover {
+    & .@{class-prefix}-addjob-search-result-item-name {  
+      font-size: 16px;
+      color: #2571bf; 
+    }
+    & .@{class-prefix}-main-avatar {
+      background-color: #2571bf;
     }
   }
 }
