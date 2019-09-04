@@ -1867,6 +1867,14 @@
 
 
 //================== addjobsearch
+.@{class-prefix}-dispatch-topmenu {
+  & .ant-steps-item-icon {
+    background-color: transparent;
+    color: #2571bf;
+    border: #2571bf 3px solid;
+  }
+}
+
 .@{class-prefix}-addjob-search-wrapper {
   position: relative;
   border-bottom: 1px solid #e6e7ed;
@@ -1932,7 +1940,6 @@
   }
 }
 
-// step bar btn
 @media screen and (max-width: 1200px) {
   h3.gx-addjob-top-title {
     display: none;
@@ -1955,6 +1962,18 @@ button.gx-addjob-next-btn:hover {
 button.gx-addjob-next-btn:focus {
   background-color: @green-color;
   border-color: @green-color;
+}
+
+.@{class-prefix}-addjob-customer-widget {
+  & .@{class-prefix}-addjob-customer-widget-text {
+    font-size: 14px;
+  }
+  & .@{class-prefix}-addjob-customer-widget-icon {
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
+  }
 }
 
 button.gx-addjob-save-btn {

@@ -13,6 +13,7 @@ import DispatchDrawer from "../Dispatch/DispatchDrawer";
 import TopToolBar from "../Dispatch/TopToolBar";
 import TopMenu from "./TopMenu";
 import Step1_1 from "./Step1/step1_1";
+import Step1_2 from "./Step1/step1_2";
 import PrivateNoteWidget from "components/AddJob/PrivateNoteWidget";
 import UploadFileWidget from "components/AddJob/UploadFileWidget";
 import {global_jobs} from "../Dispatch/data";
@@ -30,7 +31,7 @@ class NewJob extends Component {
     return (
         <div className="gx-main-content-wrapper">
             <TopMenu></TopMenu>
-            <Step1_1></Step1_1>
+            <Step1_2></Step1_2>
         </div>
     );
   }
