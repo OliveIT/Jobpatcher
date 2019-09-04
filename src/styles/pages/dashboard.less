@@ -1932,6 +1932,13 @@
   }
 }
 
+// step bar btn
+@media screen and (max-width: 1200px) {
+  h3.gx-addjob-top-title {
+    display: none;
+  }
+}
+
 button.gx-addjob-next-btn {
   background-color: @green-color;
   padding-left: 20px;
@@ -1951,9 +1958,90 @@ button.gx-addjob-next-btn:focus {
 }
 
 button.gx-addjob-save-btn {
-  box-shadow: 1px 1px 1px 1px #a7abb6;
+  box-shadow: 0 0 12px #E5E5F6 !important;
+  border: none !important;
   & span {
     color: #a7abb6;
   }
+}
+button.gx-addjob-save-btn:hover {
+  background-color: #eee;
+  border: 1px solid #eee;
+}
+button.gx-addjob-save-btn:focus {
+  background-color: #eee;
+  border: 1px solid #eee;
+}
+
+// steps
+div.ant-steps-item-process {
+  & div.ant-steps-item-icon {
+    border-width: 3px !important;
+    border-color: #257bdc !important;
+    background-color: white;
+    & span.ant-steps-icon {
+      color: #257bdc;
+    }
+  }
+  & div.ant-steps-item-content > div.ant-steps-item-title {
+    color: #257bdc;
+  }
+}
+
+div.ant-steps-item-finish {
+  & div.ant-steps-item-content > div.ant-steps-item-title {
+    color: #257bdc;
+  }
+}
+div.ant-steps-item-icon {
+  border-width: 3px !important;
+}
+
+div.ant-steps {
+  & div.ant-steps-item {
+    display: content !important;
+    & div.ant-steps-item-content div.ant-steps-item-title:after {
+      display: none;
+    }
+  }
+  & div.ant-steps-item:not(:last-child):after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-top: -7px;
+    margin-left: -30px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-bottom: none;
+    border-left: none;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+  }
+  & div.ant-steps-item-finish:not(:last-child):after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-top: -7px;
+    margin-left: -30px;
+    border: 2px solid #257bdc;
+    border-bottom: none;
+    border-left: none;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+  }
+}
+
+.ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item {
+  margin-right: 0px;
+  padding-right: 60px;
 }
 //===============================
