@@ -76,28 +76,28 @@ class Step1_2 extends Component {
                                                 mapElement={<div style={{height: `100%`}}/>}
                                                 />
                                         </div>
-                                        <div class="gx-addjob-customer-widget" style={{padding:10}}>
-                                            <div class="gx-addjob-customer-widget-item">
-                                                <span class="gx-addjob-customer-widget-text" style={{fontWeight:700}}>Peter Goldberg</span>
-                                                <i class="material-icons gx-addjob-customer-widget-icon">account_circle</i>
+                                        <div className="gx-addjob-customer-widget" style={{padding:10}}>
+                                            <div className="gx-addjob-customer-widget-item">
+                                                <span className="gx-addjob-customer-widget-text" style={{fontWeight:700}}>Peter Goldberg</span>
+                                                <i className="material-icons gx-addjob-customer-widget-icon">account_circle</i>
                                             </div>
-                                            <div class="gx-addjob-customer-widget-item">
-                                                <span class="gx-addjob-customer-widget-text">701 S Harrison Ave <br/> Kankakee, IL 60901</span>
-                                                <i class="material-icons gx-addjob-customer-widget-icon">room</i>
+                                            <div className="gx-addjob-customer-widget-item">
+                                                <span className="gx-addjob-customer-widget-text">701 S Harrison Ave <br/> Kankakee, IL 60901</span>
+                                                <i className="material-icons gx-addjob-customer-widget-icon">room</i>
                                             </div>
-                                            <div class="gx-addjob-customer-widget-item">
-                                                <span class="gx-addjob-customer-widget-text">(688)-829-0483</span>
-                                                <i class="material-icons gx-addjob-customer-widget-icon">local_phone</i>
+                                            <div className="gx-addjob-customer-widget-item">
+                                                <span className="gx-addjob-customer-widget-text">(688)-829-0483</span>
+                                                <i className="material-icons gx-addjob-customer-widget-icon">local_phone</i>
                                             </div>
-                                            <div class="gx-addjob-customer-widget-item">
-                                                <span class="gx-addjob-customer-widget-text">perterjackson@website.com</span>
-                                                <i class="material-icons gx-addjob-customer-widget-icon">email</i>
+                                            <div className="gx-addjob-customer-widget-item">
+                                                <span className="gx-addjob-customer-widget-text">perterjackson@website.com</span>
+                                                <i className="material-icons gx-addjob-customer-widget-icon">email</i>
                                             </div>
                                         </div>
                                         <div style={{height:50,width:"100%",borderBottomLeftRadius:8,borderBottomRightRadius:8,borderTop:"#e5e5e5 1px solid",backgroundColor:"#f7f6f6",padding:5, alignItems:"center", display: "flex"}}>
-                                            <i class="material-icons gx-addjob-customer-widget-icon" style={{color:"#b5b5b5",paddingLeft:8,fontSize:19, marginRight:8}}>contacts</i>
-                                            <span class="gx-addjob-customer-widget-text" style={{color:"#b5b5b5"}}>Customer jobs history</span>
-                                            <i class="material-icons gx-addjob-customer-widget-icon" style={{color:"#b5b5b5",float:"right", marginLeft:"auto", fontSize:19, marginRight:15}}>keyboard_arrow_right</i>
+                                            <i className="material-icons gx-addjob-customer-widget-icon" style={{color:"#b5b5b5",paddingLeft:8,fontSize:19, marginRight:8}}>contacts</i>
+                                            <span className="gx-addjob-customer-widget-text" style={{color:"#b5b5b5"}}>Customer jobs history</span>
+                                            <i className="material-icons gx-addjob-customer-widget-icon" style={{color:"#b5b5b5",float:"right", marginLeft:"auto", fontSize:19, marginRight:15}}>keyboard_arrow_right</i>
                                         </div>
                                     </Widget>
                                     
