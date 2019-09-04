@@ -343,6 +343,7 @@
   "dispatch.dispatch.card.file": "{value} File",
   "dispatch.dispatch.card.files": "{value} Files",
   "dispatch.dispatch.card.schedulenow": "Schedule now",
+  "job.add.search.placeholder": "Search customers (Name, email, phone or address)",
   "job.customercard.email": "Email",
   "job.customercard.mobile": "Mobile",
   "job.customercard.home": "Home",
