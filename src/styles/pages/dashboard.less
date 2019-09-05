@@ -1867,6 +1867,22 @@
 
 
 //================== addjobsearch
+.@{class-prefix}-dispatch-topmenu {
+  & .ant-steps-item-icon {
+    background-color: transparent;
+    color: #2571bf;
+    border: #2571bf 3px solid;
+  }
+  & .ant-steps-icon {
+    color: #2571bf !important;
+  }
+  & .ant-steps-item-title {
+    color : #b5b5b5 !important;
+  }
+  & .ant-steps-item-title::after {
+    visibility: hidden !important;
+  }
+}
 
 .@{class-prefix}-addjob-search-wrapper {
   position: relative;
@@ -1938,13 +1954,6 @@
     display: none;
   }
 }
-div.gx-addjob-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-
 
 button.gx-addjob-next-btn {
   background-color: @green-color;
@@ -1998,7 +2007,7 @@ button.gx-addjob-save-btn:focus {
 }
 
 // steps
-div.ant-steps div.ant-steps-item-process {
+div.ant-steps-item-process {
   & div.ant-steps-item-icon {
     border-width: 3px !important;
     border-color: #257bdc !important;
@@ -2010,20 +2019,11 @@ div.ant-steps div.ant-steps-item-process {
   & div.ant-steps-item-content > div.ant-steps-item-title {
     color: #257bdc !important;
   }
-  & div.ant-steps-item-icon > span {
-    color: #257bdc;
-  }
 }
 
-div.ant-steps div.ant-steps-item-finish {
+div.ant-steps-item-finish {
   & div.ant-steps-item-content > div.ant-steps-item-title {
     color: #257bdc !important;
-  }
-  & div.ant-steps-item-icon {
-    border: #257bdc 3px solid !important;
-    & span {
-    color: #257bdc !important;
-    }
   }
 }
 div.ant-steps-item-icon {
@@ -2033,12 +2033,6 @@ div.ant-steps-item-icon {
 div.ant-steps {
   & div.ant-steps-item {
     display: content !important;
-    & div.ant-steps-item-icon {
-      border: #a7abb6 3px solid;
-      & span {
-        color: #a7abb6;
-      }
-    }
     & div.ant-steps-item-content div.ant-steps-item-title:after {
       display: none;
     }
@@ -2081,11 +2075,6 @@ div.ant-steps {
 
 .ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item {
   margin-right: 0px;
-  padding-right: 30px;
+  padding-right: 60px;
 }
-
-div.ant-steps-item {
-  flex: none !important;
-}
-
 //===============================

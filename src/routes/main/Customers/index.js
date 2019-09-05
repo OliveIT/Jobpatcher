@@ -269,13 +269,13 @@ class Customers extends Component {
                         <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" >
                             <div className="gx-customized-modal-title"><IntlMessages id="customer.customerdlg.newcustomer"/></div>
                             <div className="gx-flex-row gx-flex-nowrap gx-align-items-center">                            
-                                <Button className="gx-customized-button gx-d-none gx-d-md-block" onClick={() => {this.showImportCustomerDlg()}}>
+                                <Button className="gx-customized-button gx-d-none gx-d-md-block notDisplayOnMobile" onClick={() => {this.showImportCustomerDlg()}}>
                                     <div className="gx-div-align-center">
                                         <i className="material-icons gx-fs-xl gx-mr-2" style={{marginLeft: '-6px'}}>publish</i>
                                         <IntlMessages id="customer.customerdlg.importcontacts"/>
                                     </div>
                                 </Button>
-                                <Button className="gx-customized-button gx-d-md-none" onClick={() => {this.showImportCustomerDlg()}}>
+                                <Button className="gx-customized-button gx-d-md-none notDisplayOnMobile" onClick={() => {this.showImportCustomerDlg()}}>
                                     <div className="gx-div-align-center">
                                         <i className="material-icons gx-fs-xl gx-mr-2" style={{marginLeft: '-6px'}}>publish</i>
                                         <IntlMessages id="customer.customerdlg.import"/>

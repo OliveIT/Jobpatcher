@@ -588,3 +588,27 @@ aside a:hover,
   color: #6F6E6C;
   background-color: initial;
 }
+
+
+
+
+@media screen and (max-width: 768px) {
+  .width-100-mobile{
+    width: 100%!important;
+  }
+
+
+}
+@media screen and (max-width: 768px) {
+  
+  .new-tab-css{
+    border-radius: 0!important;
+    margin-left: -20px!important;
+    width: calc(100% + 40px)!important;
+    justify-content: center!important;
+  }
+
+
+}
+
+

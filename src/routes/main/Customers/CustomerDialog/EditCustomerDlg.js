@@ -136,9 +136,9 @@ class EditCustomerDlg extends Component {
                     </div>
 
                     <Row>
-                        <Col span={12}>
-                            <Row>
-                                <Col span={4} style={{paddingRight: '0px'}}>
+                        <Col span={12} sm={12} className="width-100-mobile">
+                            <Row >
+                                <Col lg={4} style={{paddingRight: '0px'}} sm={12} className="width-100-mobile">
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.title"/>
@@ -150,7 +150,7 @@ class EditCustomerDlg extends Component {
                                     </div>
                                 </div>
                                 </Col>
-                                <Col span={7} style={{paddingRight: '0px'}}>
+                                <Col lg={7} style={{paddingRight: '0px'}} sm={12} className="width-100-mobile">
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.firstname"/>
@@ -162,7 +162,7 @@ class EditCustomerDlg extends Component {
                                     </div>
                                 </div>
                                 </Col>
-                                <Col span={6} style={{paddingRight: '0px'}}>
+                                <Col lg={6} style={{paddingRight: '0px'}} sm={12} className="width-100-mobile">
                                 <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.midlename"/>
@@ -174,7 +174,7 @@ class EditCustomerDlg extends Component {
                                 </div>
                             </div>
                                 </Col>
-                                <Col span={7} >
+                                <Col lg={7} small={12} className="width-100-mobile">
                                 <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.lastname"/>
@@ -188,7 +188,7 @@ class EditCustomerDlg extends Component {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col span={12}>
+                        <Col span={12} className="width-100-mobile">
                         <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.email"/>
@@ -205,7 +205,7 @@ class EditCustomerDlg extends Component {
                     </Row>
 {/* first row end */}
                 <Row>
-                    <Col span={12}>
+                    <Col span={12} className="width-100-mobile">
                     <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.companyname"/>
@@ -219,9 +219,9 @@ class EditCustomerDlg extends Component {
                             </div>  
                         </Col>
                     
-                    <Col span={12}>
+                    <Col span={12} className="width-100-mobile">
                         <Row>
-                            <Col span={12} style={{paddingRight: '0px'}}>
+                            <Col span={12} style={{paddingRight: '0px'}} className="width-100-mobile">
                             <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.phone"/>
@@ -234,7 +234,7 @@ class EditCustomerDlg extends Component {
                             </div>
                             </Col>
 
-                            <Col span={12}>
+                            <Col span={12} className="width-100-mobile">
                             <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.mobile"/>
@@ -252,7 +252,7 @@ class EditCustomerDlg extends Component {
                     </Row>
 {/* secound row end */}
         <Row>
-                    <Col span={12}>
+                    <Col span={12} className="width-100-mobile">
                     <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.displayname"/>
@@ -265,9 +265,9 @@ class EditCustomerDlg extends Component {
                             </div>
                         </Col>
                     
-                    <Col span={12}>
+                    <Col span={12} className="width-100-mobile">
                         <Row>
-                            <Col span={12} style={{paddingRight: '0px'}}>
+                            <Col span={12} style={{paddingRight: '0px'}} className="width-100-mobile">
                             <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.fax"/>
@@ -280,7 +280,7 @@ class EditCustomerDlg extends Component {
                             </div>
                             </Col>
 
-                            <Col span={12}>
+                            <Col span={12} className="width-100-mobile">
                             <div className="gx-customized-modal-content-field">
                                 <div className="gx-customized-modal-content-field-title">
                                     <IntlMessages id="customer.customerdlg.content.website"/>
@@ -307,7 +307,7 @@ class EditCustomerDlg extends Component {
     borderTopLeftRadius: '10px',
     borderTopRightRadius: '10px',
     marginBottom: '20px'
-}}>
+}} className="new-tab-css">
 <div style={{ padding: '10px 10px 10px 10px',
     color: '#FFFF'}}><IntlMessages id="customer.customerdlg.content.address"/></div>
 <div style={{ padding: '10px 10px 10px 10px',
@@ -319,15 +319,15 @@ class EditCustomerDlg extends Component {
     </div>
 
     <Row>
-        <Col span={12}>
+        <Col span={12} className="width-100-mobile">
             <Row>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
         <div className="gx-customized-modal-content-title">
             <i className="material-icons">location_on</i>
             <IntlMessages id="customer.customerdlg.content.customerlocation"/>
         </div>
                 </Col>
-                <Col span={12}>
+                <Col span={12} className="notDisplayOnMobile">
             <a className="gx-customized-modal-content-title">
             <IntlMessages id="customer.customerdlg.content.anotheraddress"/>
         </a>
@@ -346,7 +346,7 @@ class EditCustomerDlg extends Component {
             </Col>
             </Row>
             <Row>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
                 <div className="gx-customized-modal-content-field">
                                    
                                         <div>
@@ -357,7 +357,7 @@ class EditCustomerDlg extends Component {
                                         </div>
                                     </div>
                 </Col>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
                 <div className="gx-customized-modal-content-field">
                                         <div>
                                             <Input placeholder={formatMessage({id: "customer.customerdlg.content.state"})}
@@ -397,16 +397,16 @@ class EditCustomerDlg extends Component {
                 </Col>
             </Row>
         
-        </Col>
-        <Col span={12}>
+        </Col >
+        <Col span={12} className="width-100-mobile">
         <Row>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
         <div className="gx-customized-modal-content-title">
         <Icon type="credit-card" />
             <IntlMessages id="customer.customerdlg.content.customerlocation"/>
         </div>
                 </Col>
-                <Col span={12}>
+                <Col span={12} className="notDisplayOnMobile">
                 <Switch size="small" defaultChecked />
             <IntlMessages id="customer.customerdlg.content.sameascustomeraddr"/>
                 </Col>
@@ -424,7 +424,7 @@ class EditCustomerDlg extends Component {
             </Col>
             </Row>
             <Row>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
                 <div className="gx-customized-modal-content-field">
                                    
                                         <div>
@@ -435,7 +435,7 @@ class EditCustomerDlg extends Component {
                                         </div>
                                     </div>
                 </Col>
-                <Col span={12}>
+                <Col span={12} className="width-100-mobile">
                 <div className="gx-customized-modal-content-field">
                                         <div>
                                             <Input placeholder={formatMessage({id: "customer.customerdlg.content.state"})}
