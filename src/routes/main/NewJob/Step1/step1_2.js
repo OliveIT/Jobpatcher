@@ -53,29 +53,11 @@ const StreetViewPanoramaExampleGoogleMap = withGoogleMap(props => (
 
 class Step1_2 extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+    constructor(props, context) {
+        super(props, context);
 
-  }
-//   initStreetView({map, maps}) {
-//         var sv = new maps.StreetViewService();
-//         var panorama = new maps.StreetViewPanorama(document.getElementById('map'));
-//         sv.getPanorama({location: {lat: 37.869, lng: -122.2547}, radius: 50}, processSVData);
-
-//         function processSVData(data, status) {
-//             var marker = new maps.Marker({
-//                 position: data.location.latLng,
-//                 map: map,
-//                 title: data.location.description
-//             });
-//             panorama.setPano(data.location.pano)
-//             panorama.setPov({
-//                 heading: 270,
-//                 pitch: 0
-//             });
-//             panorama.setVisible(true);
-//         }
-//     }
+    }
+    
   render() {
     return (
         <div className="gx-main-content-container gx-mt-30 gx-addjob-step1-2">
@@ -87,7 +69,7 @@ class Step1_2 extends Component {
                                 <h3 style={{paddingBottom:10}}>
                                     Search customer
                                 </h3>
-                                <a className="gx-nav-btn gx-nav-new-btn gx-mb-0 gx-addjob-new-customer" >
+                                <a className="gx-nav-btn gx-nav-new-btn gx-mb-0 gx-addjob-new-customer">
                                     <div className="gx-div-align-center">
                                         <i className="material-icons gx-fs-xl gx-mr-2">add</i>
                                         New customer
