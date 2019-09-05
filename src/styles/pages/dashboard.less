@@ -1866,7 +1866,7 @@
 
 
 
-//================== addjobsearch
+//================== addjobsearch ===============
 
 div.gx-dispatch-topmenu.gx-addjob-topbar {
   padding-left: 32px;
@@ -2018,6 +2018,21 @@ div.gx-main-content-container.gx-mt-30.gx-addjob-step1-2 {
 .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item:last-child {
   padding-right: 0 !important;
 }
+
+.ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item:nth-child(2) { 
+  padding-right: 0 !important;
+}
+@media screen and (max-width: @screen-sm-max) {
+  div.ant-steps-item {
+    flex: none;
+  }
+  .ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item:nth-child(2) { 
+    padding-right: 30px !important;
+  }
+  .ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item:nth-child(1) { 
+    padding-right: 30px !important;
+  }
+}
 ///////////////////////////////////////////////////////////////////////////////////////////
 div.gx-main-content-wrapper {
   & div.gx-addjob-top-btngroup-mobile {
@@ -2037,8 +2052,11 @@ div.gx-addjob-topbar {
   justify-content: space-between;
   height: 60px;
 }
-
-
+@media screen and (max-width: @screen-md-max) {
+  div.gx-addjob-topbar {
+    justify-content: center;
+  }
+}
 button.gx-addjob-next-btn {
   background-color: @green-color;
   padding-left: 40px;
@@ -2091,7 +2109,7 @@ button.gx-addjob-save-btn:focus {
 }
 
 // steps
-div.ant-steps div.ant-steps-item-process {
+div.ant-steps-item-process {
   & div.ant-steps-item-icon {
     border-width: 3px !important;
     border-color: #257bdc !important;
@@ -2103,20 +2121,25 @@ div.ant-steps div.ant-steps-item-process {
   & div.ant-steps-item-content > div.ant-steps-item-title {
     color: #257bdc !important;
   }
-  & div.ant-steps-item-icon > span {
-    color: #257bdc;
+}
+
+div.ant-steps-item-wait {
+  & div.ant-steps-item-icon {
+    border-width: 3px !important;
+    border-color: #b5b5bc !important;
+    background-color: white;
+    & span.ant-steps-icon {
+      color: #b5b5bc;
+    }
+  }
+  & div.ant-steps-item-content > div.ant-steps-item-title {
+    color:#b5b5bc !important;
   }
 }
 
-div.ant-steps div.ant-steps-item-finish {
+div.ant-steps-item-finish {
   & div.ant-steps-item-content > div.ant-steps-item-title {
     color: #257bdc !important;
-  }
-  & div.ant-steps-item-icon {
-    border: #257bdc 3px solid !important;
-    & span {
-    color: #257bdc !important;
-    }
   }
 }
 div.ant-steps-item-icon {
@@ -2126,12 +2149,6 @@ div.ant-steps-item-icon {
 div.ant-steps {
   & div.ant-steps-item {
     display: content !important;
-    & div.ant-steps-item-icon {
-      border: #a7abb6 3px solid;
-      & span {
-        color: #a7abb6;
-      }
-    }
     & div.ant-steps-item-content div.ant-steps-item-title:after {
       display: none;
     }
@@ -2174,11 +2191,7 @@ div.ant-steps {
 
 .ant-steps-horizontal:not(.ant-steps-label-vertical) div.ant-steps-item {
   margin-right: 0px;
-  padding-right: 30px;
-}
-
-div.ant-steps-item {
-  flex: none !important;
+  padding-right: 60px;
 }
 
 .gx-nav-btn.gx-addjob-new-customer {
