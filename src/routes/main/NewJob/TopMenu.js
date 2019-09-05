@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import IntlMessages from "util/IntlMessages";
-import {Link} from "react-router-dom";
-import {Tabs} from "antd";
-import {Steps, Button, message} from "antd";
+import {Steps, Button, message, Row, Col} from "antd";
 
 const { Step } = Steps;
 
@@ -61,7 +59,12 @@ class TopMenu extends React.Component {
                         </Button>
                     </div>
                 </div>
-                <div className="steps-content">{steps[current].content}</div>
+                <Row>
+                    <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24}>
+                        <div className="steps-content" style={{height:"200px"}}>{steps[current].content}</div>
+                    </Col>
+                </Row>
+                
             </div>
         );
     }

@@ -1868,6 +1868,14 @@
 
 //================== addjobsearch
 
+div.gx-dispatch-topmenu.gx-addjob-topbar {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+@media screen and (max-width: @screen-sm-max) {
+  padding-left: 0;
+  padding-right: 0;
+}
 .@{class-prefix}-addjob-search-wrapper {
   position: relative;
   border-bottom: 1px solid #e6e7ed;
@@ -1938,6 +1946,77 @@
     display: none;
   }
 }
+
+@media screen and (max-width: @screen-sm-max) {
+  div.ant-steps-item-wait,
+  div.ant-steps-item-finish {
+    & div.ant-steps-item-content {
+      display: none;
+    }
+  }
+  div.ant-steps-item-process {
+    & div.ant-steps-item-content {
+      display: inline-block;
+    }
+  }
+  div.gx-main-content-wrapper {
+    & div.gx-dispatch-topmenu.gx-addjob-topbar {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+/////////////////////steps mobile responsive//////////////////////////////////
+@media screen and (max-width: 480px) {
+  div.ant-steps-item-wait,
+  div.ant-steps-item-finish {
+    & div.ant-steps-item-content {
+      display: none !important;
+    }
+  }
+  div.ant-steps-item-process {
+    & div.ant-steps-item-content {
+      display: inline-block;
+    }
+  }
+  div.gx-main-content-wrapper {
+    & div.gx-dispatch-topmenu.gx-addjob-topbar {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  div.ant-steps-horizontal.ant-steps-label-horizontal {
+    display: flex;
+    align-items: center !important;
+  }
+  div.ant-steps-horizontal.ant-steps-label-horizontal {
+    
+    & .ant-steps-item-content {
+      display: flex;
+      align-items: center;
+    }
+    & .ant-steps-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item:last-child {
+  padding-right: 0 !important;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+div.gx-main-content-wrapper {
+  & div.gx-addjob-top-btngroup-mobile {
+    margin-top: 60px;
+    height: 60px;
+    background: #fcfafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px #00000024;
+  }
+}
+
 div.gx-addjob-topbar {
   display: flex;
   align-items: center;
@@ -1948,8 +2027,8 @@ div.gx-addjob-topbar {
 
 button.gx-addjob-next-btn {
   background-color: @green-color;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   border: none;
   & span {
     color: white;
@@ -2088,4 +2167,120 @@ div.ant-steps-item {
   flex: none !important;
 }
 
+.gx-nav-btn.gx-addjob-new-customer {
+  color: #247cdd !important;
+  background-color: #f5f5f5 !important;
+  & div.gx-div-align-center {
+    font-size: 16px;
+  }
+}
+
+
+//========== Add job step2 ( Add job items)
+div.gx-addjob-step2-addjobitem-total-panel {
+  padding-left: 20px;
+  padding-right: 20px;
+  & div.gx-addjob-step2-subpane {
+    margin-left: 0px;
+    margin-right: 0;
+    
+    & div.ant-col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & div.ant-row div.ant-col:nth-child(3) {
+      display: flex;
+      flex-flow: row-reverse;
+    }
+    & div.ant-row div.ant-col:nth-child(4) {
+      display: flex;
+      flex-flow: row-reverse;
+    }
+    & div.ant-row div.ant-col:nth-child(7) {
+      display: flex;
+      flex-flow: row-reverse;
+    }
+    & div.ant-row div.ant-col:nth-child(6) {
+      display: flex;
+      flex-flow: row-reverse;
+    }
+    & div.gx-panel-title-bar {
+      padding: 0;
+      & div.ant-row {
+        padding: 0 1vw 0 1vw;
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    & div.gx-panel-content div.ant-row {
+      width: 100%;
+      padding: 10px 1vw 0 1vw;
+      margin-right: 0;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      & div.ant-col input {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background: #fcfbfb;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      & div.ant-col input:focus {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        box-shadow: none;
+      }
+      & div.ant-col div.ant-input-number {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-radius: 0;
+      }
+      & div.ant-col div.ant-input-number:focus {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+div.gx-addjob-step2-subpane-mobile {
+  & div.gx-panel-content {
+    padding: 80px 20px 0 20px;
+    & div input {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      background: #fcfbfb;
+      border-radius: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    & div input:focus {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      box-shadow: none;
+    }
+    & div div.ant-input-number {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-radius: 0;
+    }
+    & div div.ant-input-number:focus {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      box-shadow: none;
+    }
+  }
+}
 //===============================
