@@ -78,7 +78,7 @@ class Step1_2 extends Component {
 //     }
   render() {
     return (
-        <div className="gx-main-content-container gx-mt-30" style={{paddingTop:60}}>
+        <div className="gx-main-content-container gx-mt-30 gx-addjob-step1-2">
             <Row style={{justifyContent: "center"}}>
                 <Col  xxl={20} xl={20} lg={24} md={24} sm={24} xs={24}>
                     <Row>
@@ -96,7 +96,7 @@ class Step1_2 extends Component {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="gx-addjob-step1-2-lastcard">
                         <Col xxl={16} xl={16} lg={16} md={24} sm={24} xs={24}>
                             <Row>
                                 <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}}>

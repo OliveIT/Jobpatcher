@@ -1967,6 +1967,20 @@ div.gx-dispatch-topmenu.gx-addjob-topbar {
   }
 }
 /////////////////////steps mobile responsive//////////////////////////////////
+
+div.gx-main-content-container.gx-mt-30.gx-addjob-step1-2 {
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 992px) {
+  div.gx-main-content-container.gx-mt-30.gx-addjob-step1-2 {
+    padding-top: 0;
+    & div.gx-addjob-step1-2-lastcard {
+      padding-bottom: 50px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   div.ant-steps-item-wait,
   div.ant-steps-item-finish {
