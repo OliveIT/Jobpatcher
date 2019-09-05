@@ -6,56 +6,79 @@ import SearchBar from "components/AddJob/SearchBar";
 import Widget from "components/Widget";
 import PrivateNoteWidget from "components/AddJob/PrivateNoteWidget";
 import UploadFileWidget from "components/AddJob/UploadFileWidget";
-import {GoogleMap, withGoogleMap} from "react-google-maps";
-// import GoogleMapWrapper from './GoogleMapWrapper';
+import {GoogleMap, OverlayView, StreetViewPanorama, withGoogleMap} from "react-google-maps";
 
+const coordinates = {lat: 49.2853171, lng: -123.1119202};
 const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     <GoogleMap
       defaultZoom={15}
-      defaultCenter={{lat: 47.646935, lng: -122.303763}}
+      defaultCenter={coordinates}
     />
+));
+
+const STYLES = {
+  overlayView: {
+    background: `red`,
+    color: `white`,
+    padding: 5,
+    borderRadius: `50%`,
+  },
+};
+
+function getPixelPositionOffset(width, height) {
+  return {x: -(width / 2), y: -(height / 2)};
+}
+
+const StreetViewPanoramaExampleGoogleMap = withGoogleMap(props => (
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={coordinates}
+  >
+    <StreetViewPanorama
+      defaultPosition={coordinates}
+      visible
+    >
+      <OverlayView
+        position={{lat: 49.28590291211115, lng: -123.11248166065218}}
+        mapPaneName={OverlayView.OVERLAY_LAYER}
+        getPixelPositionOffset={getPixelPositionOffset}
+      >
+        <div style={STYLES.overlayView}>
+          OverlayView
+        </div>
+      </OverlayView>
+    </StreetViewPanorama>
+  </GoogleMap>
 ));
 
 class Step1_2 extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+    constructor(props, context) {
+        super(props, context);
 
-  }
-  initStreetView({map, maps}) {
-        var sv = new maps.StreetViewService();
-        var panorama = new maps.StreetViewPanorama(document.getElementById('map'));
-        sv.getPanorama({location: {lat: 37.869, lng: -122.2547}, radius: 50}, processSVData);
-
-        function processSVData(data, status) {
-            var marker = new maps.Marker({
-                position: data.location.latLng,
-                map: map,
-                title: data.location.description
-            });
-            panorama.setPano(data.location.pano)
-            panorama.setPov({
-                heading: 270,
-                pitch: 0
-            });
-            panorama.setVisible(true);
-        }
     }
+    
   render() {
     return (
-        <div className="gx-main-content-container gx-mt-30" style={{paddingTop:60}}>
+        <div className="gx-main-content-container gx-mt-30 gx-addjob-step1-2">
             <Row style={{justifyContent: "center"}}>
-                <Col  xxl={16} xl={20} lg={24} md={24} sm={24} xs={24}>
+                <Col  xxl={20} xl={20} lg={24} md={24} sm={24} xs={24}>
                     <Row>
                         <Col xxl={16} xl={16} lg={16} md={24} sm={24} xs={24} style={{paddingLeft:33}}>
-                            <div>
+                            <div style={{display: "flex", justifyContent:"space-between",alignItems:"center"}}>
                                 <h3 style={{paddingBottom:10}}>
                                     Search customer
                                 </h3>
+                                <a className="gx-nav-btn gx-nav-new-btn gx-mb-0 gx-addjob-new-customer">
+                                    <div className="gx-div-align-center">
+                                        <i className="material-icons gx-fs-xl gx-mr-2">add</i>
+                                        New customer
+                                    </div>
+                                </a>
                             </div>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className="gx-addjob-step1-2-lastcard">
                         <Col xxl={16} xl={16} lg={16} md={24} sm={24} xs={24}>
                             <Row>
                                 <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}}>
@@ -70,11 +93,11 @@ class Step1_2 extends Component {
                                             </h5>
                                         </div>
                                         <div className="gx-panel-content">
-                                            <SimpleMapExampleGoogleMap 
-                                                loadingElement={<div style={{height: "100%"}}/>}
-                                                containerElement={<div style={{height: "190px"}}/>}
-                                                mapElement={<div style={{height: "100%"}}/>}
-                                                />
+                                        <StreetViewPanoramaExampleGoogleMap
+                                                loadingElement={<div style={{height: `100%`}}/>}
+                                                containerElement={<div style={{height: `190px`}}/>}
+                                                mapElement={<div style={{height: `100%`}}/>}
+                                            />
                                         </div>
                                         <div className="gx-addjob-customer-widget" style={{padding:10}}>
                                             <div className="gx-addjob-customer-widget-item">
@@ -111,9 +134,9 @@ class Step1_2 extends Component {
                                         </div>
                                         <div className="gx-panel-content">
                                             <SimpleMapExampleGoogleMap 
-                                                loadingElement={<div style={{height: "100%"}}/>}
-                                                containerElement={<div style={{height: "410px"}}/>}
-                                                mapElement={<div style={{height: "100%"}}/>}
+                                                loadingElement={<div style={{height: `100%`}}/>}
+                                                containerElement={<div style={{height: `410px`}}/>}
+                                                mapElement={<div style={{height: `100%`}}/>}
                                                 />
                                         </div>
                                     </Widget>
@@ -132,9 +155,6 @@ class Step1_2 extends Component {
                                 </Col>
                             </Row>
                         </Col>
-                        {/* <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}  style={{paddingTop:10}}>
-                            <UploadFileWidget style={{padding:0}}/>
-                        </Col> */}
                     </Row>
                 </Col>
             </Row>
@@ -143,5 +163,4 @@ class Step1_2 extends Component {
   }
 };
 
-  
 export default injectIntl(Step1_2);

@@ -1,9 +1,7 @@
 import React, {Component} from "react";
 import {Button, Checkbox, Avatar } from "antd";
 import {Col, Row} from "antd";
-
 import {GoogleMap, OverlayView, StreetViewPanorama, withGoogleMap} from "react-google-maps";
-
 import IntlMessages from "util/IntlMessages";
 import {showAddress} from "util/Utils";
 import {changeDateRangeWithTimeFormat, changeDateYearFormat} from "util/DateTime";
