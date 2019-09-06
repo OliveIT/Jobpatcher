@@ -13,7 +13,7 @@ import DispatchDrawer from "./DispatchDrawer";
 import TopToolBar from "./TopToolBar";
 import EmployeeWorkHours from "./employee-work-hours";
 import SelectableButtonGroup from "components/Button/SelectableButtonGroup";
-
+import EmployeeJobCard from 'components/Dispatch/EmployeeJobCard'
 import { global_jobs } from "./data";
 
 const Option = Select.Option;
@@ -31,7 +31,7 @@ class DispatchEmployees extends Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   onChangeEmpType = employeeType => {
     this.setState({ employeeType });
@@ -99,9 +99,33 @@ class DispatchEmployees extends Component {
           <div className="gx-w-100">
             <div className="gx-dispatch-module-scroll">
               {this.renderMainContent()}
+              <div className="gx-panel-content">
+                <div className="gx-d-md-none gx-mt-20 gx-ml-20">
+                  <div className="gx-div-align-center">
+                    <span className="gx-fs-md gx-font-weight-medium gx-text-header gx-mr-3"> 1 / 10 Jobs </span>
+                    <SearchBox
+                    // styleName="gx-lt-icon-search-bar-lg gx-dispatch-search2"
+                    //             placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
+                    //             onChange={this.updateSearchJobs.bind(this)}
+                    //             value={this.state.searchText}
+                    />
+                  </div>
+                </div>
+                <div className="gx-panel-content-scroll">
+                  <div className="gx-panel-content-scroll-container panel-section">
+                    {['', '', '', '', ''].map((job, index) => (
+                      <span>
+                        {/* <DispatchJobCard key={index} job={job} /> */}
+                        <EmployeeJobCard key={index} job={job} />
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     );
   }
