@@ -4,18 +4,27 @@ import Widget from "components/Widget/index";
 import { Button, Popover } from "antd";
 const content = (
     <div style={{width: "100%", height: "100%"}}>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content">edit</i><div>Edit employee</div></p>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content ">cancel</i> <div>Cancel</div></p>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content">edit</i>Edit employee</p>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content ">cancel</i>Cancel</p>
     </div>
 );
 class EmployeeJobCard extends Component {    
 
     constructor(props, context) {
         super(props, context);    
+        this.widget = React.createRef();
+        this.clickMore = this.clickMore.bind(this);
     }
+
+    clickMore () {
+        // this.widget.current.className += " gx-employee-card-shadow";
+        // console.log(this.widget.current);
+    }
+
     render () {
         return (
-            <Widget styleName="gx-employee-card gx-py-0" >
+            <div ref= {this.widget}>
+            <Widget styleName="gx-employee-card gx-py-0">
                     <div className="gx-flex-row gx-px-20" style={{paddingTop:20}}>
                         <div className="gx-employee-card-avatar gx-flex-0 gx-main-avatar gx-mr-20">{
                             this.props.job.avatar == "" ?
@@ -33,7 +42,7 @@ class EmployeeJobCard extends Component {
                             </div>
                         </div>
                         <div className="right-icon-section">
-                            <Popover content={content}  trigger="click" placement="bottom" style={{padding:0}}>
+                            <Popover content={content}  trigger="click" placement="bottom" style={{padding:0}} onClick={this.clickMore}>
                                 <div className="more-icon-section">
                                     <i className="material-icons gx-w-100 gx-text-center" style={{fontSize:30, color:"#c5c5c5"}}>more_vert</i>
                                 </div>
@@ -91,6 +100,7 @@ class EmployeeJobCard extends Component {
                     </div>
                 </div>
             </Widget>
+            </div>
         )
     }
 };
