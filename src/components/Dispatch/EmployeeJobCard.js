@@ -11,19 +11,11 @@ const content = (
 class EmployeeJobCard extends Component {    
 
     constructor(props, context) {
-        super(props, context);    
-        this.widget = React.createRef();
-        this.clickMore = this.clickMore.bind(this);
-    }
-
-    clickMore () {
-        // this.widget.current.className += " gx-employee-card-shadow";
-        // console.log(this.widget.current);
+        super(props, context);
     }
 
     render () {
         return (
-            <div ref= {this.widget}>
             <Widget styleName="gx-employee-card gx-py-0">
                     <div className="gx-flex-row gx-px-20" style={{paddingTop:20}}>
                         <div className="gx-employee-card-avatar gx-flex-0 gx-main-avatar gx-mr-20">{
@@ -100,7 +92,6 @@ class EmployeeJobCard extends Component {
                     </div>
                 </div>
             </Widget>
-            </div>
         )
     }
 };
