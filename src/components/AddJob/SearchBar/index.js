@@ -21,6 +21,7 @@ constructor(props, context) {
     };
     this.updateStatWithProps = this.updateStatWithProps.bind(this);
     this.hideLoading = this.hideLoading.bind(this);
+    this.searchCustomer = this.searchCustomer.bind(this);
 }
 
 updateStatWithProps (props) {
@@ -63,6 +64,9 @@ hideLoading() {
     });
 }
 
+searchCustomer() {
+    this.props.onSearchCustomer();
+}
 render() {
     const { intl: {formatMessage} } = this.props;
     const { searchBarWidth, searchText, typing, searching } = this.state;
@@ -82,7 +86,7 @@ render() {
                     </div>
                 }
                 {searching &&
-                    <SearchBarContent searchKey={searchText}/>
+                    <SearchBarContent searchKey={searchText} onSearchCustomer={this.searchCustomer}/>
                 }
             </div>
         </div>

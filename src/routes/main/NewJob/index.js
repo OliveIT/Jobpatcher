@@ -23,7 +23,8 @@ const { Step } = Steps;
 const steps = [
     {
         title: 'Choose customer',
-        content: <Step1_2/>,
+        // content: <Step1_2/>,
+        content: <Step1_1/>,
     },
     {
         title: 'Job items',

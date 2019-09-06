@@ -15,9 +15,14 @@ class SearchResult extends Component {
 
     constructor(props, context) {
         super(props, context);    
-        
         this.state = {
         };
+        
+        this.selectCustomer = this.selectCustomer.bind(this);
+    }
+
+    selectCustomer () {
+        this.props.onSelectCustomer();
     }
 
     render () {
@@ -29,7 +34,7 @@ class SearchResult extends Component {
                 }
                 { data.map( (customer, index) => (
                         <div key={index} className="gx-menuitem gx-addjob-search-result-item">
-                            <div className="gx-div-align-center" style={{width:"100%"}}>
+                            <div className="gx-div-align-center" style={{width:"100%"}}  onClick={this.selectCustomer}>
                                 <Avatar icon="person" />
                                 <div className="gx-addjob-search-result-item-name">
                                     {customer.name}

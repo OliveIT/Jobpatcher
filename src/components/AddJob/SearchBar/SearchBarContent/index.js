@@ -37,6 +37,7 @@ updateStatWithProps (props) {
         }
     })
     this.setState({search_result: result})
+    this.searchCustomer = this.searchCustomer.bind(this);
 }
 
 componentWillMount() {
@@ -51,12 +52,16 @@ componentWillReceiveProps(nextProps) {
     this.updateStatWithProps(nextProps);
 }
 
+searchCustomer () {
+    this.props.onSearchCustomer();
+}
+
 render() {
     const { searchKey } = this.props;
     const { searching, typing, search_result } = this.state;
     return (
         <div>      
-            <SearchResult data={search_result} />
+            <SearchResult data={search_result} onSelectCustomer={this.searchCustomer}/>
         </div>
     );
 }
