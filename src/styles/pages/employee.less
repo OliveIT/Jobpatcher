@@ -1,0 +1,89 @@
+.@{class-prefix}-employee-content-panel {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    .more-icon-section{
+        color: #000;
+        position: absolute;
+        right: -30px;
+    }
+    .w-85{
+        width: 85px;
+    }
+    .lh-26{
+        line-height: 26px;
+    }
+    .@{class-prefix}-employee-card {
+        .ant-card-body {
+            padding:0px !important;
+        }
+        .app-version{
+            width: 100px;
+        }
+        
+        width: 350px;
+        margin-right: 10px;
+        margin-left: 10px;
+        height: 350px;
+        overflow: hidden;
+        .@{class-prefix}-employee-card-avatar {
+            width: 100px !important;
+            height: 100px !important;
+            justify-content: center;
+            
+            .@{class-prefix}-employee-avatar {
+                width: 100px;
+                height: 100px;
+            }
+            span {
+                color: white;
+                font-size: 45px;
+                font-weight: 700;
+            }
+        }
+        .@{class-prefix}-employee-card-name {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .right-icon-section{
+            position: relative;
+            cursor: pointer;
+        }
+        .@{class-prefix}-employee-card-bottom-button{
+            width: 250px;
+            height: 100%;
+            padding-right: 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+    }
+}
+
+.@{class-prefix}-employee-search-bar {
+    background-color: #e8e8e8 !important;
+}
+.gx-editContent {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    .icon-content{
+        padding-right: 10px;
+      }
+}
+
+.gx-editContent:hover {
+    background-color: #e7faff;
+    color:#257cde;
+    .material-icons {
+        color:#257cde !important;
+    }
+}
