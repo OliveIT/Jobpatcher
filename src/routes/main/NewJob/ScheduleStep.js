@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import { injectIntl } from 'react-intl';
 import {Button, Select, Avatar, Tag } from "antd";
-import TopToolBar from "../Dispatch/TopToolBar";
-import EmployeeWorkHours from "../Dispatch/employee-work-hours";
+import TopToolBar from "./Step3/TopToolBar";
+import EmployeeWorkHours from "./Step3/employee-work-hours";
 
 import {global_jobs} from "../Dispatch/data";
 
@@ -11,7 +11,7 @@ const Option = Select.Option;
 class ScheduleStep extends Component {
 
   state = {
-    duration: "day",
+    duration: "week",
     scheduled: "scheduled",
     jobs: [],
     searchText: ""
@@ -69,7 +69,7 @@ class ScheduleStep extends Component {
     return (
         <div className="gx-dispatch-module-content">    
             <TopToolBar 
-                duration={duration} scheduled={scheduled} isAddJob="YES" 
+                duration={duration} scheduled={scheduled}
                 onChangeDuration={this.onChangeDuration.bind(this)}  
                 onChangeScheduled={this.onChangeScheduled.bind(this)} 
             />
