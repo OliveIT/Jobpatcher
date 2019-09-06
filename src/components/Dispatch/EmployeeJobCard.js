@@ -4,8 +4,8 @@ import Widget from "components/Widget/index";
 import { Button, Popover } from "antd";
 const content = (
     <div style={{width: "100%", height: "100%"}}>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content">edit</i>Edit employee</p>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content ">cancel</i>Cancel</p>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-grey icon-content">edit</i>Edit employee</p>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-grey icon-content ">cancel</i>Cancel</p>
     </div>
 );
 class EmployeeJobCard extends Component {    
