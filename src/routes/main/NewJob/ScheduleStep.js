@@ -80,7 +80,7 @@ class ScheduleStep extends Component {
 
   render() {
     return (
-        <div className="gx-main-content">
+        <div className="gx-main-content gx-addjob-step3-schedule">
             <div className="gx-app-module gx-dispatch-module"> 
                 <div className="gx-w-100">
                     <div className="gx-dispatch-module-scroll">

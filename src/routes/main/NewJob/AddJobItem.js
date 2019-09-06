@@ -14,7 +14,7 @@ class AddJobItem extends Component {
 
   render() {
     return (
-        <div className="gx-main-content-container gx-mt-30" style={{paddingTop:60}}>
+        <div className="gx-main-content-container gx-mt-30 gx-addjob-step2-addjobitem-main-content">
             <Row style={{justifyContent: "center"}}>
                 <Col  xxl={20} xl={20} lg={24} md={24} sm={24} xs={24}>
                     <Row>

@@ -1,0 +1,36 @@
+// dispatch / add new job
+
+@ckr-screen-md-max: 992px;
+@ckr-screen-sm-max: 768px;
+@ckr-screen-xs-max: 576px;
+
+div.gx-addjob-step1-1-main-content {  // normal statue---step1-1 
+    padding-top: 150px;
+}
+div.gx-addjob-step2-addjobitem-main-content { // normal statue (step2-add job item)
+    padding-top: 60px;
+}
+// mobile responsive panel, steps_btn_group control //
+@media screen and (max-width: @ckr-screen-md-max) {
+    div.gx-addjob-top-btngroup-mobile {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: @ckr-screen-md-max) {
+    div.gx-addjob-top-btngroup-mobile + div.ant-row {
+        div.gx-addjob-step3-schedule { // mobile responsive (step3-schedule)
+            padding-top: 60px;
+        }
+        div.gx-addjob-step2-addjobitem-main-content { // mobile reponsive (step2-add job item)
+            padding-top: 110px;
+        }
+        div.gx-addjob-step1-1-main-content {
+            padding-top: 110px;
+        }
+        div.gx-addjob-step1-2 {
+            padding-top: 140px;
+        } 
+    }
+}

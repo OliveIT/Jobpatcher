@@ -29,7 +29,7 @@ class Step1_1 extends Component {
             customer === 'selected' ?
             <Step1_2/>
             :
-            <div className="gx-main-content-container gx-mt-30" style={{paddingTop:150}}>
+            <div className="gx-main-content-container gx-mt-30 gx-addjob-step1-1-main-content">
                 <Row style={{justifyContent: "center"}}>
                     <Col  xxl={12} xl={16} lg={24} md={24} sm={24} xs={24}>
                         <Row>
