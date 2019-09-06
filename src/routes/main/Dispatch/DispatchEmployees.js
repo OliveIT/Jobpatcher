@@ -66,9 +66,7 @@ class DispatchEmployees extends Component {
               <div className="gx-d-none gx-d-sm-block">
                 <SearchBox
                   styleName="gx-lt-icon-search-bar-lg gx-dispatch-search"
-                  placeholder={formatMessage({
-                    id: "dispatch.dispatch.search.placeholder"
-                  })}
+                  placeholder={'Search Employees'}
                   onChange={evt => this.updateSearchEmp(evt.target.value)}
                   value={this.state.searchText}
                 />
@@ -100,17 +98,6 @@ class DispatchEmployees extends Component {
             <div className="gx-dispatch-module-scroll">
               {this.renderMainContent()}
               <div className="gx-panel-content">
-                <div className="gx-d-md-none gx-mt-20 gx-ml-20">
-                  <div className="gx-div-align-center">
-                    <span className="gx-fs-md gx-font-weight-medium gx-text-header gx-mr-3"> 1 / 10 Jobs </span>
-                    <SearchBox
-                    // styleName="gx-lt-icon-search-bar-lg gx-dispatch-search2"
-                    //             placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
-                    //             onChange={this.updateSearchJobs.bind(this)}
-                    //             value={this.state.searchText}
-                    />
-                  </div>
-                </div>
                 <div className="gx-panel-content-scroll">
                   <div className="gx-panel-content-scroll-container panel-section">
                     {['', '', '', '', ''].map((job, index) => (
