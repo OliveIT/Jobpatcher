@@ -18,8 +18,6 @@ import {switchLanguage, updateWindowWidth, setCurrentPage} from "../../../appRed
 import {NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE, MOBILE_SIZE} from "../../../constants/ThemeSetting";
 import {connect} from "react-redux";
 
-import "styles/pages/addjob.less";
-
 const { Step } = Steps;
 
 const steps = [

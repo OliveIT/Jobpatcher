@@ -38,6 +38,15 @@ class EmployeeListTimeTable extends Component {
                         <div className="gx-employee-work-hours-table-area-time-single">
                             <p>3pm</p>
                         </div>
+                        <div className="gx-employee-work-hours-table-area-time-single">
+                            <p>4pm</p>
+                        </div>
+                        <div className="gx-employee-work-hours-table-area-time-single">
+                            <p>5pm</p>
+                        </div>
+                        <div className="gx-employee-work-hours-table-area-time-single">
+                            <p>6pm</p>
+                        </div>
                     </div>
                 </div>
 				

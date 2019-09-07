@@ -66,3 +66,123 @@ div.gx-addjob-step3-schedule {
         } 
     }
 }
+
+/////////// step3 schedule ////////////////
+div.gx-employee-work-hours-area.gx-addjob-step3-work-hour-area {
+    div.gx-employee-work-hours {
+        overflow-x: hidden;
+        div.gx-employee-work-hours-list-time-table-area {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            div.gx-employee-work-hours-table-area-header {
+                // width: max-content;
+                background: white;
+                div.gx-employee-work-hours-table-area-header-date {
+                    width: 100%;
+                    border-bottom: none;
+                }
+                div.gx-employee-work-hours-table-area-time {
+                    width: max-content;
+                    border-top: 1px solid #eee;
+                }
+            }
+            div.gx-employee-work-hours-table-area-body-single-item {
+                width: max-content;
+            }
+        }
+    }
+
+    div.gx-employee-work-hours-table-area-body-single-overlay {
+        border-right: 1px solid #eee;
+        border-top: 1px solid #eee;
+        background: white !important;
+    }
+    div.gx-employee-work-hours-table-area-body-single-overlay.overlay-time.user-intime.user-three {
+        border-bottom-color: #f7c43d;
+    }
+}
+
+@media screen and (max-width: @ckr-screen-md-max) {
+
+}
+
+// step3-schedule popover
+
+div.gx-addjob-step3-schedule-popover-title {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div.gx-addjob-step3-schedule-popover-content {
+    margin: -12px -16px;
+    background: #fcfbfb;
+    padding: 0px 25px;
+    input.ant-calendar-picker-input {
+        width: 180px;
+        font-size: 14px;
+        border-radius: 0;
+    }
+    input.ant-time-picker-input {
+        width: 180px;
+        font-size: 14px;
+        border-radius: 0;
+    }
+    div.ant-select-selection.ant-select-selection--single {
+        width: 180px;
+        font-size: 14px;
+        border-radius: 0;
+    }
+    span.ant-time-picker-icon {
+        right: -40px;
+    }
+    
+}
+div.gx-bold-color {
+    color: #132144;
+}
+
+div.gx-step3-popover-btn {
+    display: flex;
+    flex-flow: row-reverse;
+    button {
+        width: 135px;
+    }
+    button:nth-child(2) {
+        background: #a4abb5 !important;
+        border-color: #a4abb5 !important;
+    }
+}
+
+.@{class-prefix}-schedule-span {
+    background-color: white;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 147px;
+    height: 67px;
+    opacity: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+.@{class-prefix}-schedule-span:hover {
+    opacity: 1;
+}
+
+.@{class-prefix}-schedule-button {
+    border: 1px solid #ddd;
+    background-color: #eee;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,20 +1,156 @@
-import React, {Component} from "react"
-const user = {
-	avatar: require("assets/images/stor.png"),
-	avatarbg: require("assets/images/bg01.png"),
-	check: require("assets/images/check.png"),
-	user1: require("assets/images/user1.png"),
-	bg01: require("assets/images/bg01.png"),
-  }
-  let Usersss =  user.bg01
+import React, {Component} from "react";
+import {Popover, Button, Row, Col, DatePicker, TimePicker, Checkbox, Select, Switch} from 'antd';
+import ButtonGroup from "antd/lib/button/button-group";
+
+	const user = {
+		avatar: require("assets/images/stor.png"),
+		avatarbg: require("assets/images/bg01.png"),
+		check: require("assets/images/check.png"),
+		user1: require("assets/images/user1.png"),
+		bg01: require("assets/images/bg01.png"),
+	}
+	let Usersss =  user.bg01
+
+	const { Option } = Select;
+
+	const children = [];
+	
+	for (let i = 10; i < 13; i++) {
+		children.push(<Option key={i.toString(36) + i}>Repeat weekly</Option>);
+	}
+
 class EmployeeListTimeTablePerson extends Component {
-    
+	
+	constructor (props) {
+		super(props);
+
+		this.toggle = this.toggle.bind(this);
+		this.closePopover = this.closePopover.bind(this);
+		this.openPopover = this.openPopover.bind(this);
+		
+        this.state = {
+            visible : false
+		}
+		this.widget = React.createRef();
+	};
+
+	toggle() {
+		alert("haha");
+	};
+
+	closePopover () {
+		// this.setState({visible:false});
+		this.widget.current.click();
+		console.log(this.widget.current);
+    };
+
+    openPopover() {
+        this.setState({visible:true});
+	};
+	
+	createDiv = () => {
+		let divv = [];
+		const text = (
+            <div className="gx-addjob-step3-schedule-popover-title">
+                <h3>Schedule job</h3>
+                <i class="material-icons" style= {{cursor:"pointer"}}  onClick={this.closePopover}>close</i>
+            </div>
+        );
+        const content = (
+            <div className="gx-addjob-step3-schedule-popover-content">
+                <div className="gx-fs-md gx-font-weight-heavy gx-py-20 gx-bold-color">SCHEDULE DATE</div>
+                <Row>
+                    <Col span={12}>
+                        <div className="gx-pb-10">Start date</div>
+                        <DatePicker size={"large"} placeholder="DD /MM /YYYY"/>
+                        <div className="gx-py-10">Start time</div>
+                        <TimePicker size="large" />
+                    </Col>
+                    <Col span={12}>
+                        <div className="gx-pb-10">End date</div>
+                        <DatePicker size={"large"}  placeholder="DD /MM /YYYY"/>
+                        <div className="gx-py-10">End time</div>
+                        <TimePicker size="large" />
+                    </Col>
+                </Row>
+                
+                <div className="gx-fs-md gx-font-weight-heavy gx-py-20 gx-bold-color">ARRIVAL WINDOW</div>
+                <div className="gx-pb-10 gx-font-weight-">
+                    Choose an arrival time buffer
+                </div>
+                <div>
+                    <Checkbox>None</Checkbox>
+                    <Checkbox>+15 Min</Checkbox>
+                    <Checkbox>+30 Min</Checkbox>
+                    <Checkbox>+1 Hour</Checkbox>
+                </div>
+                
+                <div className="gx-fs-md gx-font-weight-heavy gx-py-20 gx-bold-color">RECURRENCE</div>
+                <Row>
+                    <Col span={12}>
+                        <Select size={"large"} defaultValue="Repeat weekly" style={{ width: 200 }}>{children}</Select>
+                    </Col>
+                    <Col span={12}>
+                        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                            <Switch defaultChecked/>
+                            <div><div>Workforce</div><span>stability</span></div>
+                            <i className="material-icons" style={{color:"#6e6e6e"}}>info</i>
+                        </div>
+                    </Col>
+                </Row>
+                <div className="gx-fs-md gx-font-weight-heavy gx-py-20 gx-bold-color">EMPLOYEES</div>
+                <div style={{display:"flex",alignItems:"center"}} >
+                    <ButtonGroup className="gx-customer-list-buttongroup">
+                        <Button><i className="material-icons">remove</i></Button>
+                        <Button><i className="material-icons">add</i></Button>
+                    </ButtonGroup>
+                    <div className="gx-pl-20">1 Employee</div>
+                </div>
+                <div className=" gx-mt-10 gx-mb-10" style={{display:"flex",justifyContent:"space-between",alignItems:"center",background:"white",border:"1px solid #eee"}}>
+                    <div className="gx-pl-10 gx-py-10 gx-employee-work-hours-list-single-content-area">
+                        <div className="gx-employee-work-hours-list-single-img">
+                            <img
+                                alt="avatar"
+                                src={require("assets/images/avatar/avatar04.png")}
+                            />
+                        </div>
+                        <div className="gx-employee-work-hours-list-single-content">
+                            <a href="#_"><h2>Robert Adwood</h2></a>
+                            <p style={{marginTop:"3px"}}>Field tech</p>
+                        </div>
+                    </div>
+                    <i className="material-icons  gx-mr-10 ">close</i>
+                </div>
+                <div className="gx-pt-10 gx-step3-popover-btn" style={{display:"flex",flexFlow:"row-reverse"}}>
+                    <Button className="gx-mr-0" type="primary" onClick={this.closePopover}>Schedule</Button>
+                    <Button className="gx-mr-20" type="primary" onClick={this.closePopover}>Cancel</Button>
+                </div>
+            </div>
+		); 
+
+		for(let i = 0 ; i < 11; i++) 
+		{
+			divv.push(
+				<div className="gx-employee-work-hours-table-area-body-single" style={{position: "relative"}}>
+					<Popover placement="right" title={text} content={content} trigger="click">
+						<div className="gx-schedule-span"><div className="gx-schedule-button">Add</div></div>
+					</Popover>
+					<span></span>
+					<span></span>
+				</div>
+			);
+		}
+		return divv;
+	};
+
     render () {
-          
+        
+		
         return(
-			<div className="gx-employee-work-hours-table-area-body-single-area">
+			<div className="gx-employee-work-hours-table-area-body-single-area" ref={this.widget}>
 				
 				<div className="gx-employee-work-hours-table-area-body-single-item">
+					{this.createDiv()}
 					<div style={{ left: '596px'}} className="gx-employee-work-hours-table-area-body-single-overlay overlay-time user-intime user-one">
 						<div className="gx-employee-work-hours-list-single">
 						   <div className="gx-employee-work-hours-list-single-content-area">
@@ -30,42 +166,17 @@ class EmployeeListTimeTablePerson extends Component {
 						   </div>
 						</div>
 					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
+					{/* <div className="gx-employee-work-hours-table-area-body-single" style={{position: "relative"}}>
+						<Popover placement="right" title={text} content={content} trigger="click">
+							<div className="gx-schedule-span"><div className="gx-schedule-button">Add</div></div>
+                		</Popover>
 						<span></span>
 						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
+					</div> */}
 				</div>
 				
 				<div className="gx-employee-work-hours-table-area-body-single-item">
-					
+					{this.createDiv()}
 					<div style={{ left: '75px'}} className="gx-employee-work-hours-table-area-body-single-overlay overlay-time">
 						<div className="gx-employee-work-hours-list-single">
 						   <div className="gx-employee-work-hours-list-single-content-area">
@@ -90,65 +201,25 @@ class EmployeeListTimeTablePerson extends Component {
 						   </div>
 						</div>
 					</div>
-					
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
-					<div className="gx-employee-work-hours-table-area-body-single">
-						<span></span>
-						<span></span>
-					</div>
 				</div>
 				<div className="gx-employee-work-hours-table-area-body-single-item last-rwo">
-					<div style={{ backgroundImage: `url(${Usersss})` }} className="gx-employee-work-hours-table-area-body-single-overlay overlay-time unavailable-full-hours">
-						
+					{this.createDiv()}
+					<div style={{ left: '596px'}} className="gx-employee-work-hours-table-area-body-single-overlay overlay-time user-intime user-three">
 						<div className="gx-employee-work-hours-list-single">
-						   <div className="gx-employee-work-hours-list-single-content-area">
+							<div className="gx-employee-work-hours-list-single-content-area">
 								<div className="gx-employee-work-hours-list-single-img">
-								<img alt="avatar" src={user.avatar} className="gx-avatar-img gx-size-36 gx-border-0 gx-mr-12"/>
+									<img alt="avatar" src={user.user1} className="gx-avatar-img "/>
 								</div>
-								  <div className="gx-employee-work-hours-list-single-content">
-									 <a href="#_">
-										<h2>Unavailable</h2>
-									 </a>
-									 <p>Full day</p>
-								  </div>
-						   </div>
+								<div className="gx-employee-work-hours-list-single-content">
+									<a href="#_">
+									<h2>Karina Kapoor</h2>
+									</a>
+									<p>floor cleaning</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				
-				
-				
-				
-				
-				
-				
 			</div>
         )
     }
