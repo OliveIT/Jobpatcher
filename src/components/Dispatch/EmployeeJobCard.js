@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-
+import {Link} from "react-router-dom";
 import Widget from "components/Widget/index";
 import { Button, Popover } from "antd";
+
 const content = (
     <div style={{width: "100%", height: "100%"}}>
         <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-grey icon-content">edit</i>Edit employee</p>
@@ -30,7 +31,9 @@ class EmployeeJobCard extends Component {
                             <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey">{this.props.job.jobtitle}</div>
                             <div className="gx-mb-12 paddingTop">
                                 <Button className="gx-customized-button gx-mr-0" style={{width:60}}><i className="material-icons" style={{paddingTop: 6}}>message</i></Button>
-                                <Button className="gx-customized-button gx-px-20" style={{width:90}}>View</Button>
+                                <Link to="/main/dispatch/employeeprofile">
+                                    <Button className="gx-customized-button gx-px-20" style={{width:90}}>View</Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="right-icon-section">
@@ -70,7 +73,7 @@ class EmployeeJobCard extends Component {
                                 }<span>{this.props.job.lastlogin}</span></div>
                         </div>
                     </div>
-                <div className="gx-d-none gx-d-md-block" style={{height:62,marginTop: 10}}>
+                <div className="gx-d-md-block" style={{height:62,marginTop: 10}}>
                     <div className="gx-dispatch-job-card-worker-panel" style={{height:62}}>
                         <div className="gx-dispatch-job-card-worker-panel-info w-100">
                             <div className="user-extra-Details">
@@ -86,7 +89,6 @@ class EmployeeJobCard extends Component {
                                         <span className="gx-text-green" style={{fontWeight:700}}>Active</span>
                                     }</div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

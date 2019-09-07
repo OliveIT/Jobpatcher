@@ -7,6 +7,7 @@ import Dispatch from "./Dispatch";
 import DispatchSchedule from "./Dispatch/DispatchSchedule";
 import Job from "./Job";
 import DispatchEmployees from "./Dispatch/DispatchEmployees";
+import DispatchEmployeeProfile from "./Dispatch/DispatchEmployeeProfile";
 import NewJob from "./NewJob";
 
 const Main = ({ match }) => (
@@ -25,6 +26,11 @@ const Main = ({ match }) => (
       path={`${match.url}/dispatch/employees`}
       component={DispatchEmployees}
     />
+    <Route
+      path={`${match.url}/dispatch/employeeprofile`}
+      component={DispatchEmployeeProfile}
+    />
+
     <Route path={`${match.url}/dispatch/newjob`} component={NewJob} />
     <Route path={`${match.url}/dispatch/job`} component={Job} />
     <Route path={`${match.url}/dispatch`} component={Dispatch} />

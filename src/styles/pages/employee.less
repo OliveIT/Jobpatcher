@@ -27,9 +27,11 @@
         }
         
         width: 350px;
+        min-width: 350px;
         margin-right: 10px;
         margin-left: 10px;
         height: 350px;
+        min-height: 350px;
         overflow: hidden;
         .@{class-prefix}-employee-card-avatar {
             width: 100px !important;
@@ -90,5 +92,26 @@
     color:#257cde;
     .material-icons {
         color:#257cde !important;
+    }
+}
+
+.@{class-prefix}-dispatch-employees-btn-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+@media screen and(max-width: @screen-sm-max) {
+    .@{class-prefix}-a-md-block {
+        display: flex !important;
+    }
+}
+
+// ~1523
+
+@media screen and(max-width: 1523px) {
+    .@{class-prefix}-a-md-block {
+
     }
 }

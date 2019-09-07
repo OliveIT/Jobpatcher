@@ -46,11 +46,13 @@ class DispatchEmployees extends Component {
     const { employeeType } = this.state;
     return (
       <div className="gx-dispatch-module-content">
-        <div className="gx-d-none gx-d-md-block">
+        <div className="gx-d-md-block">
+
+
           <div className="gx-dispatch-top-toolbar">
             <div className="gx-div-align-center gx-mb-12">
               <SelectableButtonGroup
-                className="gx-ml-10"
+                className="gx-ml-10 gx-d-md-block gx-d-none"
                 selected={employeeType}
                 onChange={this.onChangeEmpType}
               >
@@ -61,9 +63,13 @@ class DispatchEmployees extends Component {
                   <IntlMessages id="dispatch.dispatch.employee.terminated" />
                 </Button>
               </SelectableButtonGroup>
+              <Button className="gx-dispatch-employees-btn-filter gx-d-none gx-a-md-block">
+                  <i className="material-icons">tune</i>
+                  <div>Filter</div>
+              </Button>
             </div>
             <div className="gx-div-align-center gx-mb-12">
-              <div className="gx-d-none gx-d-sm-block">
+              <div className="gx-d-sm-block">
                 <SearchBox
                   styleName="gx-lt-icon-search-bar-lg gx-dispatch-search gx-employee-search-bar"
                   placeholder={'Search Employees'}
@@ -71,7 +77,7 @@ class DispatchEmployees extends Component {
                   value={this.state.searchText}
                 />
               </div>
-              <span className="gx-d-none gx-d-md-block gx-ml-10">
+              <span className="gx-d-md-block gx-ml-10">
                 <Button
                   className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
                   type="primary"
@@ -84,6 +90,8 @@ class DispatchEmployees extends Component {
               </span>
             </div>
           </div>
+
+
         </div>
       </div>
     );
