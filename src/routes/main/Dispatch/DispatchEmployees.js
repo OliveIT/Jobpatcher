@@ -14,7 +14,7 @@ import TopToolBar from "./TopToolBar";
 import EmployeeWorkHours from "./employee-work-hours";
 import SelectableButtonGroup from "components/Button/SelectableButtonGroup";
 import EmployeeJobCard from 'components/Dispatch/EmployeeJobCard'
-import { global_jobs } from "./data";
+import { employee_data } from "./data";
 
 const Option = Select.Option;
 
@@ -65,7 +65,7 @@ class DispatchEmployees extends Component {
             <div className="gx-div-align-center gx-mb-12">
               <div className="gx-d-none gx-d-sm-block">
                 <SearchBox
-                  styleName="gx-lt-icon-search-bar-lg gx-dispatch-search"
+                  styleName="gx-lt-icon-search-bar-lg gx-dispatch-search gx-employee-search-bar"
                   placeholder={'Search Employees'}
                   onChange={evt => this.updateSearchEmp(evt.target.value)}
                   value={this.state.searchText}
@@ -97,14 +97,11 @@ class DispatchEmployees extends Component {
           <div className="gx-w-100">
             <div className="gx-dispatch-module-scroll">
               {this.renderMainContent()}
-              <div className="gx-panel-content">
+              <div className="gx-panel-content gx-py-20" style={{backgroundColor:"transparent"}}>
                 <div className="gx-panel-content-scroll">
-                  <div className="gx-panel-content-scroll-container panel-section">
-                    {['', '', '', '', ''].map((job, index) => (
-                      <span>
-                        {/* <DispatchJobCard key={index} job={job} /> */}
-                        <EmployeeJobCard key={index} job={job} />
-                      </span>
+                  <div className="gx-employee-content-panel">
+                    {employee_data.map((emp, index) => (
+                        <EmployeeJobCard key={index} job={emp} />
                     ))}
                   </div>
                 </div>

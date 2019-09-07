@@ -1,120 +1,99 @@
-import React from "react";
+import React, {Component} from "react";
 
 import Widget from "components/Widget/index";
-import { getJobDisplayInfo } from "util/JobStatus";
-import IntlMessages from "util/IntlMessages";
-import { Link } from "react-router-dom";
 import { Button, Popover } from "antd";
-import ButtonGroup from "antd/lib/button/button-group";
-import { changeDateTimeAtFormat } from "util/DateTime";
-import EmployeeBox from "components/Dispatch/EmployeeBox";
-import Auxiliary from "util/Auxiliary";
-
 const content = (
-    <div>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content">edit</i><div>Edit employee</div></p>
-        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-black icon-content ">cancel</i> <div>Cancel</div></p>
+    <div style={{width: "100%", height: "100%"}}>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-grey icon-content">edit</i>Edit employee</p>
+        <p className="gx-editContent"><i className="material-icons  gx-text-center gx-text-grey icon-content ">cancel</i>Cancel</p>
     </div>
 );
-const EmployeeJobCard = () => {
-    return (
-        <Widget styleName="gx-card-full gx-dispatch-job-card job-card-section" >
-            <div className="gx-dispatch-job-card-customer-panel">
-                <div className="gx-dispatch-job-card-customer-panel-info gx-justify-content-between">
-                    <div>
-                        <div className="gx-dispatch-job-card-customer-panel-info2">
-                            <div className="gx-flex-row section-gx-flex ">
-                                <div className="gx-flex-0 gx-main-avatar  gx-mr-2 card-icon">
-                                    <i className="material-icons gx-w-100 gx-text-center gx-text-white">person</i>
-                                </div>
-                                <div className="gx-mr-3 gx-mb-12 customer-name-section">
-                                    <div className="gx-dispatch-job-card-customer-name">John Deo</div>
-                                    <div className="gx-div-align-center gx-fs-sm gx-text-grey">
-                                        Info 1
-                                        <span className="gx-round-4 gx-bg-grey gx-mx-1"></span>
-                                        info 2
-                                    </div>
-                                    <div className="gx-mb-12 paddingTop">
-                                        <Button className="gx-customized-button gx-customized-text-button gx-mr-0"><IntlMessages id="dispatch.dispatch.card.customerprofile" /></Button>
-                                        <Button className="gx-customized-button gx-customized-text-button"><IntlMessages id="dispatch.dispatch.card.jobdetails" /></Button>
-                                    </div>
-                                </div>
-                                <div className="right-icon-section">
-                                    <Popover content={content}  trigger="click" placement="bottom">
-                                        <div className="more-icon-section">
-                                            <i className="material-icons gx-w-100 gx-text-center gx-text-black ">more_vert</i>
-                                        </div>
-                                    </Popover>
-                                </div>
-                            </div>
+class EmployeeJobCard extends Component {    
 
-                        </div>
-                    </div>
-                    <div className="customer-parent-section">
-                        <div className="customer-details-section" >
-                            <div className="gx-div-align-center gx-fs-sm gx-text-grey w-75">Email</div>
-                            <div className="customer-name"><span>robert@website.com</span></div>
-                        </div>
-                        <div className="customer-details-section" >
-                            <div className="gx-div-align-center gx-fs-sm gx-text-grey w-75">Mobile</div>
-                            <div className="customer-name"><span>(306)-469-4576</span></div>
-                        </div>
-                        <div className="customer-details-section" >
-                            <div className="gx-div-align-center gx-fs-sm gx-text-grey w-75">Status</div>
-                            <div className="customer-name"><span>N/A</span></div>
-                        </div>
-                        <div className="customer-details-section" >
-                            <div className="gx-div-align-center gx-fs-sm gx-text-grey w-75">Last Login</div>
-                            <div className="customer-name"><span className="">N/A</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="gx-d-none gx-d-md-block">
-                <div className="gx-dispatch-job-card-worker-panel">
-                    <div className="gx-dispatch-job-card-worker-panel-info w-100">
-                        <div className="user-extra-Details">
-                            <div className="customer-details-section gx-border-right gx-extra-details" >
-                                <div className="gx-div-align-center gx-fs-sm gx-text-grey app-version">App Version:</div>
-                                <div className="customer-name text-fontSize"><span className="text-green">v 2.0.2</span></div>
-                            </div>
-                            <div className="customer-details-section gx-extra-details" >
-                                <div className="customer-name"><span className="text-green">Active</span></div>
-                            </div>
+    constructor(props, context) {
+        super(props, context);
+    }
 
+    render () {
+        return (
+            <Widget styleName="gx-employee-card gx-py-0">
+                    <div className="gx-flex-row gx-px-20" style={{paddingTop:20}}>
+                        <div className="gx-employee-card-avatar gx-flex-0 gx-main-avatar gx-mr-20">{
+                            this.props.job.avatar == "" ?
+                            <span>{this.props.job.name.substr(0,1)}</span>
+                            :
+                            <img className="gx-employee-avatar" src={require("assets/images/avatar/"+this.props.job.avatar)}/>
+                        }
+                        </div>
+                        <div className="gx-mr-3 gx-mb-12">
+                            <div className="gx-employee-card-name">{this.props.job.name}</div>
+                            <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey">{this.props.job.jobtitle}</div>
+                            <div className="gx-mb-12 paddingTop">
+                                <Button className="gx-customized-button gx-mr-0" style={{width:60}}><i className="material-icons" style={{paddingTop: 6}}>message</i></Button>
+                                <Button className="gx-customized-button gx-px-20" style={{width:90}}>View</Button>
+                            </div>
+                        </div>
+                        <div className="right-icon-section">
+                            <Popover content={content}  trigger="click" placement="bottom" style={{padding:0}} onClick={this.clickMore}>
+                                <div className="more-icon-section">
+                                    <i className="material-icons gx-w-100 gx-text-center" style={{fontSize:30, color:"#c5c5c5"}}>more_vert</i>
+                                </div>
+                            </Popover>
+                        </div>
+                    </div>
+                    <div className="gx-employee-detail-container gx-px-20">
+                        <div className="customer-details-section" >
+                            <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey w-85">Email</div>
+                            <div className="customer-name gx-fs-md lh-26"><span>{this.props.job.email}</span></div>
+                        </div>
+                        <div className="customer-details-section" >
+                            <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey w-85">Mobile</div>
+                            <div className="customer-name gx-fs-md lh-26"><span>{this.props.job.phone}</span></div>
+                        </div>
+                        <div className="customer-details-section" >
+                            <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey w-85">Status</div>
+                            <div className="customer-name gx-fs-md lh-26">{
+                                this.props.job.jobid == "" ?
+                                "N/A"
+                                :
+                                <div><span>{this.props.job.status}</span><span className= "gx-text-primary" style={{cursor:"pointer"}}>{this.props.job.jobid}</span></div>
+                            }</div>
+                        </div>
+                        <div className="customer-details-section" >
+                            <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey w-85">Last Login</div>
+                            <div className="customer-name gx-fs-md lh-26" style={{display:"flex"}}>
+                                {
+                                    this.props.job.lastlogin == "Online" ?
+                                    <span className="gx-text-green" style={{fontSize:35, fontWeight:700}}>•&nbsp;</span>
+                                    :
+                                    ""
+                                }<span>{this.props.job.lastlogin}</span></div>
+                        </div>
+                    </div>
+                <div className="gx-d-none gx-d-md-block" style={{height:62,marginTop: 10}}>
+                    <div className="gx-dispatch-job-card-worker-panel" style={{height:62}}>
+                        <div className="gx-dispatch-job-card-worker-panel-info w-100">
+                            <div className="user-extra-Details">
+                                <div className="gx-border-right gx-employee-card-bottom-button" >
+                                    <div className="gx-div-align-center gx-fs-md lh-26 gx-text-grey app-version">App Version:</div>
+                                    <span className="gx-fs-md lh-26 gx-text-green">{this.props.job.appversion}</span>
+                                </div>
+                                <div className="customer-details-section gx-extra-details" style={{paddingLeft:20}}>
+                                    <div className="gx-fs-md">{
+                                        this.props.job.appversion == "Invited" ?
+                                        <span className="gx-text-primary" style={{fontWeight:700}}>Resend</span>
+                                        :
+                                        <span className="gx-text-green" style={{fontWeight:700}}>Active</span>
+                                    }</div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="gx-d-md-none">
-                <div className="gx-dispatch-job-card-worker-panel">
-                    <div className="gx-dispatch-job-card-worker-panel-info">
-                        <div>
-                            <i className="material-icons gx-mr-2 card-icon">event</i>
-                        </div>
-                        <div>
-                            <i className="material-icons gx-mr-2">description</i>
-                        </div>
-                        <div>
-                            <i className="material-icons gx-mr-2">folder</i>
-                        </div>
-                    </div>
-                </div>
-                    <div className="gx-dispatch-job-card-worker-panel2">
-                        <div className="gx-dispatch-job-card-worker-panel-tools gx-d-none gx-d-sm-block">
-                            <ButtonGroup className="gx-customer-list-buttongroup">
-                                <Button><i className="material-icons">assignment_ind</i></Button>
-                                <Button><i className="material-icons">restore</i></Button>
-                                <Button><i className="material-icons">cancel</i></Button>
-                            </ButtonGroup>
-                        </div>
-                        <div className="gx-d-sm-none">
-                            <i className="material-icons gx-pointer gx-text-grey">more_vert</i>
-                        </div>
-                    </div>
-            </div>
-        </Widget>
-    );
+            </Widget>
+        )
+    }
 };
 
 export default EmployeeJobCard;

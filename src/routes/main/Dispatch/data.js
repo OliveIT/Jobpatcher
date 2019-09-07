@@ -97,3 +97,72 @@ export const global_jobs = [
         files: 3
     }
 ];
+
+export const employee_data = [
+    {
+        name: "Peter Branon",
+        status: "N/A",
+        phone: "(688)-829-0483",
+        email: "robert@website.com",
+        lastlogin: "N/A",
+        avatar:"",
+        jobtitle: "Dispatcher",
+        appversion: "Invited",
+        jobid: ""
+    },
+    {
+        name: "Tom Boldfend",
+        status: "Scheduled ",
+        phone: "(688)-829-0483",
+        email: "enjoy@website.com",
+        lastlogin: "15 July",
+        avatar:"1.png",
+        jobtitle: "Field worker",
+        appversion: "v 2.0.2",
+        jobid: "#00536"
+    },
+    {
+        name: "Selina Rosebell",
+        status: "Started job ",
+        phone: "(688)-829-0483",
+        email: "selina@website.com",
+        lastlogin: "Online",
+        avatar:"2.png",
+        jobtitle: "Dispatcher",
+        appversion: "v 2.0.2",
+        jobid: "#00534"
+    },
+    {
+        name: "Mark Goldberg",
+        status: "On the way ",
+        phone: "(688)-829-0483",
+        email: "enjoy@website.com",
+        lastlogin: "Online",
+        avatar:"",
+        jobtitle: "Field worker",
+        appversion: "v 2.0.2",
+        jobid: "#00538"
+    },
+    {
+        name: "Kevin Holdon",
+        status: "Finished job ",
+        phone: "(688)-829-0483",
+        email: "kelivin@website.com",
+        lastlogin: "9 March",
+        avatar:"3.png",
+        jobtitle: "Field walker",
+        appversion: "v 2.0.2",
+        jobid: "#00532"
+    },
+    {
+        name: "Victor Bullberg",
+        status: "N/A",
+        phone: "(688)-829-0483",
+        email: "victor@website.com",
+        lastlogin: "N/A",
+        avatar:"4.png",
+        jobtitle: "Dispatcher",
+        appversion: "v 2.0.1",
+        jobid: ""
+    }
+  ];
