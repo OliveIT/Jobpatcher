@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Tabs, Avatar, Row, Col, Select, Input, Switch, Icon } from "antd";
+import { Button, Tabs, Modal, Row, Col, Select, Input, Switch, Icon, DatePicker } from "antd";
 
 import { GoogleMap, withGoogleMap } from "react-google-maps";
 import Widget from "components/Widget";
@@ -7,16 +7,10 @@ import { injectIntl } from 'react-intl';
 import { Countries } from "util/Countries";
 import IntlMessages from "util/IntlMessages";
 const TabPane = Tabs.TabPane;
-const SimpleMapExampleGoogleMap = withGoogleMap(props => (
-    <GoogleMap
-        defaultZoom={15}
-        defaultCenter={{ lat: 47.646935, lng: -122.303763 }}
-    />
-));
 
 const Option = Select.Option;
 
-class EditCustomerDlg extends Component {
+class EditEmployeeDlg extends Component {
     static defaultProps = {
         data: {
             name: "",
@@ -137,26 +131,14 @@ class EditCustomerDlg extends Component {
 
                     <div className="gx-customized-modal-content-block">
                         <div className="gx-customized-modal-content-title" style={{ marginBottom: "20px" }}>
-                            <i className="material-icons" style={{ fontSize: "28px" }}>account_circle</i>&nbsp;
-                        <IntlMessages id="customer.customerdlg.content.customerdetails" />
+                            <i className="material-icons" style={{ fontSize: "28px" }}>assignment_ind</i>&nbsp;
+                        Employee Details
                         </div>
 
                         <Row>
                             <Col span={12} sm={12} className="width-100-mobile">
                                 <Row >
-                                    <Col lg={5} sm={12} className="width-100-mobile">
-                                        <div className="gx-customized-modal-content-field">
-                                            <div className="gx-customized-modal-content-field-title">
-                                                <IntlMessages id="customer.customerdlg.content.title" />
-                                            </div>
-                                            <div>
-                                                <Input
-                                                    value={title}
-                                                    onChange={(event) => { this.setState({ title: event.target.value }) }} />
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col lg={5} sm={12} className="width-100-mobile">
+                                    <Col lg={8} sm={8} className="width-100-mobile">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.firstname" />
@@ -168,7 +150,7 @@ class EditCustomerDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={9} sm={12} className="width-100-mobile">
+                                    <Col lg={8} sm={8} className="width-100-mobile">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.midlename" />
@@ -180,7 +162,7 @@ class EditCustomerDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={5} sm={12} className="width-100-mobile">
+                                    <Col lg={8} sm={8} className="width-100-mobile">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.lastname" />
@@ -200,8 +182,8 @@ class EditCustomerDlg extends Component {
                                         <IntlMessages id="customer.customerdlg.content.email" />
                                     </div>
                                     <div>
-                                        <Input style={{ fontStyle: "italic" }}
-                                            placeholder="Separate multiple emails with commas"
+                                        <Input 
+                                            placeholder=""
                                             value={email}
                                             onChange={(event) => { this.setState({ email: event.target.value }) }} />
                                     </div>
@@ -211,17 +193,29 @@ class EditCustomerDlg extends Component {
                         {/* first row end */}
                         <Row>
                             <Col span={12}  className="width-100-mobile">
-                                <div className="gx-customized-modal-content-field">
-                                    <div className="gx-customized-modal-content-field-title">
-                                        <IntlMessages id="customer.customerdlg.content.companyname" />
-                                    </div>
-                                    <div>
-                                        <Input
-                                            placeholder={formatMessage({ id: 'customer.customerdlg.content.companynameholder' })}
-                                            value={companyname}
-                                            onChange={(event) => { this.setState({ companyname: event.target.value }) }} />
-                                    </div>
-                                </div>
+                                <Row >
+                                    <Col span={12}  className="width-100-mobile">
+                                        <div className="gx-customized-modal-content-field">
+                                            <div className="gx-customized-modal-content-field-title">
+                                                Hiring date
+                                            </div>
+                                            <div>
+                                            <DatePicker  size={"large"}  placeholder="DD /MM /YYYY" style={{width:"100%"}}/>
+                                            </div>
+                                        </div>
+                                    </Col>
+
+                                    <Col span={12} className="width-100-mobile">
+                                        <div className="gx-customized-modal-content-field">
+                                            <div className="gx-customized-modal-content-field-title">
+                                                Birth date
+                                            </div>
+                                            <div>
+                                                <DatePicker  size={"large"}  placeholder="DD /MM /YYYY" style={{width:"100%"}}/>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
                             </Col>
 
                             <Col span={12}className="width-100-mobile">
@@ -258,29 +252,22 @@ class EditCustomerDlg extends Component {
                         {/* secound row end */}
                         <Row>
                             <Col span={12}  className="width-100-mobile">
-                                <div className="gx-customized-modal-content-field">
-                                    <div className="gx-customized-modal-content-field-title">
-                                        <IntlMessages id="customer.customerdlg.content.displayname" />
-                                    </div>
-                                    <div>
-                                        <Input
-                                            value={displayname}
-                                            onChange={(event) => { this.setState({ displayname: event.target.value }) }} />
-                                    </div>
-                                </div>
-                            </Col>
-
-                            <Col span={12} className="width-100-mobile">
-                                <Row>
-                                    <Col span={12} className="width-100-mobile">
+                                <Row >
+                                    <Col span={12}  className="width-100-mobile">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
-                                                <IntlMessages id="customer.customerdlg.content.fax" />
+                                                Employee role
                                             </div>
                                             <div>
-                                                <Input
-                                                    value={fax}
-                                                    onChange={(event) => { this.setState({ fax: event.target.value }) }} />
+                                                <Select style={{ width: '100%' }}
+                                                    placeholder={"Field tech"}
+                                                    suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>}>
+                                                        <Option key={0} value={0}>Field tech</Option>
+                                                        <Option key={1} value={1}>Field tech</Option>
+                                                        <Option key={2} value={2}>Field tech</Option>
+                                                        <Option key={3} value={3}>Field tech</Option>
+                                                        <Option key={4} value={4}>Field tech</Option>
+                                                </Select>
                                             </div>
                                         </div>
                                     </Col>
@@ -288,12 +275,62 @@ class EditCustomerDlg extends Component {
                                     <Col span={12} className="width-100-mobile">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
-                                                <IntlMessages id="customer.customerdlg.content.website" />
+                                                Employee color
                                             </div>
                                             <div>
-                                                <Input
-                                                    value={website}
-                                                    onChange={(event) => { this.setState({ website: event.target.value }) }} />
+                                                <div style={{backgroundColor:"white", borderRadius:"18px", width: "100%", height: "36px",
+                                                            boxShadow:"0 0 2px 2px rgba(0, 0, 0, 0.05)", paddingTop:"4px", paddingBottom:"4px",
+                                                            paddingLeft:"10px", paddingRight:"10px", display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                                                        {/* <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"red"}}></div> */}
+                                                        <img src= {require("assets/images/color_palette.png")}></img>
+                                                        <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"#f7c43d"}}></div>
+                                                        <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"#39bf58"}}></div>
+                                                        <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"#08bdc5"}}></div>
+                                                        <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"#257bde"}}></div>
+                                                        <div style={{width:"25px", height: "25px", borderRadius:"50%", backgroundColor:"#f55555"}}></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Col>
+
+                            <Col span={12} className="width-100-mobile">
+                                <Row>
+                                    <Col span={12} className="width-100-mobile">
+                                        <div className="gx-customized-modal-content-field">
+                                            <div className="gx-customized-modal-content-field-title">
+                                                Join position
+                                            </div>
+                                            <div>
+                                                <Select style={{ width: '100%' }}
+                                                    placeholder={"Housekeeping"}
+                                                    suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>}>
+                                                        <Option key={0} value={0}>Housekeeping</Option>
+                                                        <Option key={1} value={1}>Housekeeping</Option>
+                                                        <Option key={2} value={2}>Housekeeping</Option>
+                                                        <Option key={3} value={3}>Housekeeping</Option>
+                                                        <Option key={4} value={4}>Housekeeping</Option>
+                                                </Select>
+                                            </div>
+                                        </div>
+                                    </Col>
+
+                                    <Col span={12} className="width-100-mobile">
+                                        <div className="gx-customized-modal-content-field">
+                                            <div className="gx-customized-modal-content-field-title">
+                                                Employee type
+                                            </div>
+                                            <div>
+                                                <Select style={{ width: '100%' }}
+                                                    placeholder={"Salaried employee"}
+                                                    suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>}>
+                                                        <Option key={0} value={0}>Salaried employee</Option>
+                                                        <Option key={1} value={1}>Salaried employee</Option>
+                                                        <Option key={2} value={2}>Salaried employee</Option>
+                                                        <Option key={3} value={3}>Salaried employee</Option>
+                                                        <Option key={4} value={4}>Salaried employee</Option>
+                                                </Select>
                                             </div>
                                         </div>
                                     </Col>
@@ -313,13 +350,8 @@ class EditCustomerDlg extends Component {
                                                 <Col span={12} className="width-100-mobile gx-employee-edit-card-bottom-title">
                                                     <div className="gx-customized-modal-content-title">
                                                         <i className="material-icons">location_on</i>
-                                                        <IntlMessages id="customer.customerdlg.content.customerlocation" />
+                                                        Employee address
                                                     </div>
-                                                </Col>
-                                                <Col span={12} className="notDisplayOnMobile gx-employee-edit-card-bottom-title">
-                                                    <a className="gx-customized-modal-content-title">
-                                                        <IntlMessages id="customer.customerdlg.content.anotheraddress" />
-                                                    </a>
                                                 </Col>
                                             </Row>
                                             <Row>
@@ -388,94 +420,20 @@ class EditCustomerDlg extends Component {
                                             </Row>
 
                                         </Col >
-                                        <Col span={12} className="width-100-mobile">
-                                            <Row>
-                                                <Col span={9} className="width-100-mobile gx-employee-edit-card-bottom-title">
-                                                    <div className="gx-customized-modal-content-title" style={{height: "24px"}}>
-                                                        <Icon type="credit-card"/>
-                                                        Billing Address
-                                                    </div>
-                                                </Col>
-                                                <Col span={15} className="notDisplayOnMobile gx-employee-edit-card-bottom-title">
-                                                    <Switch size="large" defaultChecked  style={{marginRight:"10px"}} onChange={this.onSwitch}/>
-                                                    <IntlMessages id="customer.customerdlg.content.sameascustomeraddr"/>
-                                                </Col>
-                                            </Row>
-                                            <Row><Col span={24}>
-                                                <div className="gx-customized-modal-content-field">
-
-                                                    <div>
-                                                        <Input
-                                                            placeholder={formatMessage({ id: 'customer.customerdlg.content.street' })}
-                                                            value={street}
-                                                            onChange={(event) => { this.setState({ street: event.target.value }) }} disabled ={this.state.usesameaddress ? "disabled" : ""} />
-                                                    </div>
-                                                </div>
-                                            </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col span={12} className="width-100-mobile">
-                                                    <div className="gx-customized-modal-content-field">
-
-                                                        <div>
-                                                            <Input
-                                                                placeholder={formatMessage({ id: 'customer.customerdlg.content.city' })}
-                                                                value={city}
-                                                                onChange={(event) => { this.setState({ city: event.target.value }) }} disabled ={this.state.usesameaddress ? "disabled" : ""} />
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                                <Col span={12} className="width-100-mobile">
-                                                    <div className="gx-customized-modal-content-field">
-                                                        <div>
-                                                            <Input placeholder={formatMessage({ id: "customer.customerdlg.content.state" })}
-                                                                value={state}
-                                                                onChange={(event) => { this.setState({ state: event.target.value }) }} disabled ={this.state.usesameaddress ? "disabled" : ""}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                            <Row>
-                                                <Col span={12}>
-                                                    <div className="gx-customized-modal-content-field">
-
-                                                        <div>
-                                                            <Input
-                                                                placeholder={formatMessage({ id: 'customer.customerdlg.content.postalcode' })}
-                                                                value={postalcode}
-                                                                onChange={(event) => { this.setState({ postalcode: event.target.value }) }}  disabled ={this.state.usesameaddress ? "disabled" : ""}/>
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                                <Col span={12}>
-                                                    <div className="gx-customized-modal-content-field">
-                                                        <div>
-                                                            <Select style={{ width: '100%' }}
-                                                                placeholder={formatMessage({ id: "customer.customerdlg.content.country" })}
-                                                                suffixIcon={<i className="gx-combo-icon material-icons">expand_more</i>} disabled ={this.state.usesameaddress ? "disabled" : ""}>
-                                                                {Countries().map((country, index) => (
-                                                                    <Option key={index} value={index}>
-                                                                        {formatMessage({ id: country })}
-                                                                    </Option>
-                                                                ))}
-                                                            </Select>
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                            </Row>
-
-                                        </Col>
+                                        
                                     </Row>
 
                                 </TabPane>
-                                <TabPane tab={"Payment"} key="2">
+                                <TabPane tab={"Permissions"} key="2">
                                     <div></div>
                                 </TabPane>
                                 <TabPane tab={"Notes"} key="3">
                                     <div></div>
                                 </TabPane>
                                 <TabPane tab={"Files"} key="4">
+                                    <div></div>
+                                </TabPane>
+                                <TabPane tab={"Tags"} key="5">
                                     <div></div>
                                 </TabPane>
                             </Tabs>
@@ -492,4 +450,4 @@ class EditCustomerDlg extends Component {
     }
 };
 
-export default injectIntl(EditCustomerDlg);
+export default injectIntl(EditEmployeeDlg);

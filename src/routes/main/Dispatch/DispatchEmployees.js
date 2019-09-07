@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Button, Select, Avatar, Tag, Tabs } from "antd";
+import { Button, Select, Modal, Tag, Tabs } from "antd";
 import { injectIntl } from "react-intl";
 
-import Auxiliary from "util/Auxiliary";
+import {connect} from "react-redux";
 import IntlMessages from "util/IntlMessages";
 import { Link } from "react-router-dom";
 import Widget from "components/Widget";
@@ -15,6 +15,7 @@ import EmployeeWorkHours from "./employee-work-hours";
 import SelectableButtonGroup from "components/Button/SelectableButtonGroup";
 import EmployeeJobCard from 'components/Dispatch/EmployeeJobCard'
 import { employee_data } from "./data";
+import EditEmployeeDlg from "./EditEmployeeDlg";
 
 const Option = Select.Option;
 
@@ -27,7 +28,8 @@ class DispatchEmployees extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      employeeType: "active"
+      employeeType: "active",
+      newEmpDlgShow: false
     };
   }
 
@@ -37,13 +39,21 @@ class DispatchEmployees extends Component {
     this.setState({ employeeType });
   };
 
+  addNewEmp() {
+    this.setState({newEmpDlgShow: true});
+  }
+
+  onCancel() {
+    this.setState({newEmpDlgShow: false});
+  }
+
   updateSearchEmp = searchText => this.setState({ searchText });
 
   renderMainContent = () => {
     const {
       intl: { formatMessage }
     } = this.props;
-    const { employeeType } = this.state;
+    const { employeeType, newEmpDlgShow } = this.state;
     return (
       <div className="gx-dispatch-module-content">
         <div className="gx-d-md-block">
@@ -81,7 +91,7 @@ class DispatchEmployees extends Component {
                 <Button
                   className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
                   type="primary"
-                >
+                  onClick={this.addNewEmp.bind(this)}>
                   <div className="gx-div-align-center">
                     <i className="material-icons gx-fs-xl gx-mr-2">add</i>
                     <IntlMessages id="dispatch.dispatch.employe.addnewemp" />
@@ -98,6 +108,7 @@ class DispatchEmployees extends Component {
   };
 
   render() {
+    const {width, intl: {formatMessage}} = this.props;
     return (
       <div className="gx-main-content">
         <TopMenu currentPage="2" />
@@ -118,9 +129,31 @@ class DispatchEmployees extends Component {
           </div>
         </div>
 
+        <Modal
+            title={ 
+                <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" >
+                    <div className="gx-customized-modal-title">Add new employee</div>
+                    <div className="gx-flex-row gx-flex-nowrap gx-align-items-center">                                                            
+                        <i className="material-icons gx-customized-modal-close" onClick={this.onCancel.bind(this)}>clear</i>
+                    </div>
+                </div>
+            }
+            closable={false}
+            wrapClassName="gx-customized-modal vertical-center-modal"
+            visible={this.state.newEmpDlgShow}
+            onCancel={this.onCancel.bind(this)}
+            width={ width >= 1144 ? 1084 : width - 60 }
+        >
+            <EditEmployeeDlg onCancel={this.onCancel.bind(this)}/>
+        </Modal>
       </div>
     );
   }
 }
 
-export default injectIntl(DispatchEmployees);
+const mapStateToProps = ({settings}) => {
+  const {locale, navStyle, navCollapsed, width, currentPage} = settings;
+  return {locale, navStyle, navCollapsed, width, currentPage}
+};
+
+export default connect(mapStateToProps) (injectIntl(DispatchEmployees));
