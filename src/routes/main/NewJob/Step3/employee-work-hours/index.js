@@ -25,7 +25,7 @@ class EmployeeWorkHours extends Component {
     render () {    
         
         return(
-            <div className="gx-employee-work-hours-area gx-addjob-step3-work-hour-area">
+            <div className="gx-employee-work-hours-area gx-addjob-step3-work-hour-area"  style={{position: "relative"}}>
                 <div className="gx-employee-work-hours ant-card gx-card-widget gx-card-full gx-dispatcher-job-panel ant-card-bordered">
                     
                     <div className="gx-employee-work-hours-list-area">

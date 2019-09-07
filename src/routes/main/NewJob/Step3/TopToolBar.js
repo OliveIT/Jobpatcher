@@ -56,8 +56,7 @@ class TopToolBar extends Component {
                             </ButtonGroup>
                         </div>
                     </div>
-                </div>
-            }             
+                </div>             
             </div>
         )
     }
