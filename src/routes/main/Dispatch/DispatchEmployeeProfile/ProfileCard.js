@@ -121,7 +121,7 @@ class ProfileCard extends Component {
                                 <td>Home</td>
                                 <td>
                                     <div>{data.address.home.street}</div>
-                                    <div>{data.address.home.street}, {data.address.home.city} {data.address.home.statecode} {data.address.home.zipcode}</div>
+                                    <div>{data.address.home.city} {data.address.home.statecode} {data.address.home.zipcode}</div>
                                 </td>
                             </tr>                   
                         </tbody>

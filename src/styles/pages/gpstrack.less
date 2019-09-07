@@ -1,0 +1,113 @@
+div.gx-dispatch-gps-googlemap-container {
+    height: calc(~"100vh - 104px");
+}
+div.gx-dispatch-gps-drawer {
+    height: calc(~"100vh - 104px");
+    background: white;
+    padding: 20px 0 0 0;
+    div.gx-dispatch-gps-drawer-title {
+        color: black;
+        height: 40px;
+        font-size: 18px;
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+    }
+    div.gx-dispatch-gps-drawer-select-search-box {
+        height: 120px;
+        padding: 0 20px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        div.gx-dispatch-gps-dawer-select-bar {
+            width: 100%;
+            div.ant-select-selection--single {
+                border-radius: unset;
+            }
+        }
+        div.gx-dispatch-gps-dawer-search-bar {
+            width: 100%;
+        }
+    }
+    
+    div.gx-dispatch-gps-dawer-users {
+        overflow: scroll;
+        height: calc(~"100vh - 264px");  // - 104 - 20 - 120-20
+    }
+}
+
+div.gx-gps-employee-list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 99;
+    div.gx-gps-employee-avatar {
+        position: relative;
+        div.circle-ss {
+            position: absolute;
+            border-radius: 40px;
+            border: 3px solid white;
+            background: #9399a2; // login 34,194,72
+            width: 15px;
+            height: 15px;
+            top: 18px;
+            left: 22px;
+        }
+        div.circle-green {
+            background: rgb(34,194,72) !important;
+        }
+    }
+    div.gx-gps-employee-name {
+        padding-left: 10px;
+    }
+}
+
+div.gx-gps-employee-list:hover {
+    background: rgb(231,250,255);
+    cursor: pointer;
+}
+
+@media screen and(max-width: @screen-lg-max) {
+    div.gx-dispatch-gps-dawer-users {
+        height: 150px !important;
+        min-height: 150px !important;
+    }
+    div.gx-dispatch-gps-googlemap-container {
+        height: calc(~"100vh - 494px"); // -264 - 180 - 60(bottom menu)
+    }
+    div.gx-main-content-wrapper {
+        height: 100vh;
+    }
+    div.gx-dispatch-gps-drawer {
+        height: auto !important;
+    }
+    .gx-customer-sidenav {
+        flex: none;
+    }
+}
+
+@media screen and(max-width: 500px) {
+    div.gx-dispatch-gps-dawer-users {
+        height: 130px !important;
+        min-height: 130px !important;
+    }
+    div.gx-dispatch-gps-googlemap-container {
+        height: calc(~"100vh - 434px"); // -264 - 180 - 60(bottom menu)
+    }
+    div.gx-main-content-wrapper {
+        height: 100vh;
+    }
+    div.gx-dispatch-gps-drawer {
+        height: auto !important;
+    }
+    .gx-dispatch-gps-drawer-title {
+        display: none !important;
+    }
+    .gx-customer-sidenav {
+        flex: none;
+    }
+}

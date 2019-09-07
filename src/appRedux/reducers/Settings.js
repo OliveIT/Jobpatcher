@@ -10,6 +10,7 @@ import {
   THEME_TYPE,
   THEME_TYPE_SEMI_DARK
 } from "../../constants/ThemeSetting";
+import { WINDOW_HEIGHT } from "../../constants/ActionTypes";
 
 const initialSettings = {
   navCollapsed: true,
@@ -47,6 +48,11 @@ const settings = (state = initialSettings, action) => {
       return {
         ...state,
         width: action.width,
+      };
+    case WINDOW_HEIGHT:
+      return {
+        ...state,
+        height: action.height,
       };
     case THEME_TYPE:
       return {
