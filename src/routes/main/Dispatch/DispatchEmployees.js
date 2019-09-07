@@ -55,11 +55,11 @@ class DispatchEmployees extends Component {
     } = this.props;
     const { employeeType, newEmpDlgShow } = this.state;
     return (
-      <div className="gx-dispatch-module-content">
-        <div className="gx-d-md-block">
+      <div className="gx-dispatch-module-content gx-dispatch-employees-toolbar-ss">
+        <div className="">
 
-
-          <div className="gx-dispatch-top-toolbar">
+          {/* mobile reponsive... if width > sm-max then visible, else disappear */}
+          <div className="gx-dispatch-top-toolbar gx-a-align-around-ss gx-d-md-flex gx-d-none">
             <div className="gx-div-align-center gx-mb-12">
               <SelectableButtonGroup
                 className="gx-ml-10 gx-d-md-block gx-d-none"
@@ -79,7 +79,7 @@ class DispatchEmployees extends Component {
               </Button>
             </div>
             <div className="gx-div-align-center gx-mb-12">
-              <div className="gx-d-sm-block">
+              <div className="">
                 <SearchBox
                   styleName="gx-lt-icon-search-bar-lg gx-dispatch-search gx-employee-search-bar"
                   placeholder={'Search Employees'}
@@ -87,7 +87,7 @@ class DispatchEmployees extends Component {
                   value={this.state.searchText}
                 />
               </div>
-              <span className="gx-d-md-block gx-ml-10">
+              <span className="gx-ml-10">
                 <Button
                   className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
                   type="primary"
@@ -100,8 +100,37 @@ class DispatchEmployees extends Component {
               </span>
             </div>
           </div>
+          {/* end responsive */}
 
-
+          {/* mobile reponsive... if width < sm-max then visible, else disappear */}
+          <div className="gx-dispatch-top-toolbar gx-a-align-around-ss gx-a-md-block gx-d-none gx-a-md-flex-column">
+            <div className="gx-div-align-center gx-mb-12 gx-dispatch-employees-mobile-toolbar-btngroup">
+              <Button className="gx-dispatch-employees-btn-filter gx-d-none gx-a-md-block">
+                  <i className="material-icons">tune</i>
+                  <div className="gx-px-10">Filter</div>
+              </Button>
+              <Button
+                  className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
+                  type="primary"
+                >
+                  <div className="gx-div-align-center">
+                    <i className="material-icons gx-fs-xl gx-mr-2">add</i>
+                    <IntlMessages id="dispatch.dispatch.employe.addnewemp" />
+                  </div>
+                </Button>
+            </div>
+            <div className="gx-div-align-center gx-mb-12 gx-dispatch-employees-mobile-toolbar-search">
+              <div className="">
+                <SearchBox
+                  styleName="gx-lt-icon-search-bar-lg gx-dispatch-search gx-employee-search-bar"
+                  placeholder={'Search Employees'}
+                  onChange={evt => this.updateSearchEmp(evt.target.value)}
+                  value={this.state.searchText}
+                />
+              </div>
+            </div>
+          </div>
+        {/* end responsive */}
         </div>
       </div>
     );
@@ -118,7 +147,7 @@ class DispatchEmployees extends Component {
               {this.renderMainContent()}
               <div className="gx-panel-content gx-py-20" style={{backgroundColor:"transparent"}}>
                 <div className="gx-panel-content-scroll">
-                  <div className="gx-employee-content-panel">
+                  <div className="gx-employee-content-panel gx-a-align-center-ss">
                     {employee_data.map((emp, index) => (
                         <EmployeeJobCard key={index} job={emp} />
                     ))}
