@@ -671,9 +671,12 @@
 
 .@{class-prefix}-customized-modal-content {
 
-    padding: 25px 30px;
+    padding: 15px 20px;
     width: 100%;
 
+    .@{class-prefix}-customer-edit-tab-panel {
+        margin-top: 20px;
+    }
     @media screen and (max-width: @screen-sm-min) {
         padding: 25px 20px;
     }
@@ -696,7 +699,7 @@
             font-size: 16px;
             line-height: 20px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
 
             & i,
             & img {
@@ -706,10 +709,13 @@
         }
 
         &-field {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             
+            .ant-input {
+                border-radius: 3px;
+            }
             &-item {
-                margin-bottom: 25px;
+                margin-bottom: 15px;
             }
 
             /*
@@ -721,7 +727,7 @@
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 500;
-                margin-bottom: 12px;
+                margin-bottom: 8px;
             }
 
             &-input {
@@ -730,8 +736,7 @@
                 border: none;
                 border-bottom: 2px solid #d5d7de;
                 background-color: transparent;
-                width: 100%;                
-
+                width: 100%;
                 &:hover,
                 &:focus {
                     border-bottom: 2px solid #309cee;

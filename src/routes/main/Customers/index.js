@@ -267,7 +267,7 @@ class Customers extends Component {
                 <Modal
                     title={ 
                         <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" >
-                            <div className="gx-customized-modal-title"><IntlMessages id="customer.customerdlg.newcustomer"/></div>
+                            <div className="gx-customized-modal-title">Add new customer</div>
                             <div className="gx-flex-row gx-flex-nowrap gx-align-items-center">                            
                                 <Button className="gx-customized-button gx-d-none gx-d-md-block notDisplayOnMobile" onClick={() => {this.showImportCustomerDlg()}}>
                                     <div className="gx-div-align-center">
