@@ -207,7 +207,7 @@
   "customer.profile.tab.stats": "Stats",
   "customer.profile.tab.notes": "Note",
   "customer.profile.tab.files": "File",
-  "customer.customerdlg.content.anotheraddress": "+ Another address",
+  "customer.customerdlg.content.anotheraddress": " Another address",
   "customer.profile.tab.tags": "Tag",
   "customer.profile.jobdone": "Jobs done",
   "customer.profile.jobvalue": "Jobs value",

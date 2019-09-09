@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Files from "components/ToolTab/Files";
+import NewJobUpload from "components/ToolTab/NewJobUpload";
 import Widget from "components/Widget";
 import IntlMessages from "util/IntlMessages";
 
@@ -12,8 +12,8 @@ class UploadFileWidget extends Component {
                     UPLOAD FILES
                 </h5>
             </div>
-            <div className="gx-panel-content">
-                <Files/>
+            <div className="gx-panel-content gx-ss-newjob-upload-panel-content">
+                <NewJobUpload/>
             </div>
         </Widget>
     );

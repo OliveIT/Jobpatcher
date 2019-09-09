@@ -149,18 +149,19 @@ class Customers extends Component {
     return (
         <Auxiliary>
             <div className="gx-main-content-container">
-                <div className="gx-sub-title-container gx-flex-row gx-flex-nowrap gx-w-100 gx-justify-content-between gx-align-items-center">
+                <div className="gx-sub-title-container gx-flex-row gx-flex-nowrap gx-w-100 gx-justify-content-between gx-align-items-center gx-ss-customers-top-toolbar">
                     <div className="gx-sub-title">                
                         {data.length} <IntlMessages id="customers"/>
                     </div>
-                    <div className="gx-flex-row">                
+                    <div className="gx-flex-row gx-flex-nowrap gx-ss-tool">                
                         <span>
                             <SearchBox styleName="gx-lt-icon-search-bar-lg gx-customer-search"
                                 placeholder={formatMessage({id:"customer.search.placeholder"})}
                                 onChange={this.updateSearchCustomers.bind(this)}
                                 value={this.state.searchText}/>
                         </span>
-                        <span className="gx-d-none gx-d-md-block gx-ml-10">
+                        {/* <span className="gx-d-none gx-d-md-block gx-ml-10"> */}
+                        <span className="gx-d-md-block gx-ml-10">
                             <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0" type="primary" onClick={this.showNewCustomerDlg.bind(this)}>
                                 <div className="gx-div-align-center">
                                     <i className="material-icons gx-fs-xl gx-mr-2">add</i>
@@ -264,7 +265,7 @@ class Customers extends Component {
                 </Widget>
 
                 
-                <Modal
+                <Modal className="gx-ss-customers-new-modal" 
                     title={ 
                         <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" >
                             <div className="gx-customized-modal-title">Add new customer</div>
@@ -289,7 +290,14 @@ class Customers extends Component {
                     wrapClassName="gx-customized-modal vertical-center-modal"
                     visible={this.state.customerNewDlgVisible}
                     onCancel={this.onCancel.bind(this)}
-                    width={ width >= 1144 ? 1084 : width - 60 }
+                    // width={ width >= 1144 ? 1084 : width - 60 }
+                    width = {
+                        width >= 1144 &&
+                            1084
+                        || width >= 500 &&
+                            width - 60
+                        || width - 30
+                    }
                 >
                     <EditCustomerDlg onCancel={this.onCancel.bind(this)} onSave={this.onSaveCustomer.bind(this)}/>
                 </Modal>

@@ -127,18 +127,18 @@ class EditEmployeeDlg extends Component {
 
         return (
             <div className="gx-edit-customer-dlg" >
-                <div className="gx-customized-modal-content">
+                <div className="gx-customized-modal-content gx-pb-0">
 
                     <div className="gx-customized-modal-content-block">
-                        <div className="gx-customized-modal-content-title" style={{ marginBottom: "20px" }}>
+                        <div className="gx-customized-modal-content-title" style={{ marginBottom: "15px" }}>
                             <i className="material-icons" style={{ fontSize: "28px" }}>assignment_ind</i>&nbsp;
                         Employee Details
                         </div>
 
                         <Row>
-                            <Col span={12} sm={12} className="width-100-mobile">
-                                <Row >
-                                    <Col lg={8} sm={8} className="width-100-mobile">
+                            <Col span={12} sm={12} xs={24} className="">
+                                <Row gutter={4}>
+                                    <Col lg={8} sm={12} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.firstname" />
@@ -150,7 +150,7 @@ class EditEmployeeDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={8} sm={8} className="width-100-mobile">
+                                    <Col lg={8} sm={12} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.midlename" />
@@ -162,7 +162,7 @@ class EditEmployeeDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={8} sm={8} className="width-100-mobile">
+                                    <Col lg={8} sm={12} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.lastname" />
@@ -176,7 +176,7 @@ class EditEmployeeDlg extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col span={12} className="width-100-mobile" >
+                            <Col span={12} sm={12} xs={24} className="" >
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.email" />
@@ -192,9 +192,9 @@ class EditEmployeeDlg extends Component {
                         </Row>
                         {/* first row end */}
                         <Row>
-                            <Col span={12}  className="width-100-mobile">
-                                <Row >
-                                    <Col span={12}  className="width-100-mobile">
+                            <Col span={12} md={12} sm={12} xs={24}>
+                                <Row  gutter={10}>
+                                    <Col span={12} md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Hiring date
@@ -205,7 +205,7 @@ class EditEmployeeDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12} md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Birth date
@@ -218,9 +218,9 @@ class EditEmployeeDlg extends Component {
                                 </Row>
                             </Col>
 
-                            <Col span={12}className="width-100-mobile">
-                                <Row >
-                                    <Col span={12}  className="width-100-mobile">
+                            <Col span={12} md={12} sm={12} xs={24}>
+                                <Row  gutter={10}>
+                                    <Col span={12} md={12} sm={24} xs={24}  className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.phone" />
@@ -233,7 +233,7 @@ class EditEmployeeDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12} md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.mobile" />
@@ -251,9 +251,9 @@ class EditEmployeeDlg extends Component {
                         </Row>
                         {/* secound row end */}
                         <Row>
-                            <Col span={12}  className="width-100-mobile">
-                                <Row >
-                                    <Col span={12}  className="width-100-mobile">
+                            <Col span={12} md={12} sm={12} xs={24}>
+                                <Row  gutter={10}>
+                                    <Col span={12} md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Employee role
@@ -272,7 +272,7 @@ class EditEmployeeDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12} md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Employee color
@@ -295,9 +295,9 @@ class EditEmployeeDlg extends Component {
                                 </Row>
                             </Col>
 
-                            <Col span={12} className="width-100-mobile">
-                                <Row>
-                                    <Col span={12} className="width-100-mobile">
+                            <Col span={12} md={12} sm={12} xs={24}>
+                                <Row gutter={10}>
+                                    <Col span={12}  md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Join position
@@ -316,7 +316,7 @@ class EditEmployeeDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12}  md={12} sm={24} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 Employee type
@@ -345,9 +345,9 @@ class EditEmployeeDlg extends Component {
                                 prevIcon={<i className="material-icons">close</i>}>
                                 <TabPane tab={"Address"} key="1" className="gx-pt-20">
                                     <Row>
-                                        <Col span={12} className="width-100-mobile">
+                                        <Col span={12}  sm={12} xs={24}>
                                             <Row>
-                                                <Col span={12} className="width-100-mobile gx-employee-edit-card-bottom-title">
+                                                <Col span={24}  sm={24} xs={24} className=" gx-employee-edit-card-bottom-title">
                                                     <div className="gx-customized-modal-content-title">
                                                         <i className="material-icons">location_on</i>
                                                         Employee address
@@ -355,9 +355,8 @@ class EditEmployeeDlg extends Component {
                                                 </Col>
                                             </Row>
                                             <Row>
-                                                <Col span={24}>
+                                                <Col span={24} sm={24} xs={24}>
                                                     <div className="gx-customized-modal-content-field">
-
                                                         <div>
                                                             <Input
                                                                 placeholder={formatMessage({ id: 'customer.customerdlg.content.street' })}
@@ -367,8 +366,8 @@ class EditEmployeeDlg extends Component {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12} className="width-100-mobile">
+                                            <Row gutter={10}>
+                                                <Col span={12}  sm={12} xs={24} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -379,7 +378,7 @@ class EditEmployeeDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12} className="width-100-mobile">
+                                                <Col span={12}  sm={12} xs={24} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Input placeholder={formatMessage({ id: "customer.customerdlg.content.state" })}
@@ -390,8 +389,8 @@ class EditEmployeeDlg extends Component {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12}>
+                                            <Row gutter={10}>
+                                                <Col span={12}  sm={12} xs={12} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -402,7 +401,7 @@ class EditEmployeeDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12}>
+                                                <Col span={12}  sm={12} xs={12} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Select style={{ width: '100%' }}

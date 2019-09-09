@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import { Button, Tabs, Avatar, Row, Col, Select, Input, Switch, Icon } from "antd";
-
-import { GoogleMap, withGoogleMap } from "react-google-maps";
 import Widget from "components/Widget";
 import { injectIntl } from 'react-intl';
 import { Countries } from "util/Countries";
 import IntlMessages from "util/IntlMessages";
 const TabPane = Tabs.TabPane;
-const SimpleMapExampleGoogleMap = withGoogleMap(props => (
-    <GoogleMap
-        defaultZoom={15}
-        defaultCenter={{ lat: 47.646935, lng: -122.303763 }}
-    />
-));
 
 const Option = Select.Option;
 
@@ -133,18 +125,18 @@ class EditCustomerDlg extends Component {
 
         return (
             <div className="gx-edit-customer-dlg" >
-                <div className="gx-customized-modal-content">
+                <div className="gx-customized-modal-content gx-px-30" style={{paddingBottom:"0"}}>
 
                     <div className="gx-customized-modal-content-block">
-                        <div className="gx-customized-modal-content-title" style={{ marginBottom: "20px" }}>
+                        <div className="gx-customized-modal-content-title gx-mb-20">
                             <i className="material-icons" style={{ fontSize: "28px" }}>account_circle</i>&nbsp;
                         <IntlMessages id="customer.customerdlg.content.customerdetails" />
                         </div>
 
                         <Row>
-                            <Col span={12} sm={12} className="width-100-mobile">
-                                <Row >
-                                    <Col lg={5} sm={12} className="width-100-mobile">
+                            <Col span={12} sm={12} xs={24} className=" gutter-row">
+                                <Row gutter={4}>
+                                    <Col lg={3} sm={12} xs={24} className=" gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.title" />
@@ -156,7 +148,7 @@ class EditCustomerDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={5} sm={12} className="width-100-mobile">
+                                    <Col lg={7} sm={12} xs={24} className=" gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.firstname" />
@@ -168,7 +160,7 @@ class EditCustomerDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={9} sm={12} className="width-100-mobile">
+                                    <Col lg={7} sm={12} xs={24} className=" gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.midlename" />
@@ -180,7 +172,7 @@ class EditCustomerDlg extends Component {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col lg={5} sm={12} className="width-100-mobile">
+                                    <Col lg={7} sm={12} xs={24} className=" gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.lastname" />
@@ -194,7 +186,7 @@ class EditCustomerDlg extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col span={12} className="width-100-mobile" >
+                            <Col span={12} sm={12} xs={24} className=" gutter-row" >
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.email" />
@@ -210,7 +202,7 @@ class EditCustomerDlg extends Component {
                         </Row>
                         {/* first row end */}
                         <Row>
-                            <Col span={12}  className="width-100-mobile">
+                            <Col span={12} sm={12}  xs={24} className="gutter-row">
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.companyname" />
@@ -224,9 +216,9 @@ class EditCustomerDlg extends Component {
                                 </div>
                             </Col>
 
-                            <Col span={12}className="width-100-mobile">
-                                <Row >
-                                    <Col span={12}  className="width-100-mobile">
+                            <Col span={12} sm={12} xs={24} className="gutter-row">
+                                <Row gutter={10} >
+                                    <Col span={12} sm={12} xs={24}  className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.phone" />
@@ -239,7 +231,7 @@ class EditCustomerDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12} sm={12} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.mobile" />
@@ -257,7 +249,7 @@ class EditCustomerDlg extends Component {
                         </Row>
                         {/* secound row end */}
                         <Row>
-                            <Col span={12}  className="width-100-mobile">
+                            <Col span={12} sm={12}  xs={24} className="gutter-row">
                                 <div className="gx-customized-modal-content-field">
                                     <div className="gx-customized-modal-content-field-title">
                                         <IntlMessages id="customer.customerdlg.content.displayname" />
@@ -270,9 +262,9 @@ class EditCustomerDlg extends Component {
                                 </div>
                             </Col>
 
-                            <Col span={12} className="width-100-mobile">
-                                <Row>
-                                    <Col span={12} className="width-100-mobile">
+                            <Col span={12} sm={12} xs={24} className="gutter-row">
+                                <Row gutter={10}>
+                                    <Col span={12} sm={12}  xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.fax" />
@@ -285,7 +277,7 @@ class EditCustomerDlg extends Component {
                                         </div>
                                     </Col>
 
-                                    <Col span={12} className="width-100-mobile">
+                                    <Col span={12} sm={12} xs={24} className="gutter-row">
                                         <div className="gx-customized-modal-content-field">
                                             <div className="gx-customized-modal-content-field-title">
                                                 <IntlMessages id="customer.customerdlg.content.website" />
@@ -301,31 +293,32 @@ class EditCustomerDlg extends Component {
                             </Col>
 
                         </Row>
-
                         {/* third row end */}
                         <Widget styleName="gx-card-full gx-customer-edit-tab-panel">
                             <Tabs className="gx-customer-job-panel-tab" defaultActiveKey="1" animated={false}
                                 prevIcon={<i className="material-icons">close</i>}>
                                 <TabPane tab={"Address"} key="1" className="gx-pt-20">
                                     <Row>
-                                        <Col span={12} className="width-100-mobile">
-                                            <Row>
-                                                <Col span={12} className="width-100-mobile gx-employee-edit-card-bottom-title">
+                                        <Col span={12} sm={12} xs={24}  className="gutter-row">
+                                            <Row gutter={0}>
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row gx-employee-edit-card-bottom-title">
                                                     <div className="gx-customized-modal-content-title">
                                                         <i className="material-icons">location_on</i>
                                                         <IntlMessages id="customer.customerdlg.content.customerlocation" />
                                                     </div>
                                                 </Col>
-                                                <Col span={12} className="notDisplayOnMobile gx-employee-edit-card-bottom-title">
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row notDisplayOnMobile gx-flex-row-reverse gx-employee-edit-card-bottom-title">
                                                     <a className="gx-customized-modal-content-title">
-                                                        <IntlMessages id="customer.customerdlg.content.anotheraddress" />
+                                                        <i className="material-icons">add</i>
+                                                        <div className="gx-customized-modal-content-field-title gx-m-0">
+                                                            <IntlMessages id="customer.customerdlg.content.anotheraddress" />
+                                                        </div>
                                                     </a>
                                                 </Col>
                                             </Row>
                                             <Row>
                                                 <Col span={24}>
                                                     <div className="gx-customized-modal-content-field">
-
                                                         <div>
                                                             <Input
                                                                 placeholder={formatMessage({ id: 'customer.customerdlg.content.street' })}
@@ -335,8 +328,8 @@ class EditCustomerDlg extends Component {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12} className="width-100-mobile">
+                                            <Row gutter={10}>
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -347,7 +340,7 @@ class EditCustomerDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12} className="width-100-mobile">
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Input placeholder={formatMessage({ id: "customer.customerdlg.content.state" })}
@@ -358,8 +351,8 @@ class EditCustomerDlg extends Component {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12}>
+                                            <Row gutter={10}>
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -370,7 +363,7 @@ class EditCustomerDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12}>
+                                                <Col span={12}  sm={12} xs={24} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Select style={{ width: '100%' }}
@@ -388,17 +381,19 @@ class EditCustomerDlg extends Component {
                                             </Row>
 
                                         </Col >
-                                        <Col span={12} className="width-100-mobile">
+                                        <Col span={12} sm={12} xs={24}  className="gutter-row">
                                             <Row>
-                                                <Col span={9} className="width-100-mobile gx-employee-edit-card-bottom-title">
-                                                    <div className="gx-customized-modal-content-title" style={{height: "24px"}}>
-                                                        <Icon type="credit-card"/>
+                                                <Col span={10} sm={10} xs={24}  className="gutter-row gx-employee-edit-card-bottom-title">
+                                                    <div className="gx-customized-modal-content-title">
+                                                        <i className="material-icons">credit_card</i>
                                                         Billing Address
                                                     </div>
                                                 </Col>
-                                                <Col span={15} className="notDisplayOnMobile gx-employee-edit-card-bottom-title">
-                                                    <Switch size="large" defaultChecked  style={{marginRight:"10px"}} onChange={this.onSwitch}/>
-                                                    <IntlMessages id="customer.customerdlg.content.sameascustomeraddr"/>
+                                                <Col span={14} sm={14} xs={24}  className="notDisplayOnMobile gx-flex-row-reverse gx-employee-edit-card-bottom-title">
+                                                    <div>
+                                                        <Switch size="large" defaultChecked  style={{marginRight:"10px"}} onChange={this.onSwitch}/>
+                                                        <IntlMessages id="customer.customerdlg.content.sameascustomeraddr"/>
+                                                    </div>
                                                 </Col>
                                             </Row>
                                             <Row><Col span={24}>
@@ -413,8 +408,8 @@ class EditCustomerDlg extends Component {
                                                 </div>
                                             </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12} className="width-100-mobile">
+                                            <Row gutter={10}>
+                                                <Col span={12} sm={12} xs={24} className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -425,7 +420,7 @@ class EditCustomerDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12} className="width-100-mobile">
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Input placeholder={formatMessage({ id: "customer.customerdlg.content.state" })}
@@ -436,8 +431,8 @@ class EditCustomerDlg extends Component {
                                                     </div>
                                                 </Col>
                                             </Row>
-                                            <Row>
-                                                <Col span={12}>
+                                            <Row gutter={10}>
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
 
                                                         <div>
@@ -448,7 +443,7 @@ class EditCustomerDlg extends Component {
                                                         </div>
                                                     </div>
                                                 </Col>
-                                                <Col span={12}>
+                                                <Col span={12} sm={12} xs={24}  className="gutter-row">
                                                     <div className="gx-customized-modal-content-field">
                                                         <div>
                                                             <Select style={{ width: '100%' }}

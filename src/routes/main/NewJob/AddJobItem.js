@@ -34,24 +34,6 @@ class AddJobItem extends Component {
                                         <div className="gx-addjob-step2-addjobitem-total-panel">
                                             <JobSubPane kind="Service"/>
                                             <JobSubPane kind="Material"/>
-                                            {/* <Row>
-                                                <Col xxl={1} xl={1} lg={1}>
-                                                </Col>
-                                                <Col xxl={9} xl={6} lg={6}>
-                                                </Col>
-                                                <Col xxl={2} xl={2} lg={2}>
-                                                </Col>
-                                                <Col xxl={2} xl={2} lg={2}>
-                                                </Col>
-                                                <Col xxl={3} xl={3} lg={3} md={3} sm={3}>
-                                                    <div>SubTotal</div>
-                                                </Col>
-                                                <Col xxl={2} xl={2} lg={2} md={2} sm={2}>
-                                                    <div>$600.00</div>
-                                                </Col>
-                                                <Col xxl={1} xl={1} lg={1}>
-                                                </Col>
-                                            </Row> */}
                                         </div>
                                     </Widget>
                                 </Col>
@@ -63,7 +45,7 @@ class AddJobItem extends Component {
                                 <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}}>
                                     <PrivateNoteWidget style={{padding:0}}/>
                                 </Col>
-                                <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}}>
+                                <Col xxl={24} xl={24} lg={24} md={24} sm={24} xs={24} style={{paddingBottom:20}} className="gx-step2-upload-container">
                                     <UploadFileWidget style={{padding:0}}/>
                                 </Col>
                             </Row>

@@ -23,7 +23,6 @@ const { Step } = Steps;
 const steps = [
     {
         title: 'Choose customer',
-        // content: <Step1_2/>,
         content: <Step1_1/>,
     },
     {
@@ -47,8 +46,9 @@ class NewJob extends Component {
 
   next() {
     const current = this.state.current + 1;
+    console.log(current);
     if(current === 3) {
-        current = 2;
+        return;
     }
     this.setState({ current });
   }
@@ -63,6 +63,7 @@ class NewJob extends Component {
       this.props.updateWindowWidth(window.innerWidth)
     });
   }
+
 
   render() {
     const {locale, width, navCollapsed, navStyle, pathname, currentPage, setCurrentPage, intl: {formatMessage}} = this.props;
@@ -85,7 +86,11 @@ class NewJob extends Component {
                         <div className="gx-addjob-top-btngroup">
                             <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-save-btn">Save without scheduling</Button>
                             <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-next-btn" onClick={() => this.next()}>
-                                Next
+                                { this.state.current < 2 ?
+                                  "Next"
+                                  :
+                                  "Save" 
+                                }
                             </Button>
                         </div>
                     }
@@ -95,7 +100,11 @@ class NewJob extends Component {
                     <div className="gx-addjob-top-btngroup-mobile">
                       <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-save-btn">Save without scheduling</Button>
                       <Button className="gx-nav-btn gx-nav-customer-btn gx-mb-0 gx-addjob-next-btn" onClick={() => this.next()}>
-                          Next
+                              { this.state.current < 2 ?
+                                  "Next"
+                                  :
+                                  "Save" 
+                                }
                       </Button>
                     </div>
                 }

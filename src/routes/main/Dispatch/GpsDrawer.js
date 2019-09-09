@@ -14,100 +14,45 @@ for (let i = 1; i < 3; i++) {
 
 const data = [
     {
-        name: "Robert Brannon",
+        name: "Jason Marlord",
         job: "#00546",
         type: "Paid invoice",
         datetime: "4/24/2019 15:26",
-        avatar: require("assets/images/avatar/avatar01.png"),
+        avatar: require("assets/images/avatar/avatar07.png"),
         statue: "login",
     },
     {
-        name: "Leana Rosebell",
-        job: "#00542",
-        type: "Completed job",
-        datetime: "4/22/2019 14:26",
-        avatar: require("assets/images/avatar/avatar03.png"),
-        statue: "login",
-    },
-    {
-        name: "Tomas Belford",
+        name: "Peter Jonson",
         job: "#00542",
         type: "Created job",
         datetime: "4/20/2019 5:53",
         avatar: require("assets/images/avatar/avatar04.png"),
         statue: ""
-    },{
-        name: "Robert Brannon",
+    },
+    {
+        name: "Kevin Moltoze",
+        job: "#00542",
+        type: "Completed job",
+        datetime: "4/22/2019 14:26",
+        avatar: require("assets/images/avatar/avatar08.png"),
+        statue: "login",
+    },
+    {
+        name: "John Boldberg",
         job: "#00546",
         type: "Paid invoice",
         datetime: "4/24/2019 15:26",
-        avatar: require("assets/images/avatar/avatar01.png"),
+        avatar: require("assets/images/avatar/avatar10.png"),
         statue: ""
     },
     {
-        name: "Leana Rosebell",
+        name: "Rosana Marton",
         job: "#00542",
         type: "Completed job",
         datetime: "4/22/2019 14:26",
-        avatar: require("assets/images/avatar/avatar03.png"),
+        avatar: require("assets/images/avatar/avatar09.png"),
         statue: ""
-    },
-    {
-        name: "Tomas Belford",
-        job: "#00542",
-        type: "Created job",
-        datetime: "4/20/2019 5:53",
-        avatar: require("assets/images/avatar/avatar04.png"),
-        statue: ""
-    },
-    {
-        name: "Leana Rosebell",
-        job: "#00542",
-        type: "Completed job",
-        datetime: "4/22/2019 14:26",
-        avatar: require("assets/images/avatar/avatar03.png"),
-        statue: ""
-    },
-    {
-        name: "Tomas Belford",
-        job: "#00542",
-        type: "Created job",
-        datetime: "4/20/2019 5:53",
-        avatar: require("assets/images/avatar/avatar04.png"),
-        statue: ""
-    },
-    {
-        name: "Leana Rosebell",
-        job: "#00542",
-        type: "Completed job",
-        datetime: "4/22/2019 14:26",
-        avatar: require("assets/images/avatar/avatar03.png"),
-        statue: ""
-    },
-    {
-        name: "Tomas Belford",
-        job: "#00542",
-        type: "Created job",
-        datetime: "4/20/2019 5:53",
-        avatar: require("assets/images/avatar/avatar04.png"),
-        statue: ""
-    },
-    {
-        name: "Leana Rosebell",
-        job: "#00542",
-        type: "Completed job",
-        datetime: "4/22/2019 14:26",
-        avatar: require("assets/images/avatar/avatar03.png"),
-        statue: ""
-    },
-    {
-        name: "Tomas Belford",
-        job: "#00542",
-        type: "Created job",
-        datetime: "4/20/2019 5:53",
-        avatar: require("assets/images/avatar/avatar04.png"),
-        statue: ""
-    },
+    }
 ];
 
 class GpsDrawer extends Component {
@@ -115,7 +60,27 @@ class GpsDrawer extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+            searchText: "",
+            liveEmployees: data,
+        }
+    }
 
+    updateSearchEmp(key) {
+        this.setState({searchText:key});
+        const trimKey = key.trim();
+        if(trimKey === "") {
+            this.setState({liveEmployees: data});
+        }
+        else
+        {
+            let tmp_employees = [];
+            data.forEach(employee => {
+                let reg_string = trimKey;
+                let reg_trimKey = new RegExp(reg_string, "i");
+                if (employee.name.search(reg_trimKey) > -1)
+                    tmp_employees.push(employee);
+            });
+            this.setState({liveEmployees: tmp_employees});
         }
     }
 
@@ -136,7 +101,7 @@ class GpsDrawer extends Component {
                     />
                 </div>
                 <div className="gx-dispatch-gps-dawer-users">
-                    {data.map((item, index) => (
+                    {this.state.liveEmployees.map((item, index) => (
                         <GpsUserListItem key={index} avatar={item.avatar} name={item.name} status={item.statue}datetime={item.datetime} >
                             { item.type } <span className="gx-link">{item.job}</span>
                         </GpsUserListItem>

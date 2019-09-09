@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Widget from "components/Widget";
-import Notes from "components/ToolTab/Notes";
+import NewJobNotes from "components/ToolTab/NewJobNotes";
 import IntlMessages from "util/IntlMessages";
 
 const notes = [
@@ -22,14 +22,14 @@ class PrivateNoteWidget extends Component {
   render() {
     const {className, title, padding} = this.props;
     return (
-        <Widget styleName="gx-card-full gx-dispatcher-job-panel gx-m-0">
+        <Widget styleName="gx-card-full gx-dispatcher-job-panel gx-m-0 gx-ss-newjob-notes-panel">
             <div className="gx-panel-title-bar ">
                 <h5>
                     PRIVATE NOTES
                 </h5>
             </div>
-            <div className="gx-panel-content">
-                <Notes/>
+            <div className="gx-panel-content gx-ss-newjob-notes-panel-content">
+                <NewJobNotes/>
             </div>
         </Widget>
     );

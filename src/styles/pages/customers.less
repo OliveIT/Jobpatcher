@@ -883,3 +883,31 @@
     font-size: 16px;
     margin-top: -2px;
 }
+
+////////////////// sinbad //////////////////////
+
+@media screen and (max-width: @screen-sm-max) {
+    .@{class-prefix}-ss-customers-top-toolbar {
+        display: flex;
+        flex-flow: column-reverse !important;
+        justify-content: space-evenly !important;
+        align-items: flex-start !important;
+        height: 106px;
+    }
+}
+
+@media screen and(max-width: @screen-xs-max) {
+    .@{class-prefix}-ss-customers-top-toolbar {
+        .@{class-prefix}-ss-tool {
+            .@{class-prefix}-lt-icon-search-bar-lg {
+                width: auto !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: @screen-xs-max) {
+    .@{class-prefix}-ss-customers-new-modal {
+        top: 20px;
+    }
+}

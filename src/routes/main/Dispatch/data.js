@@ -116,7 +116,7 @@ export const employee_data = [
         phone: "(688)-829-0483",
         email: "enjoy@website.com",
         lastlogin: "15 July",
-        avatar:"1.png",
+        avatar:"avatar07.png",
         jobtitle: "Field worker",
         appversion: "v 2.0.2",
         jobid: "#00536"
@@ -127,7 +127,7 @@ export const employee_data = [
         phone: "(688)-829-0483",
         email: "selina@website.com",
         lastlogin: "Online",
-        avatar:"2.png",
+        avatar:"avatar08.png",
         jobtitle: "Dispatcher",
         appversion: "v 2.0.2",
         jobid: "#00534"
@@ -149,7 +149,7 @@ export const employee_data = [
         phone: "(688)-829-0483",
         email: "kelivin@website.com",
         lastlogin: "9 March",
-        avatar:"3.png",
+        avatar:"avatar09.png",
         jobtitle: "Field walker",
         appversion: "v 2.0.2",
         jobid: "#00532"
@@ -160,7 +160,7 @@ export const employee_data = [
         phone: "(688)-829-0483",
         email: "victor@website.com",
         lastlogin: "N/A",
-        avatar:"4.png",
+        avatar:"avatar10.png",
         jobtitle: "Dispatcher",
         appversion: "v 2.0.1",
         jobid: ""

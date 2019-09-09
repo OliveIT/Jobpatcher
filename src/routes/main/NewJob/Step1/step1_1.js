@@ -51,7 +51,7 @@ class Step1_1 extends Component {
                             <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}  style={{paddingTop:10}}>
                                 <PrivateNoteWidget style={{padding:0}}/>
                             </Col>
-                            <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}  style={{paddingTop:10}}>
+                            <Col xxl={12} xl={12} lg={12} md={12} sm={24} xs={24}  style={{paddingTop:10}} className="gx-step1-1-upload-container">
                                 <UploadFileWidget style={{padding:0}}/>
                             </Col>
                         </Row>

@@ -14,7 +14,7 @@ class EmployeeJobCard extends Component {
     constructor(props, context) {
         super(props, context);
     }
-
+    
     render () {
         return (
             <Widget styleName="gx-employee-card gx-py-0">

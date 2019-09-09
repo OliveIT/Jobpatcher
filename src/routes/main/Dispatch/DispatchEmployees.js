@@ -56,7 +56,7 @@ class DispatchEmployees extends Component {
     const { employeeType, newEmpDlgShow } = this.state;
     return (
       <div className="gx-dispatch-module-content gx-dispatch-employees-toolbar-ss">
-        <div className="">
+        <div>
 
           {/* mobile reponsive... if width > sm-max then visible, else disappear */}
           <div className="gx-dispatch-top-toolbar gx-a-align-around-ss gx-d-md-flex gx-d-none">
@@ -112,6 +112,7 @@ class DispatchEmployees extends Component {
               <Button
                   className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
                   type="primary"
+                  onClick={this.addNewEmp.bind(this)}
                 >
                   <div className="gx-div-align-center">
                     <i className="material-icons gx-fs-xl gx-mr-2">add</i>
@@ -145,7 +146,7 @@ class DispatchEmployees extends Component {
           <div className="gx-w-100">
             <div className="gx-dispatch-module-scroll">
               {this.renderMainContent()}
-              <div className="gx-panel-content gx-py-20" style={{backgroundColor:"transparent"}}>
+              <div className="gx-panel-content gx-pt-0 gx-ss-dispatch-employees-a-pb-60" style={{backgroundColor:"transparent"}}>
                 <div className="gx-panel-content-scroll">
                   <div className="gx-employee-content-panel gx-a-align-center-ss">
                     {employee_data.map((emp, index) => (
@@ -158,7 +159,7 @@ class DispatchEmployees extends Component {
           </div>
         </div>
 
-        <Modal
+        <Modal className="gx-ss-dispatch-new-employee-modal"
             title={ 
                 <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" >
                     <div className="gx-customized-modal-title">Add new employee</div>
