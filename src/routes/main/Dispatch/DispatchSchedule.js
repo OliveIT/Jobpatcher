@@ -9,9 +9,11 @@ import Widget from "components/Widget";
 import SearchBox from "components/SearchBox";
 import DispatchJobCard from "components/Dispatch/DispatchJobCard";
 import TopMenu from "./TopMenu";
-import DispatchDrawer from "./DispatchDrawer";
+import JobListItem from "components/List/JobListItem";
 import TopToolBar from "./TopToolBar";
 import EmployeeWorkHours from "./employee-work-hours";
+import EmployeeWorkmonth from "./employee-work-month";
+import EmployeeWorkweek from "./employee-work-week";
 
 import {global_jobs} from "./data";
 
@@ -59,6 +61,7 @@ class DispatchSchedule extends Component {
 
   onChangeDuration (duration) {
     this.setState({duration: duration});
+    console.log(duration);
   }
 
   onChangeScheduled (scheduled) {
@@ -76,52 +79,82 @@ class DispatchSchedule extends Component {
     const { jobs, scheduled, duration } = this.state;
     const {intl: {formatMessage}} = this.props;
     return (
-    <div className="gx-dispatch-module-content">    
-        <TopToolBar duration={duration} scheduled={scheduled} 
-                    onChangeDuration={this.onChangeDuration.bind(this)}  
-                    onChangeScheduled={this.onChangeScheduled.bind(this)} 
-                    scheduledCount={3}
-                    unscheduledCount={1} />
-        <EmployeeWorkHours />
-        <Widget styleName="gx-card-full gx-dispatcher-job-panel">
-            <div className="gx-panel-title-bar ">
-                <h5>
-                    {scheduled === "scheduled" &&
-                        <IntlMessages id="dispatch.dispatch.scheduledjobs" values={{value: this.state.jobs.length}} />
-                    }
-                    {scheduled !== "scheduled" &&
-                        <IntlMessages id="dispatch.dispatch.unscheduledjobs" values={{value: this.state.jobs.length}} />
-                    }
-                </h5>
-                <div className="gx-div-align-center">
-                    <div className="gx-d-none gx-d-md-block">
-                        <SearchBox styleName="gx-lt-icon-search-bar-lg gx-dispatch-search"
-                                    placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
-                                    onChange={this.updateSearchJobs.bind(this)}
-                                    value={this.state.searchText}/>     
-                    </div>          
+      <div className="gx-ss-schedule-position-relative">
+      <div className="gx-dispatch-module-content">    
+          <TopToolBar duration={duration} scheduled={scheduled} 
+                      onChangeDuration={this.onChangeDuration.bind(this)}
+                      onChangeScheduled={this.onChangeScheduled.bind(this)} 
+                      scheduledCount={3}
+                      unscheduledCount={5} />
+          {/* <EmployeeWorkHours/> */}
+          {
+            duration === "month" &&
+            <EmployeeWorkmonth/>
+            || duration === "week" &&
+            <EmployeeWorkweek/>
+            || <EmployeeWorkHours/>
+          }
+          {/* <Widget styleName="gx-card-full gx-dispatcher-job-panel">
+              <div className="gx-panel-title-bar ">
+                  <h5>
+                      {scheduled === "scheduled" &&
+                          <IntlMessages id="dispatch.dispatch.scheduledjobs" values={{value: this.state.jobs.length}} />
+                      }
+                      {scheduled !== "scheduled" &&
+                          <IntlMessages id="dispatch.dispatch.unscheduledjobs" values={{value: this.state.jobs.length}} />
+                      }
+                  </h5>
+                  <div className="gx-div-align-center">
+                      <div className="gx-d-none gx-d-md-block">
+                          <SearchBox styleName="gx-lt-icon-search-bar-lg gx-dispatch-search"
+                                      placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
+                                      onChange={this.updateSearchJobs.bind(this)}
+                                      value={this.state.searchText}/>     
+                      </div>          
+                  </div>
+              </div>
+              <div className="gx-panel-content">
+                  <div className="gx-d-md-none gx-mt-20 gx-ml-20">
+                      <div className="gx-div-align-center">
+                          <span className="gx-fs-md gx-font-weight-medium gx-text-header gx-mr-3"> 1 / { this.state.jobs.length } Jobs </span>
+                          <SearchBox styleName="gx-lt-icon-search-bar-lg gx-dispatch-search2"
+                                      placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
+                                      onChange={this.updateSearchJobs.bind(this)}
+                                      value={this.state.searchText}/>     
+                      </div>
+                  </div>
+                  <div className="gx-panel-content-scroll">
+                      <div className="gx-panel-content-scroll-container">
+                          { jobs.map ( (job, index) => (
+                              <DispatchJobCard key={index} job={job} />
+                          ))}
+                      </div>
+                  </div>
+              </div>
+          </Widget> */}
+      </div>
+      {
+        scheduled === "unscheduled" &&
+        <div className="gx-ss-unscheduled-drawer">
+            <div className="gx-customer-tab gx-dispatcher-unscheduled-tab" >
+                <div className="gx-customer-tab-header gx-justify-content-between" >
+                    <h5 className="gx-text-uppercase">
+                        <IntlMessages id="dispatch.dispatch.unscheduledjobs" values={{value: jobs.length}} />
+                    </h5>
                 </div>
-            </div>
-            <div className="gx-panel-content">
-                <div className="gx-d-md-none gx-mt-20 gx-ml-20">
-                    <div className="gx-div-align-center">
-                        <span className="gx-fs-md gx-font-weight-medium gx-text-header gx-mr-3"> 1 / { this.state.jobs.length } Jobs </span>
-                        <SearchBox styleName="gx-lt-icon-search-bar-lg gx-dispatch-search2"
-                                    placeholder={formatMessage({id:"dispatch.dispatch.search.placeholder"})}
-                                    onChange={this.updateSearchJobs.bind(this)}
-                                    value={this.state.searchText}/>     
-                    </div>
-                </div>
-                <div className="gx-panel-content-scroll">
-                    <div className="gx-panel-content-scroll-container">
-                        { jobs.map ( (job, index) => (
-                            <DispatchJobCard key={index} job={job} />
+                <div className="gx-dispatcher-unscheduled-tab-scroll" >
+                    <div className="gx-customer-tab-content">
+                        {jobs.map((item, index) => (
+                            <JobListItem key={index} avatar={item.customer.avatar} name={item.customer.name} status={item.status} >
+                                <div className="gx-fs-11 gx-text-grey">{item.job}</div>
+                            </JobListItem>
                         ))}
                     </div>
-                </div>
-            </div>
-        </Widget>
-    </div>
+                </div >
+            </div> 
+        </div>
+      }
+      </div>
     );
   }
 

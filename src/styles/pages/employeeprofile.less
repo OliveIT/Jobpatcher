@@ -6,3 +6,58 @@ div.gx-dispatch-employee-profile {
         }
     }
 }
+.@{class-prefix}-ss-employee-profile-top {
+    height: 60px;
+    .@{class-prefix}-ss-profile-employee-name {
+        color: #1a2f52;
+    }
+    .@{class-prefix}-ss-btngroup {
+        .@{class-prefix}-ss-edit-btn {
+            padding-left: 25px;
+            padding-right: 25px;
+            color: #a5abb5 !important;
+        }
+        .@{class-prefix}-customer-list-buttongroup {
+            .ant-btn {
+                color: #a5abb5 !important;
+            }
+        }
+    }
+}
+
+.@{class-prefix}-ss-employee-profile-profile-container {
+    margin-bottom: 30px !important;
+    .@{class-prefix}-customer-profile-card {
+        &:nth-child(1) {
+            .@{class-prefix}-ss-avatar {
+                .@{class-prefix}-main-avatar {
+                    margin-right: 0 !important;
+                }
+            }
+            .@{class-prefix}-ss-info1-name-position {
+                .@{class-prefix}-ss-name {
+                }
+                .@{class-prefix}-ss-position {
+                    color: #4c586d;
+                }
+            }
+        }
+        &:nth-child(3) {
+            button {
+                min-width: 50px;
+                width: 50px;
+                height: 20px;
+                &:after {
+                    width: 26px;
+                    height: 26px;
+                    top: -4px;
+                }
+                &.ant-switch-checked {
+                    &:after {
+                        margin-left: 2px !important;
+                    }
+                }
+            }
+        }
+    }
+}

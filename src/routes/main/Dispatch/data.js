@@ -80,7 +80,7 @@ export const global_jobs = [
     {
         customer: {
             avatar: 'person',
-            name: 'Jimmy Tomson',
+            name: 'Max Planck',
             info1: 'Commercial',
             info2: 'Quebec',
             info3: '2+',
@@ -90,6 +90,82 @@ export const global_jobs = [
         workers: [            
         ],
         job_id: "#00534",
+        job: 'House cleaning',
+        status: 'unscheduled',
+        datetime: '05/06/2019 16:30',
+        notes: 4,
+        files: 3
+    },
+    {
+        customer: {
+            avatar: 'business',
+            name: 'Marie Curie',
+            info1: 'Commercial',
+            info2: 'Quebec',
+            info3: '2+',
+            phone: '+1(705)-255-8504',
+            email: 'robert@website.com',
+        },
+        workers: [            
+        ],
+        job_id: "#00535",
+        job: 'Windows cleaning',
+        status: 'unscheduled',
+        datetime: '05/06/2019 16:30',
+        notes: 4,
+        files: 3
+    },
+    {
+        customer: {
+            avatar: 'person',
+            name: 'James Clerk',
+            info1: 'Commercial',
+            info2: 'Quebec',
+            info3: '2+',
+            phone: '+1(705)-255-8504',
+            email: 'robert@website.com',
+        },
+        workers: [            
+        ],
+        job_id: "#00536",
+        job: 'Deep house cleaning',
+        status: 'unscheduled',
+        datetime: '05/06/2019 16:30',
+        notes: 4,
+        files: 3
+    },
+    {
+        customer: {
+            avatar: 'person',
+            name: 'Jimmy Tomson',
+            info1: 'Commercial',
+            info2: 'Quebec',
+            info3: '2+',
+            phone: '+1(705)-255-8504',
+            email: 'robert@website.com',
+        },
+        workers: [            
+        ],
+        job_id: "#00537",
+        job: 'House cleaning',
+        status: 'unscheduled',
+        datetime: '05/06/2019 16:30',
+        notes: 4,
+        files: 3
+    },
+    {
+        customer: {
+            avatar: 'person',
+            name: 'John Kelvine',
+            info1: 'Commercial',
+            info2: 'Quebec',
+            info3: '2+',
+            phone: '+1(705)-255-8504',
+            email: 'robert@website.com',
+        },
+        workers: [            
+        ],
+        job_id: "#00538",
         job: 'House cleaning',
         status: 'unscheduled',
         datetime: '05/06/2019 16:30',

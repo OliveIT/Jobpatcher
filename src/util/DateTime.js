@@ -100,3 +100,50 @@ export function changeDateRangeWithTimeFormat(dateStart, dateEnd) {
 
     return dateStartStr + timeStart + " - " + dateEndStr + timeEnd;
 }
+
+////////////////////////////////  ss  //////////////////////////////////
+function dayString(day) {
+    var dayStr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return dayStr[day];
+}
+
+export function changeSpecialDateFormatSS(date) {
+    var today = new Date();
+    var datetime = new Date(date);
+    var year = datetime.getFullYear();
+    var special = "";
+    const month = datetime.toLocaleString('en-us', { month: 'short' });
+
+    if( year == today.getFullYear() ) {
+        if( today.getMonth() == datetime.getMonth() &&
+            today.getDate() == datetime.getDate() ){
+            special = " - Today";
+        } else {
+            var specialDay = new Date();
+            specialDay.setDate( today.getDate() - 1 );
+            if( specialDay.getMonth() == datetime.getMonth() && specialDay.getDate() == datetime.getDate() ){
+                special = " - Yesterday";
+            }
+
+            specialDay = new Date();
+            specialDay.setDate( today.getDate() + 1 );
+            if( specialDay.getMonth() == datetime.getMonth() && specialDay.getDate() == datetime.getDate() ){
+                special = " - Tomorrow";
+            }
+        }
+    } else {
+        return month + " " + datetime.getDate() + ", " + year;
+    }    
+
+    return month + " " + datetime.getDate() + special;
+}
+
+export function changeDayDateMonthYearFormatSS(date) {
+    var datetime = new Date(date);
+    var day = datetime.getDay();
+    var year = datetime.getFullYear();
+    var month = datetime.toLocaleString('en-us', { month: 'long'});
+    var date = datetime.getDate();
+
+    return dayString(day) + ", " + month + " " + date + ", " + year;
+}

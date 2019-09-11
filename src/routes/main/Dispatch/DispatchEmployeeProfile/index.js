@@ -68,7 +68,7 @@ class DispatchEmployeeProfile extends Component {
   renderMainContent() {
     return (
     <div className="gx-main-content-container gx-customer-profile-module-content">                   
-        <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center" style={{height: '58px'}}>                
+        <div className="gx-flex-row gx-w-100 gx-justify-content-between gx-align-items-center gx-ss-employee-profile-top">                
             <div className="gx-sub-title">                
                 <div className="gx-flex-row  gx-align-items-center">
                     <Link to="/main/dispatch/employees">
@@ -77,18 +77,20 @@ class DispatchEmployeeProfile extends Component {
                             <IntlMessages id="back"/>
                         </div>
                     </Link>
-                    <div className="gx-ml-3 gx-flex-row  gx-align-items-center">
+                    <div className="gx-ml-3 gx-flex-row gx-align-items-center gx-ss-profile-employee-name">
                         <span className="gx-mr-2">{data.name}</span>
                     </div>
                 </div>                    
             </div>
             <div className="gx-flex-row">
-                <div className="gx-d-none gx-d-lg-block">
+                <div className="gx-d-none gx-d-lg-block gx-ss-btngroup">
                     <ButtonGroup className="gx-customer-list-buttongroup">
                         <Button><i className="material-icons">chat</i></Button>
                         <Button><i className="material-icons">cancel</i></Button>
                     </ButtonGroup>
-                    <Button className="gx-customized-button gx-customized-text-button gx-ml-10"><IntlMessages id="customer.profile.edit"/></Button>
+                    <Button className="gx-customized-button gx-customized-text-button gx-ml-10 gx-ss-edit-btn">
+                        <IntlMessages id="customer.profile.edit"/>
+                    </Button>
                 </div>
                 <div className="gx-d-lg-none">
                     <i className="material-icons gx-pointer gx-text-grey">more_vert</i>

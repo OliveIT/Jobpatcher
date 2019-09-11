@@ -32,7 +32,7 @@ class DispatchGps extends Component {
                 <TopMenu currentPage="3" />
                 <div className="gx-app-module gx-dispatch-module"> 
 
-                    <div className="gx-customer-sidenav">
+                    <div className="gx-customer-sidenav gx-ss-gps-sidenav">
                         <GpsDrawer/>
                     </div>
 

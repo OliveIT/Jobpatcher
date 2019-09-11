@@ -44,25 +44,25 @@ class ProfileCard extends Component {
     var {data} = this.props;
 
     return (
-        <Widget styleName="gx-card-full">
+        <Widget styleName="gx-card-full gx-ss-employee-profile-profile-container">
             <div className="gx-customer-profile-container">
                 <div className="gx-customer-profile-card">
                     <div className="gx-flex-row gx-flex-nowrap">
-                        <div className="gx-d-none gx-d-xl-block gx-mr-20">
+                        <div className="gx-d-none gx-d-xl-block gx-mr-20  gx-ss-avatar">
                             { this.renderAvatar( data.avatar ) }
                         </div>
-                        <div>    
-                            <div  className="gx-flex-row gx-flex-nowrap">
+                        <div className="gx-ss-info1">    
+                            <div  className="gx-flex-row gx-flex-nowrap gx-ss-info1-name-position">
                                 <div className="gx-d-xl-none gx-mr-20">
                                     { this.renderAvatar( data.avatar ) }
                                 </div>
                                 <div className="gx-customer-profile-card-title">
-                                    <div>{data.name}</div>
-                                    <div className="gx-customer-profile-card-subtitle">{data.info1}</div>
+                                    <div className="gx-ss-fs-14 gx-ss-fw-500 gx-ss-name">{data.name}</div>
+                                    <div className="gx-customer-profile-card-subtitle gx-ss-fs-12 gx-ss-fw-500 gx-ss-position">{data.info1}</div>
                                 </div>
                             </div>                        
                             
-                            <table className="gx-customer-profile-card-table">
+                            <table className="gx-customer-profile-card-table gx-ss-info1-others">
                                 <tbody>
                                     <tr>
                                         {/* <td><IntlMessages id="customer.profile.totaljobs"/></td>
@@ -83,7 +83,7 @@ class ProfileCard extends Component {
                                     <tr>
                                         <td>Last login</td>
                                         <td style={{display:"flex"}}>
-                                            <span className="gx-text-green" style={{fontSize:35, fontWeight:700}}>•&nbsp;</span>
+                                            <span className="gx-text-green" style={{fontSize:27, fontWeight:700}}>•&nbsp;</span>
                                             {data.lastLogin}
                                         </td>
                                     </tr>
@@ -104,7 +104,7 @@ class ProfileCard extends Component {
                         <tbody>
                             <tr>
                                 <td>Email</td>
-                                <td>{data.email}</td>
+                                <td style={{color: "#257bde"}}>{data.email}</td>
                             </tr>
                             <tr>
                                 <td>Mobile</td>
@@ -135,9 +135,9 @@ class ProfileCard extends Component {
                         <tbody>
                             <tr style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}>
                                 <Switch defaultChecked />
-                                <div className="gx-ml-10">Enabled</div>
+                                <div className="gx-ml-10" style={{fontWeight: "500"}}>Enabled</div>
                             </tr>
-                            <tr className="gx-pt-10">
+                            <tr className="gx-pt-10" style={{color:"#9399a2"}}>
                                 <div>When login on mobile app</div>
                             </tr>                     
                         </tbody>

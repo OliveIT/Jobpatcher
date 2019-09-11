@@ -12,7 +12,13 @@ function GpsUserListItem({styleName, avatar, name, datetime, children,status}) {
                 <div className="circle-ss"></div>
             }
         </div>
-        <div className="gx-gps-employee-name">{name}</div>
+        {
+          status === "login" ?
+          <div className="gx-gps-employee-name logedin-user">{name}</div>
+          :
+          <div className="gx-gps-employee-name">{name}</div>
+        }
+        
     </div>
 
   );

@@ -62,14 +62,14 @@ class DispatchEmployees extends Component {
           <div className="gx-dispatch-top-toolbar gx-a-align-around-ss gx-d-md-flex gx-d-none">
             <div className="gx-div-align-center gx-mb-12">
               <SelectableButtonGroup
-                className="gx-ml-10 gx-d-md-block gx-d-none"
+                className="gx-d-md-block gx-d-none"
                 selected={employeeType}
                 onChange={this.onChangeEmpType}
               >
-                <Button key="active">
+                <Button key="active" style={{paddingRight:"18px",paddingLeft:"18px"}}>
                   <IntlMessages id="dispatch.dispatch.employee.active" />
                 </Button>
-                <Button key="terminated">
+                <Button key="terminated" style={{paddingRight:"22px",paddingLeft:"22px"}}>
                   <IntlMessages id="dispatch.dispatch.employee.terminated" />
                 </Button>
               </SelectableButtonGroup>
@@ -91,9 +91,9 @@ class DispatchEmployees extends Component {
                 <Button
                   className="gx-nav-btn gx-nav-dispatch-new-btn gx-mb-0"
                   type="primary"
-                  onClick={this.addNewEmp.bind(this)}>
-                  <div className="gx-div-align-center">
-                    <i className="material-icons gx-fs-xl gx-mr-2">add</i>
+                  onClick={this.addNewEmp.bind(this)} style={{paddingLeft:"12px"}}>
+                  <div className="gx-div-align-center gx-ss-fs-13 gx-ss-fw-500">
+                    <i className="material-icons gx-fs-xl" style={{marginRight: "1px"}}>add</i>
                     <IntlMessages id="dispatch.dispatch.employe.addnewemp" />
                   </div>
                 </Button>

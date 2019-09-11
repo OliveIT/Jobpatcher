@@ -1,3 +1,37 @@
+.@{class-prefix}-ss-fs-13 {
+    font-size: 13px !important;
+}
+.@{class-prefix}-ss-fs-12 {
+    font-size: 12px !important;
+}
+.@{class-prefix}-ss-fw-300 {
+    font-weight: 300 !important;
+}
+.@{class-prefix}-ss-fw-400 {
+    font-weight: 400 !important;
+}
+.@{class-prefix}-ss-fw-500 {
+    font-weight: 500 !important;
+}
+.@{class-prefix}-ss-fw-700 {
+    font-weight: 700 !important;
+}
+
+.@{class-prefix}-lh-18 {
+    line-height: 18px !important;
+}
+
+div.employee-popover {
+    .ant-popover-arrow {
+        right: 16px !important;
+    }
+    .ant-popover-inner-content {
+        padding-top: 23px;
+        padding-bottom: 17px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 .@{class-prefix}-employee-content-panel {
     display: flex;
     justify-content: start;
@@ -8,7 +42,7 @@
         right: -30px;
     }
     .w-85{
-        width: 85px;
+        width: 67px;
     }
     .lh-26{
         line-height: 26px;
@@ -23,24 +57,24 @@
             padding:0px !important;
         }
         .app-version{
-            width: 100px;
+            width: 88px;
         }
         
-        width: 350px;
-        min-width: 350px;
+        width: 277px;
+        min-width: 277px;
         margin-right: 10px;
         margin-left: 10px;
-        height: 350px;
-        min-height: 350px;
+        height: 265px;
+        min-height: 265px;
         overflow: hidden;
         .@{class-prefix}-employee-card-avatar {
-            width: 100px !important;
-            height: 100px !important;
+            width: 72px !important;
+            height: 72px !important;
             justify-content: center;
-            
+            margin-right: 13px;
             .@{class-prefix}-employee-avatar {
-                width: 100px;
-                height: 100px;
+                width: 72px;
+                height: 72px;
             }
             span {
                 color: white;
@@ -49,8 +83,26 @@
             }
         }
         .@{class-prefix}-employee-card-name {
-            font-size: 16px;
+            font-size: 13px;
             font-weight: 700;
+            color: #132144;
+        }
+        .@{class-prefix}-ss-emloyee-card-position {
+            font-size: 12px;
+            font-weight: 400 !important;
+            color: #9399a2;
+            line-height: 16px !important;
+        }
+        .@{class-prefix}-ss-employee-card-btn-group {
+            a {
+                button {
+                    padding-left: 15px !important;
+                }
+            }
+            & > button {
+                    padding-left: 13px !important;
+                    padding-right: 13px !important;
+            }
         }
         .right-icon-section{
             position: relative;
@@ -63,27 +115,55 @@
             justify-content: center;
             align-items: center;
             display: flex;
+            span.gx-ss-vers {
+                color: #4c586d;
+            }
+        }
+        // .@{class-prefix}-customer-details-section {
+        //     &.@{class-prefix}-extra-details {
+        //         padding-left: 20px !important;
+        //     }
+        // }
+    }
+    .customer-details-section {
+        padding: 3px !important;
+        div:nth-child(2) {
+            color: #4c586d !important;
         }
     }
 }
 
 .@{class-prefix}-employee-search-bar {
-    background-color: #e8e8e8 !important;
+    background-color: #e5e5e5 !important;
+    width: 277px !important;
+    input::placeholder {
+        color: #9399a2;
+        font-size: 13px;
+        font-weight: 300;
+    }
+    span {
+        i {
+            color: #a5abb5;
+        }
+    }
 }
+
 .gx-editContent {
     display: flex;
     align-items: center;
+    color: #9399a2 !important;
     cursor: pointer;
     margin-left: -15px !important;
     margin-right: -15px !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    padding-left: 35px !important;
-    padding-right: 35px !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-left: 22px !important;
+    padding-right: 34px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
     .icon-content{
         padding-right: 10px;
+        color: #a5abb5;
       }
 }
 
@@ -161,5 +241,51 @@
 @media screen and(max-width: @screen-xs-max) {
     .@{class-prefix}-ss-dispatch-new-employee-modal {
         top: 20px !important;
+    }
+}
+
+///////////////////////  mobile  /////////////////////
+@media screen and (max-width: 400px) {
+    .@{class-prefix}-dispatch-employees-mobile-toolbar-btngroup {
+        width: 100%;
+        justify-content: space-between !important;
+        .@{class-prefix}-dispatch-employees-btn-filter {
+            border: none;
+            margin: 0;
+            box-shadow: 1px 1px 5px #dce0e9;
+            padding-right: 25px;
+            i {
+                padding-right: 20px;
+            }
+        }
+    }
+    .@{class-prefix}-dispatch-employees-mobile-toolbar-search {
+        width: 100%;
+        & > div {
+            width: 100%;
+            .@{class-prefix}-dispatch-search {
+                &.@{class-prefix}-employee-search-bar {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+    .@{class-prefix}-employee-content-panel {
+        .@{class-prefix}-employee-card {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 13px;
+            .right-icon-section {
+                position: absolute;
+                right: 40px;
+            }
+            .@{class-prefix}-dispatch-job-card-worker-panel {
+                padding-left: 0;
+                .@{class-prefix}-employee-card-bottom-button {
+                    padding-right: 0;
+                }
+            }
+        }
     }
 }

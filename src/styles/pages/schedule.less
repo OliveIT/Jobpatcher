@@ -1,0 +1,94 @@
+.@{class-prefix}-ss-schedule-position-relative {
+    position: relative;
+    height: inherit;
+    .@{class-prefix}-ss-unscheduled-drawer {
+        position: absolute;
+        right: 30px;
+        top: 60px;
+        width: 300px;
+        height: calc(~"100vh - 164px"); // -104-60
+        z-index: 99;
+        background: #fcfbfb;
+        box-shadow: -2px 0px 10px #ddd;
+        .@{class-prefix}-dispatcher-unscheduled-tab-scroll {
+            height: inherit !important;
+        }
+    }
+    .@{class-prefix}-employee-work-hours {
+        overflow-x: unset;
+        .@{class-prefix}-employee-work-hours-list-time-table-area {
+            overflow-x: scroll;
+            .@{class-prefix}-employee-work-hours-table-area-header {
+                background: white;
+                width: max-content;
+                .@{class-prefix}-employee-work-hours-table-area-time {
+                    width: max-content;
+                }
+            }
+        }
+    }
+    .@{class-prefix}-employee-week-area {
+        margin-right: 30px;
+        margin-left: 30px;
+        table,th,td {
+            border: 1px solid #eee;
+            border-collapse: collapse;
+        }
+        table {
+            .@{class-prefix}-employee-work-hours-search {
+                border: none;
+            }
+            width: 100%;
+            overflow-x: scroll;
+            th {
+                width: 256px;
+                .@{class-prefix}-employee-work-hours-list-single {
+                    border: none;
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                        background: #fcfbfb;
+                        min-height: 70px;
+                        height: 70px;
+                        padding-bottom: 20px;
+                        min-width: 150px;
+                    }
+                }
+            }
+            thead {
+                tr:nth-child(2) {
+                    td {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        // display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .@{class-prefix}-ss-float-right {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: @screen-lg-max) {
+    .@{class-prefix}-ss-schedule-position-relative {
+        .@{class-prefix}-ss-unscheduled-drawer {
+            height: calc(~"100vh - 224px"); // -104-60-60
+        }
+    }
+}
+@media screen and(max-width: @screen-md-max) {
+    .@{class-prefix}-ss-schedule-position-relative {
+        .@{class-prefix}-ss-unscheduled-drawer {
+            top: 106px; // -60-46
+            right: 0px;
+            height: calc(~"100vh - 270px"); // -104-60-60-46
+        }
+    }
+}
+

@@ -11,7 +11,6 @@ class TopToolBar extends Component {
     
     constructor(props, context) {
         super(props, context);
-    
     }
 
     render () {   

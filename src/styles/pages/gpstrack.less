@@ -6,16 +6,17 @@ div.gx-dispatch-gps-drawer {
     background: white;
     padding: 20px 0 0 0;
     div.gx-dispatch-gps-drawer-title {
-        color: black;
+        color: #132144 !important;
+        font-size: 16px;
+        font-weight: bold;
         height: 40px;
-        font-size: 18px;
         display: flex;
-        padding: 0 20px;
+        padding: 0 20px 0 32px;
         align-items: center;
     }
     div.gx-dispatch-gps-drawer-select-search-box {
         height: 120px;
-        padding: 0 20px;
+        padding: 0 20px 0 32px;
         display: flex;
         flex-flow: column;
         justify-content: space-evenly;
@@ -24,12 +25,17 @@ div.gx-dispatch-gps-drawer {
         width: 100%;
         div.gx-dispatch-gps-dawer-select-bar {
             width: 100%;
+            color: #9399a2 !important;
+            font-size: 12px !important;
+            font-weight: 400 !important;
             div.ant-select-selection--single {
                 border-radius: unset;
             }
         }
         div.gx-dispatch-gps-dawer-search-bar {
-            width: 100%;
+            width: 100% !important;
+            font-size: 13px !important;
+            font-weight: 300 !important;
         }
     }
     
@@ -43,7 +49,7 @@ div.gx-gps-employee-list {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 10px 20px;
+    padding: 8px 20px 8px 32px;
     z-index: 99;
     div.gx-gps-employee-avatar {
         position: relative;
@@ -52,23 +58,32 @@ div.gx-gps-employee-list {
             border-radius: 40px;
             border: 3px solid white;
             background: #9399a2; // login 34,194,72
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             top: 18px;
             left: 22px;
         }
         div.circle-green {
-            background: rgb(34,194,72) !important;
+            background: #23c147 !important;
         }
     }
     div.gx-gps-employee-name {
-        padding-left: 10px;
+        padding-left: 1px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #9399a2;
+        &.logedin-user {
+            color: #132144;
+        }
     }
 }
 
 div.gx-gps-employee-list:hover {
-    background: rgb(231,250,255);
+    background: #e6faff;
     cursor: pointer;
+    div.gx-gps-employee-name {
+        color:  #257cde;
+    }
 }
 
 @media screen and(max-width: @screen-lg-max) {
@@ -86,7 +101,10 @@ div.gx-gps-employee-list:hover {
         height: auto !important;
     }
     .gx-customer-sidenav {
-        flex: none;
+        &.@{class-prefix}-ss-gps-sidenav {
+            flex: none;
+            width: 100% !important;
+        }
     }
 }
 
@@ -107,8 +125,28 @@ div.gx-gps-employee-list:hover {
     }
     .gx-dispatch-gps-drawer-title {
         display: none !important;
+        color: #132144 !important;
     }
     .gx-customer-sidenav {
         flex: none;
     }
 }
+
+div.@{class-prefix}-ss-gps-sidenav {
+    min-width: 252px !important;
+    width: 252px !important;
+    flex: none !important;
+    box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and(max-width: 400px) {
+    .@{class-prefix}-ss-gps-sidenav {
+        .@{class-prefix}-dispatch-gps-drawer-select-search-box {
+            box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.08) !important;
+            padding-left: 20px !important;
+        }
+        .@{class-prefix}-dispatch-gps-dawer-users {
+            background: #f5f5f5 !important;
+        }
+    }
+} 

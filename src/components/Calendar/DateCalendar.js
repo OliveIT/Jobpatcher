@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Button, Popover, Calendar} from "antd";
 import ButtonGroup from "antd/lib/button/button-group";
-import {changeSpecialDateFormat} from "util/DateTime";
+import {changeSpecialDateFormatSS} from "util/DateTime";
 import moment from "moment";
 
 class DateCalendar extends Component {
@@ -32,7 +32,7 @@ class DateCalendar extends Component {
                             content={ <Calendar fullscreen={false} onChange={this.onChangeDate.bind(this)}/>}
                             trigger="click">                    
                     <Button>
-                        <span className="gx-text-normal">{ changeSpecialDateFormat( currentDate ) }</span>
+                        <span className="gx-text-normal">{ changeSpecialDateFormatSS( currentDate ) }</span>
                     </Button>
                 </Popover>       
                 <Button>
@@ -41,6 +41,6 @@ class DateCalendar extends Component {
             </ButtonGroup>
         )
     }
-}  
+}
 
 export default DateCalendar;
